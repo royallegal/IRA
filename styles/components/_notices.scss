@@ -1,0 +1,30 @@
+.notice {
+    text-align: center;
+    margin: 0;
+    padding: 15px 25px;
+    > * {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    form {
+        max-width: 600px;
+    }
+    a {
+        display: table;
+        margin: 0 auto 10px;
+    }
+
+    // ---- COLORS ---- //
+    border-bottom: 2px solid palegoldenrod;
+    background: lightgoldenrodyellow;
+    &.success {
+        border-color: #c1eeb9;
+        background-color: #f0ffed;
+        color: #9dd293;
+    }
+    &.error {
+        border-color: #f7dede;
+        background-color: #f9f2ed;
+        color: #e3aaa3;
+    }
+}

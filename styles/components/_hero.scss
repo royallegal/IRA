@@ -1,0 +1,72 @@
+.hero-container,
+.parallax-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    position: relative;
+    overflow: hidden;
+    height: 500px;
+
+
+    // ---- CONTENT ---- //
+    .hero,
+    .parallax {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: -1;
+    }
+    .title-group,
+    .button-group {
+        flex-basis: 100%;
+        text-align: center;
+        margin: 15px auto;
+    }
+
+    // ---- MEDIA ---- //
+    // Background Images
+    .hero {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    // Images
+    .hero,
+    .parallax {
+        img {
+            display: none;
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+        }
+    }
+    .parallax {
+        img {
+            transform: translate3d(0,0,0);
+            transform: translateX(-50%);
+        }
+    }
+}
+
+
+// ---- HOME HERO ---- //
+body.home {
+    .hero-container {
+        .hero {
+            @media screen and (min-width: 769px) {
+                background-size: 150%;
+                background-position: left 40%;
+            }
+            @media screen and (max-width: 768px) {
+                background-size: 225%;
+                background-position: 33% 40%;
+            }
+        }
+    }
+}

@@ -1,0 +1,190 @@
+// ---- GRADIENT MIXIN ---- //
+// Mixin printing a linear-gradient as well as a plain color fallback
+// and the `-webkit-` prefixed declaration
+// @access public
+// @param {Keyword | Angle} $direction - Linear gradient direction
+// @param {Arglist} $color-stops - List of color-stops composing the gradient
+@mixin linear-gradient($direction, $color-stops...) {
+    // Direction has been omitted and happens to be a color-stop
+    @if is-direction($direction) == false {
+        $color-stops: $direction, $color-stops;
+        $direction: 125deg;
+    }
+    background: nth(nth($color-stops, 1), 1);
+    background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+    background: linear-gradient($direction, $color-stops);
+}
+
+
+// ---- DIRECTION VALIDATION ---- //
+// Test if `$value` is a valid direction
+// @param {*} $value - Value to test
+// @return {Bool}
+@function is-direction($value) {
+    $is-keyword: index((to top, to top right, to right top, to right, to bottom right, to right bottom, to bottom, to bottom left, to left bottom, to left, to left top, to top left), $value);
+    $is-angle: type-of($value) == 'number' and index('deg' 'grad' 'turn' 'rad', unit($value));
+    @return $is-keyword or $is-angle;
+}
+
+
+// ---- LEGACY DIRECTION ---- //
+// Convert a direction to legacy syntax
+// @param {Keyword | Angle} $value - Value to convert
+// @require {function} is-direction
+// @require {function} convert-angle
+// @throw Cannot convert `#{$value}` to legacy syntax because it doesn't seem to be a direction.;
+@function legacy-direction($value) {
+    @if is-direction($value) == false {
+        @error "Cannot convert `#{$value}` to legacy syntax because it doesn't seem to be a direction.";
+    }
+    $conversion-map: (
+        to top          : bottom,
+        to top right    : bottom left,
+        to right top    : left bottom,
+        to right        : left,
+        to bottom right : top left,
+        to right bottom : left top,
+        to bottom       : top,
+        to bottom left  : top right,
+        to left bottom  : right top,
+        to left         : right,
+        to left top     : right bottom,
+        to top left     : bottom right
+    );
+    @if map-has-key($conversion-map, $value) {
+        @return map-get($conversion-map, $value);
+    }
+    @return 90deg - $value;
+}
+
+
+// ---- EXAMPLES ---- //
+// .input-1 {
+//   @include linear-gradient(#31B7D7, #EDAC7D);
+// }
+// .output-1 {
+//   background: #31B7D7;
+//   background: -webkit-linear-gradient(-90deg, #31B7D7, #EDAC7D);
+//   background: linear-gradient(180deg, #31B7D7, #EDAC7D);
+// }
+// 
+// .input-2 {
+//   @include linear-gradient(to right, #E47D7D 0%, #C195D3 50%, #4FB4E8 100%);
+// }
+// .output-2 {
+//   background: #E47D7D;
+//   background: -webkit-linear-gradient(left, #E47D7D 0%, #C195D3 50%, #4FB4E8 100%);
+//   background: linear-gradient(to right, #E47D7D 0%, #C195D3 50%, #4FB4E8 100%);
+// }
+// 
+// .input-3 {
+//   @include linear-gradient(42deg, #B58234 0%, #D2B545 50%, #D7C04D 50.01%, #FFFFFF 100%);
+// }
+// .output-3 {
+//   background: #B58234;
+//   background: -webkit-linear-gradient(48deg, #B58234 0%, #D2B545 50%, #D7C04D 50.01%, #FFFFFF 100%);
+//   background: linear-gradient(42deg, #B58234 0%, #D2B545 50%, #D7C04D 50.01%, #FFFFFF 100%);
+// }
+
+
+.gradient {
+    &.pink {
+        @include linear-gradient(155deg,
+                                 color("pink", "light") 0%,
+                                 color("pink", "base") 90%);
+    }
+    &.red {
+        @include linear-gradient(155deg,
+                                 color("red", "light") 0%,
+                                 color("red", "base") 90%);
+    }
+    &.purple {
+        @include linear-gradient(155deg,
+                                 color("purple", "light") 0%,
+                                 color("purple", "base") 90%);
+    }
+    &.blue {
+        @include linear-gradient(155deg,
+                                 color("blue", "light") 0%,
+                                 color("blue", "base") 90%);
+    }
+    &.teal {
+        @include linear-gradient(155deg,
+                                 color("teal", "light") 0%,
+                                 color("teal", "base") 90%);
+    }
+    &.green {
+        @include linear-gradient(155deg,
+                                 color("green", "light") 0%,
+                                 color("green", "base") 90%);
+    }
+    &.yellow {
+        @include linear-gradient(155deg,
+                                 color("yellow", "light") 0%,
+                                 color("yellow", "base") 90%);
+    }
+    &.orange {
+        @include linear-gradient(155deg,
+                                 color("orange", "light") 0%,
+                                 color("orange", "base") 90%);
+    }
+    &.tan {
+        @include linear-gradient(155deg,
+                                 color("tan", "light") 0%,
+                                 color("tan", "base") 90%);
+    }
+    &.brown {
+        @include linear-gradient(155deg,
+                                 color("brown", "light") 0%,
+                                 color("brown", "base") 90%);
+    }
+    &.steel {
+        @include linear-gradient(155deg,
+                                 color("steel", "light") 0%,
+                                 color("steel", "base") 90%);
+    }
+}
+
+$mix-angle: 125deg;
+.mix {
+    &.pink {
+        @include linear-gradient($mix-angle,
+                                 #FABA32 0%,
+                                 #FF31CB 90%);
+    }
+    &.red {
+        @include linear-gradient($mix-angle,
+                                 color("orange", "light") 0%,
+                                 color("red", "base") 90%);
+    }
+    &.purple {
+        @include linear-gradient($mix-angle,
+                                 color("pink", "accent") 0%,
+                                 color("purple", "accent") 90%);
+    }
+    &.blue {
+        @include linear-gradient($mix-angle,
+                                 color("blue", "dark") 0%,
+                                 color("purple", "accent") 90%);
+    }
+    &.teal {
+        @include linear-gradient($mix-angle,
+                                 color("blue", "base") 0%,
+                                 color("green", "light") 90%);
+    }
+    &.green {
+        @include linear-gradient($mix-angle,
+                                 color("teal", "accent") 0%,
+                                 color("green", "accent") 90%);
+    }
+    &.yellow {
+        @include linear-gradient($mix-angle,
+                                 color("green", "light") 0%,
+                                 color("yellow", "accent") 90%);
+    }
+    &.orange {
+        @include linear-gradient($mix-angle,
+                                 color("yellow", "accent") 0%,
+                                 color("orange", "accent") 90%);
+    }
+}

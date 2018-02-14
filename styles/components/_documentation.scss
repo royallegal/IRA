@@ -1,0 +1,52 @@
+main#documentation {
+
+    // ---- LAYOUT ---- //
+    .table-of-contents {
+        position: fixed;
+        top: 100px;
+        right: 0;
+        padding: 0 25px 0 0;
+    }
+
+    .flex-row {
+        display: flex;
+        // justify-content: space-around;
+    }
+
+
+    // ---- COMPONENTS ---- //
+    // Buttons
+    #buttons {
+        th,
+        td {
+            text-align: center;
+            width: 140px;
+        }
+        th {
+            text-transform: capitalize;
+        }
+        td {
+            &.white-buttons,
+            &.to-white-buttons,
+            &.to-blue-buttons,
+            &.color-text-buttons,
+            &.ghost-buttons,
+            &.fill-buttons {
+                background-color: #f2f2f2;
+            }
+        }
+    }
+
+    // Colors
+    #colors {
+        .swatch {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100px;
+            width: 100px;
+            margin: 2.5px;
+            padding: 10px;
+        }
+    }
+}

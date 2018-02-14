@@ -1,0 +1,78 @@
+// ---- TABLE OF CONTENTS ---- //
+// 1. Defaults
+// 2. Layout
+// 3. Related Posts
+
+
+// ---- DEFAULTS ---- //
+article {
+    box-sizing: content-box;
+    max-width: 800px;
+    padding: 0 15px;
+    h1:first-child {
+        margin-top: 0;
+    }
+}
+
+
+// ---- LAYOUT ---- //
+main#article {
+    .container {
+        .content {
+            margin-top: 50px;
+        }
+    }
+    &.with-sidebar {
+        .container {
+            max-width: 1200px;
+            .content {
+                display: flex;
+                justify-content: center;
+                sidebar {
+                    box-sizing: border-box;
+                    height: fit-content;
+                    width: 400px;
+                    margin: 0 15px;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: $blog-sidebar-screen) {
+    main#article {
+        &.with-sidebar {
+            .content {
+                flex-wrap: wrap;
+            }
+            sidebar {
+                width: auto !important;
+            }
+        }
+    }
+}
+
+
+// ---- RELATED POSTS ---- //
+.related-posts {
+    .card {
+        margin: 10px 0;
+        &:first-child {
+            margin-top: 0;
+        }
+        .card-image {
+            height: 100px;
+            background-size: cover;
+            background-position: center;
+        }
+        .card-content {
+            padding: 15px;
+            a {
+                font-weight: 900;
+                color: #aaa;
+            }
+        }
+        .card-action {
+            padding: 15px;
+        }
+    }
+}

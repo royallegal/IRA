@@ -1,0 +1,109 @@
+#feed { 
+    position: relative;
+    .col {
+        transition: all .4s ease-in-out; 
+    }
+    [data-toggle-sidebar] { 
+        position: absolute;
+        top: 0;
+        right: 10px;
+        z-index: 90;
+    }
+    article {
+        width: calc(33% - 10px);
+        box-sizing: border-box;
+        overflow: hidden;
+        padding: 0;
+        border: 1px solid #eee;
+        border-radius: 3px;
+        display: flex;
+        flex-direction: column;
+        margin: 5px;
+        background: white;
+        .image-wrapper {
+            overflow: hidden;
+            position: relative;
+            .play-button {
+                position: absolute;
+                top: 0;
+                left: 0;
+                background: rgba(0, 0, 0, 0.41);
+                height: 100%;
+                width: 100%;
+                border: 0;
+                -webkit-appearance: none;
+                .material-icons {
+                    font-size: 5rem;
+                    color: white;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+            img {
+                width: 100%;
+                margin-bottom: -5px;
+            }
+        }
+        .excerpt {
+            flex:1;
+        }
+        .post-categories {
+            margin: 0;
+            text-transform: uppercase;
+            font-size: 0.65rem;
+            li {
+                display: inline;
+                margin-right: 10px;
+                position: relative;
+                display: inline-block;
+                &:after {    
+                    content: "●";
+                    position: absolute;
+                    right: -8px;
+                    font-size: 7px;
+                    top: 2px;
+                    opacity: 0.4;
+                }
+                &:last-child:after {
+                    content: "";
+                }
+            }
+            a {
+                opacity: 0.8;
+                color:inherit;
+                position: relative;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+        .line {
+            width: 20%;
+            height: 3px; 
+        }
+        h3, h4 {
+            margin-top: 0px; 
+            margin-bottom: 10px;
+            a {
+                color:inherit;
+            }
+        }
+    } 
+
+    .feed-sidebar {
+        &.collapsed {
+            transform: translateX(100%);
+        }
+        @media only screen and (min-width: $medium-screen-up) {
+            position: absolute;
+            top: 0;
+            right: 0;
+        } 
+        .widget {
+            background: white;
+            border: 0;
+        } 
+    }
+}

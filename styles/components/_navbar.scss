@@ -1,0 +1,387 @@
+// ---- DEFAULTS ---- //
+nav {
+    // Desktop
+    width: 100%;
+    max-width: 100vw;
+    height: $navbar-height-mobile;
+    line-height: $navbar-line-height-mobile;
+    @media #{$medium-and-up} {
+        height: $navbar-height;
+        line-height: $navbar-line-height;
+    }
+    .nav-wrapper {
+        position: relative;
+        height: 100%;
+    }
+
+    // Mobile
+    .button-collapse {
+        z-index: 1;
+        position: relative;
+        float: right;
+        height: $navbar-height-mobile;
+        margin: 0 18px;
+        @media #{$large-and-up} {
+            display: none;
+        }
+    }
+}
+
+
+// ---- VARIANTS ---- //
+// Fixed Navbar
+.navbar-fixed {
+    position: relative;
+    z-index: 997;
+    nav {
+        position: fixed;
+    }
+}
+// Extended Navbar
+nav {
+    &.nav-extended {
+        height: auto;
+        .nav-wrapper {
+            min-height: $navbar-height-mobile;
+            height: auto;
+        }
+        .nav-content {
+            position: relative;
+            line-height: normal;
+        }
+    }
+}
+@media #{$medium-and-up} {
+    nav.nav-extended .nav-wrapper {
+        min-height: $navbar-height;
+    }
+}
+
+
+// ---- COLORS ---- //
+.home nav.transparent {
+    #nav-right {
+        li a {
+            color: $transparent-nav-color;
+        }
+    }
+}
+nav {
+    color: $navbar-font-color;
+    @extend .z-depth-1;
+    background-color: color("shades", "white");
+    &.transparent {
+        border-color: transparent;
+        background-color: transparent;
+        box-shadow: none;
+        .logo-group {
+            #rls-logo {
+                background-image: url('https://royallegalsolutions.com/wp-content/uploads/2017/05/Layer-2.png');
+                background-size: 19px auto;
+            }
+        }
+        #rls-title,
+        #mobile-menu {
+            color: $transparent-nav-color;
+        }
+        #nav-left,
+        #nav-right {
+            li {
+                a {
+                    color: white;
+                    opacity: .7;
+                    &:hover {
+                        color: white;
+                        opacity: 1;
+                    }
+                    &.active {
+                        background-color: $link-color;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// ---- LOGO ---- //
+nav {
+    // Logo Group
+    .logo-group {
+        display: inline-block;
+        float: left;
+        #rls-logo,
+        #rls-title {
+            display: inline-block;
+        }
+
+        // Logo
+        #rls-logo {
+            float: left;
+            height: $navbar-height-mobile;
+            width: 45px;
+            margin: auto;
+            background-image: url('https://royallegalsolutions.com/wp-content/uploads/2017/07/cropped-RLS-Favicon-1.png');
+            background-size: 26px auto;
+            background-position: center;
+            background-repeat: no-repeat;
+            @media #{$medium-and-up} {
+                height: $navbar-height;
+            }
+        }
+
+        // Title
+        #rls-title {
+            padding: 0;
+            font-size: 1rem;
+            font-weight: bold;
+            line-height: 45px;
+            @media #{$large-and-up} {
+                display: none;
+            }
+        }
+    }
+
+    .brand-logo {
+        display: inline-block;
+        position: absolute;
+        padding: 0;
+        font-size: $navbar-brand-font-size;
+        color: $navbar-font-color;      
+
+        // Layout
+        &.center {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        &.right {
+            right: 0.5rem;
+            padding: 0;
+        }
+        @media #{$medium-and-down} {
+            left: 50%;
+            transform: translateX(-50%);
+            &.left,
+            &.right {
+                padding: 0;
+                transform: none;
+            }
+            &.left {
+                left: 0.5rem;
+            }
+            &.right {
+                right: 0.5rem;
+                left: auto;
+            }
+        }
+        // Icon
+        i,
+        [class^="mdi-"], [class*="mdi-"],
+        i.material-icons {
+            float: left;
+            margin-right: 15px;
+        }
+    }
+
+    // Title
+    .nav-title {
+        display: inline-block;
+        font-size: 32px;
+        padding: 28px 0;
+    }
+}
+
+
+// ---- SERVICES ---- //
+.admin-bar {
+    nav {
+        ul#services {
+            top: 77px !important;
+        }
+    }
+}
+
+nav {
+    ul#services {
+        display: none;
+        position: fixed !important;
+        top: 45px !important;
+        left: 0 !important;
+        right: 0 !important;
+        padding: 20px 0;
+        background-color: #f7f7f7;
+        box-shadow: 0 2px 5px 1px rgba(0,0,0,.15);
+        &.active {
+            display: flex;
+        }
+
+        .service-column {
+            flex-basis: 20%;
+            border-left: 1px solid #eee;
+            border-right: 1px solid #eee;
+            &:first-child {
+                border-left: 0;
+            }
+            &:last-child {
+                border-right: 0;
+            }
+            &.recommendations .service-item:hover {
+                background-color: color("red", "base");
+            }
+            &.llcs .service-item:hover {
+                background-color: color("blue", "base");
+            }
+            &.trusts .service-item:hover {
+                background-color: color("brown", "base");
+            }
+            &.agreements .service-item:hover {
+                background-color: color("green", "base");
+            }
+            &.plans .service-item:hover {
+                background-color: color("purple", "base");
+            }
+
+            .service-heading {
+                padding: 10px 22px;
+                font-size: 12px;
+                font-weight: bold;
+                color: #aaa;
+                line-height: 1;
+                letter-spacing: .5px;
+                text-transform: uppercase;
+                cursor: default;
+            }
+
+            .service-item {
+                padding: 0 10px;
+                a {
+                    font-size: 12px;
+                    font-weight: normal;
+                    color: black;
+                    line-height: 40px;
+                }
+                &:hover a {
+                    font-weight: bold;
+                    color: white;
+                }
+            }
+        }
+    }
+}
+
+
+// ---- CONTENT ---- //
+nav {
+    // Icons
+    i,
+    [class^="mdi-"], [class*="mdi-"],
+    i.material-icons {
+        display: block;
+        font-size: 1.2rem;
+        height: $navbar-height-mobile;
+        line-height: $navbar-line-height-mobile;
+        @media #{$medium-and-up} {
+            height: $navbar-height;
+            line-height: $navbar-line-height;
+        }
+    }
+
+    // Text Links
+    a {
+        color: $navbar-font-color;
+    }
+
+    // Search
+    form {
+        height: 100%;
+    }
+    .input-field {
+        margin: 0;
+        height: 100%;
+        input {
+            height: 100%;
+            font-size: 1.2rem;
+            border: none;
+            padding-left: 2rem;
+            &:focus,
+            &[type=text]:valid,
+            &[type=password]:valid,
+            &[type=email]:valid,
+            &[type=url]:valid,
+            &[type=date]:valid {
+                border: none;
+                box-shadow: none;
+            }
+        }
+        label {
+            top: 0;
+            left: 0;
+            i {
+                color: rgba(255,255,255,.7);
+                transition: color .3s;
+            }
+            &.active i { color: $navbar-font-color; }
+        }
+    }
+
+    // Menus
+    ul {
+        margin: 0;
+        &.left {
+            float: left;
+        }
+
+        // Menu Items
+        li {
+            transition: background-color .3s;
+            float: left;
+            padding: 0;
+            &.active {
+                background-color: rgba(0,0,0,.1);
+            }
+        }
+
+        // Menu Text Links
+        a {
+            transition: background-color .3s;
+            font-size: $navbar-font-size;
+            font-weight: 700;
+            color: $navbar-font-color;
+            letter-spacing: .33px;
+            display: block;
+            padding: 0 14px;
+            cursor: pointer;
+            &.active {
+                background-color: $link-color;
+            }
+            &:hover {
+                color: $link-color;
+            }
+        }
+
+        // Menu Buttons
+        a.button {
+            margin-top: -2px;
+            margin-left: 15px;
+            margin-right: 15px;
+            padding: 0 14px;
+            border: 1px solid $navbar-font-color;
+            border-radius: 2px;
+            background-color: transparent;
+            font-size: $navbar-font-size;
+            color: $navbar-font-color;
+            text-transform: unset;
+            &:hover {
+                border-color: $link-color;
+                background-color: $link-color;
+                box-shadow: none;
+                color: #fff;
+            }
+            & > .material-icons {
+                height: inherit;
+                line-height: inherit;
+            }
+        }
+    }
+}

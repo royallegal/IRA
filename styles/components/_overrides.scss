@@ -1,0 +1,36 @@
+// ---- WORDPRESS ---- //
+// Admin Bar
+#wpadminbar {
+    overflow: hidden;
+}
+
+
+// ---- CHECKOUT ---- //
+// Payment Methods
+.wc_payment_methods {
+    // Stripe
+    label[for="payment_method_stripe"] { // Remove label
+        display: none;
+    }
+    .StripeElement {                     // Force Materialize input styles
+        background-color: transparent !important;
+        border: none !important;
+        border-bottom: $input-border !important;
+        border-radius: 0 !important;
+        outline: none !important;
+        margin: 5px 0 10px !important;
+        box-shadow: none !important;
+        transition: $input-transition !important;
+        &#stripe-exp-element,
+        &#stripe-cvc-element {
+            display: inline-block;
+            width: calc(50% - 10px);
+        }
+        &#stripe-cvc-element {
+            float: right;
+        }
+    }
+    .StripeElement--webkit-autofill {
+        background-color: rgb(250, 255, 189) !important;
+    }
+}

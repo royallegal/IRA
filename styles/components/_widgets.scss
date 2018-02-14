@@ -1,0 +1,93 @@
+.widget {
+    margin: 10px 0;
+    padding: 20px;
+    border: 2px solid #eee;
+    border-radius: 2px;
+    background-color: #f5f5f5;
+    &:first-of-type {
+        margin-top: 0;
+    }
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+    h4 {
+        margin: 0 0 20px;
+        line-height: 1;
+    }
+    ul, ol {
+        margin: 0;
+        padding: 0;
+    }
+    li {
+        &:first-child {
+            margin-top: 0 !important;
+            padding-top: 0 !important;
+        }
+        &:last-child {
+            margin-bottom: 0 !important;
+            padding-bottom: 0 !important;
+        }
+    }
+
+
+    // ---- Widget Overrides ---- // 
+    &.widget_search {
+        input {
+            margin-bottom: 10px !important;
+        }
+    }
+
+    &.widget_recent_entries,
+    &.widget_nav_menu// ,
+    // &.widget_categories
+    {
+        li {
+            padding: 10px 0;
+            border-top: 1px solid #ccc;
+            a {
+                font-size: 1rem;
+                color: #777;
+            }
+            &:hover {
+                background-color: #f5f5f5;
+                a {
+                    color: #333;
+                }
+            }
+            &:first-of-type {
+                border: 0;
+            }
+        }
+    }
+
+    &.widget_categories {
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            li {
+                display: inline-block;
+                height: 36px;
+                font-size: 15px;
+                font-weight: 500;
+                line-height: 36px;
+                letter-spacing: .5px;
+                padding: 0 15px;
+                border-radius: 18px;
+                background-color: $chip-bg-color;
+                margin-bottom: $chip-margin;
+                margin-right: $chip-margin;
+                a {
+                    color: rgba(0,0,0,.6);
+                }
+                &:hover {
+                    background-color: $link-color;
+                    transition: .2s ease-out;
+                    a {
+                        color: white;
+                        transition: .2s ease-out;
+                    }
+                }
+            }
+        }
+    }
+}

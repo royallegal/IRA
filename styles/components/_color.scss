@@ -1,0 +1,295 @@
+// ---- COLORS ---- //
+$pink: (
+    "accent": #FF4649,
+    "light":  #F99F8C,
+    "base":   #FD7778,
+    "dark":   #E66767
+);
+
+$red: (
+    "accent": #E61E28,
+    "light":  #FC545D,
+    "base":   #E6343E,
+    "dark":   #C7151F
+);
+
+$purple: (
+    "accent": #AA58BE,
+    "light":  #CDAAD8,
+    "base":   #A478B1,
+    "dark":   #A7509E
+);
+
+$blue: (
+    "accent": #22a7f0,
+    "light":  #76B6E7,
+    "base":   #2D7EBC,
+    "dark":   #2A6EA2
+);
+
+$teal: (
+    "accent": #1DD190,
+    "light":  #74D6B1,
+    "base":   #3FC494,
+    "dark":   #43B18F
+);
+
+$green: (
+    "accent": #1BC81B,
+    "light":  #5DD65D,
+    "base":   #29B629,
+    "dark":   #2A9F2A
+);
+
+$yellow: (
+    "accent": #FFFB2B,
+    "light":  #FEEF7E,
+    "base":   #FAE444,
+    "dark":   #FECE2F
+);
+
+$orange: (
+    "accent": #FF8500,
+    "light":  #FDA544,
+    "base":   #FD7B36,
+    "dark":   #F16532
+);
+
+$tan: (
+    "accent": #BE7B42,
+    "light":  #CB925B,
+    "base":   #B37A4A,
+    "dark":   #80502E
+);
+
+$brown: (
+    "accent": #8A4D38,
+    "light":  #A37364,
+    "base":   #896154,
+    "dark":   #844740
+);
+
+$steel: (
+    "accent": #95B3BE,
+    "light":  #C6D0D4,
+    "base":   #A3B2B8,
+    "dark":   #5F6D79
+);
+
+$gray: (
+    "lighten-5": #fafafa,
+    "lighten-4": #f5f5f5,
+    "lighten-3": #eeeeee,
+    "lighten-2": #e0e0e0,
+    "lighten-1": #bdbdbd,
+    "base":      #9e9e9e,
+    "darken-1":  #757575,
+    "darken-2":  #616161,
+    "darken-3":  #424242,
+    "darken-4":  #212121
+);
+
+$shades: (
+    "transparent": transparent,
+    "white":       #FFFFFF,
+    "gray":        #e5e5e5,
+    "black":       #000000
+);
+
+$colors: (
+    "pink": $pink,
+    "red": $red,
+    "purple": $purple,
+    "blue": $blue,
+    "teal": $teal,
+    "green": $green,
+    "yellow": $yellow,
+    "orange": $orange,
+    "tan": $tan,
+    "brown": $brown,
+    "steel": $steel,
+) !default;
+
+$all_colors: (
+    "pink": $pink,
+    "red": $red,
+    "purple": $purple,
+    "blue": $blue,
+    "teal": $teal,
+    "green": $green,
+    "yellow": $yellow,
+    "orange": $orange,
+    "tan": $tan,
+    "brown": $brown,
+    "steel": $steel,
+    "gray": $gray,
+    "shades": $shades
+) !default;
+
+
+// ---- TEXT COLORS ---- //
+// Modify text color based on background lightness
+@function dynamic_text_color($color) {
+    @if (lightness($color) > 80) {
+        @return rgba(0, 0, 0, 0.8);
+    }
+    @else {
+        @return #FFF;
+    }
+}
+
+// ---- COLOR CLASSES ---- //
+// String name match
+@function color_name($string, $find) {
+    @if ($find == (str-slice($string, 0, str-length($find)))) {
+        @return true;
+    } @else {
+        @return false;
+    }
+}
+
+// Generates classes for background and text colors from basedon above variables
+@each $color_name, $color in $colors {
+    @each $color_type, $color_value in $color {
+        // Base colors (ie ".blue")
+        @if $color_type == "base" {
+            .#{$color_name} {
+                border-color: darken($color_value, 2.5%);
+                background-color: $color_value;
+                @if color_name($color_name, "yellow") == true {
+                    color: rgba(0, 0, 0, 0.8);
+                }
+                @else {
+                    color: dynamic_text_color($color_value);
+                }
+
+                // Button Hover States
+                &.button {
+                    &:hover {
+                        color: dynamic_text_color($color_value);
+                        &.yellow {
+                            color: rgba(0,0,0,.8);
+                        }
+                        &.hollow {
+                            border-color: $color_value;
+                            background-color: transparent;
+                            color: $color_value;
+                        }
+                        &.to-blue {
+                            border-color: #00b0ff !important;
+                            background-color: #00b0ff !important;
+                            color: white !important;
+                        }
+                        &.to-white {
+                            border-color: white !important;
+                            background-color: white !important;
+                            color: $color_value !important;
+                        }
+                    }
+
+                    // Gradients & Mixes
+                    &.gradient,
+                    &.mix {
+                        transition: none;
+                        &:hover {
+                            border: 2px solid $color_value;
+                            background: white;
+                            color: $color_value;
+                        }
+                    }
+
+                    // Ghost Buttons
+                    &.ghost {
+                        border-color: $color_value;
+                        color: $color_value;
+                        &:hover {
+                            border-color: darken($color_value, 2.5%);
+                            background: $color_value;
+                            color: white;
+                        }
+                    }
+                }
+            }
+
+            // Text
+            .#{$color_name}-text {
+                color: $color_value;
+            }
+        }
+
+        // Color variants (ie ".blue.lightest")
+        @else {
+            .#{$color_name}.#{$color_type} {
+                border-color: darken($color_value, 2.5%);
+                background-color: $color_value;
+                @if color_name($color_name, "yellow") == true {
+                    color: rgba(0, 0, 0, 0.8);
+                }
+                @else {
+                    color: dynamic_text_color($color_value);
+                }
+            }
+            .#{$color_name}-text.text-#{$color_type} {
+                color: $color_value;
+            }
+        }
+    }
+}
+
+// Shade classes
+@each $color, $color_value in $shades {
+    .#{$color} {
+        border-color: $color_value;
+        background-color: $color_value;
+        color: dynamic_text_color($color_value);
+        &.button {
+            &:hover {
+                border-color: #00b0ff;
+                background-color: #00b0ff;
+                color: white;
+            }
+            &.ghost {
+                border-color: $color_value;
+                background-color: transparent;
+                color: $color_value;
+                &:hover {
+                    border-color: $color_value;
+                    background-color: $color_value;
+                    color: rgba(0,0,0,.8);
+                    &.blue-text {
+                        color: #00b0ff
+                    }
+                }
+            }
+            &:hover,
+            &.ghost:hover {
+                &.to-blue {
+                    border-color: #00b0ff;
+                    background-color: #00b0ff;
+                    color: white;
+                }
+                &.to-white {
+                    border-color: white;
+                    background-color: white;
+                    color: rgba(0,0,0,.8);
+                }
+            }
+        }
+    }
+    .#{$color}-text {
+        color: $color_value;
+    }
+}
+
+// usage: color("name_of_color", "type_of_color")
+// to avoid to repeating map-get($colors, ...)
+@function color($color, $type) {
+    @if map-has-key($all_colors, $color) {
+        $curr_color: map-get($all_colors, $color);
+        @if map-has-key($curr_color, $type) {
+            @return map-get($curr_color, $type);
+        }
+    }
+    @warn "Unknown `#{$color}` - `#{$type}` in $colors.";
+    @return null;
+}

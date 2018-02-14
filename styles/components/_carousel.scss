@@ -1,0 +1,162 @@
+// @media only screen and (max-width: 782px) {
+//     .admin-bar {
+//         #home {
+//             .carousel:first-child {
+//                 margin-top: 46px;
+//             }
+//         }
+//     }
+// }
+// @media only screen and (min-width: 783px) {
+//     .admin-bar {
+//         #home {
+//             .carousel:first-child {
+//                 margin-top: 32px;
+//             }
+//         }
+//     }
+// }
+
+
+#home {
+    #home-description {
+        padding: 50px 0;
+        // background-color: #f2f2f2;
+        p:first-of-type {
+            margin: 0;
+            font-size: 1.33rem;
+            line-height: 2;
+        }
+    }
+}
+
+#home {
+    .carousel {
+        &.carousel-slider {
+            .carousel-item {
+                background-size: cover;
+                background-position: center;
+                .caption-container {
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    align-content: center;
+                    justify-content: center;
+                    height: 100%;
+                    width: 90vw;
+                    max-width: 800px;
+                    .caption {
+                        margin: 50px;
+                        padding: 25px;
+                        border: 1px solid rgba(255,255,255,.25);
+                        border-radius: 2px;
+                        background-color: rgba(0,0,0,.5);
+                        .title-group {
+                            margin-top: 0;
+                            padding-top: 0;
+                            .title {
+                                font-size: 1.75rem;
+                                line-height: 1.25;
+                            }
+                            .subtitle {
+                                font-size: 1.15rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.carousel {
+    &.carousel-slider {
+        top: 0;
+        left: 0;
+
+        .carousel-fixed-item {
+            &.with-indicators {
+                bottom: 68px;
+            }
+
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 20px;
+            z-index: 1;
+        }
+
+        .carousel-item {
+            width: 100%;
+            height: 100%;
+            min-height: $carousel-height;
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            h2 {
+                font-size: 24px;
+                font-weight: 500;
+                line-height: 32px;
+            }
+
+            p {
+                font-size: 15px;
+            }
+        }
+    }
+
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: $carousel-height;
+    perspective: 500px;
+    transform-style: preserve-3d;
+    transform-origin: 0% 50%;
+
+    .carousel-item {
+        display: none;
+        width: $carousel-item-width;
+        height: $carousel-item-height;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        & > img {
+            width: 100%;
+        }
+    }
+
+    .indicators {
+        position: absolute;
+        text-align: center;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: 0;
+
+        .indicator-item {
+            &.active {
+                background-color: #fff;
+            }
+
+            display: inline-block;
+            position: relative;
+            cursor: pointer;
+            height: 8px;
+            width: 8px;
+            margin: 24px 4px;
+            background-color: rgba(255,255,255,.5);
+
+            transition: background-color .3s;
+            border-radius: 50%;
+        }
+    }
+
+    // Materialbox compatibility
+    &.scrolling .carousel-item .materialboxed,
+    .carousel-item:not(.active) .materialboxed {
+        pointer-events: none;
+    }
+}

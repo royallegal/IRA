@@ -1,0 +1,78 @@
+.quiz {
+  .image-area {
+    text-align:center;
+    img {
+      float: right;
+      width: 400px;
+      shape-outside: url(../img/person.png);
+      shape-margin: 40px;
+      margin-left: 40px;
+      @media #{$medium-and-down} {
+        float:none;
+        shape-outside:none;
+        width:70%;
+        margin-left:0;
+        margin-bottom:1em;
+      }
+    }
+  }
+  .text-area {
+    text-align: left;
+    @media #{$medium-and-down} {
+      text-align: center;
+    }
+    .quiz-title {
+      width: 60%;
+      @media #{$medium-and-down} {
+        width: 100%;
+      }
+      h2 {
+        font-size: 3em;
+        font-weight: bolder;
+        margin: 0;
+        text-transform: none;
+        @media #{$medium-and-down} {
+          font-size: 2.5em;
+        }
+      }
+    }
+    .quiz-under-line {
+      width: 40%;
+      height: 3px;
+      background-color: $underline-color;
+      @media #{$medium-and-down} {
+        width: 60%;
+        margin: 0 auto;
+      }
+    }
+    .btn-quiz-toggle{
+      width: 170px;
+      text-align: center;
+      &.close{
+        background-color:$white-color-dark;
+        color:$black-color-light;
+        border:none;
+      }
+    }
+
+  }
+  .toggle-section{
+    clear:both;
+    padding:2em 1em;
+    background-color:$white-color-off;
+    text-align:center;
+    //.carousel {
+    //
+    //  .indicator-item {
+    //    height: 14px;
+    //    width: 14px;
+    //
+    //    background-color:$white-color-dark;
+    //    border:1px solid;
+    //    &.active{
+    //      background-color:$blue-color-dark;
+    //    }
+    //  }
+    //}
+  }
+}
