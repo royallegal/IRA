@@ -1,0 +1,25 @@
+// Icon Styles
+i {
+    line-height: inherit;
+
+    &.left {
+        float: left;
+        margin-right: 5px;
+    }
+    &.right {
+        float: right;
+        margin-left: 5px;
+    }
+    &.tiny {
+        font-size: 1rem;
+    }
+    &.small {
+        font-size: 2rem;
+    }
+    &.medium {
+        font-size: 4rem;
+    }
+    &.large {
+        font-size: 6rem;
+    }
+}

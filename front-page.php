@@ -45,7 +45,7 @@
             <p>The investing world is being revolutionized by self directed IRAs. This popular investment structure provides easy, fast, and cost-efficient access to higher performing private investments. Get all the benefits of private IRA investing without the pain points.</p>
         </div>
 
-        <h2 class="center section">Think outside your current IRA</h2>
+        <h2 class="center-align section">Think outside your current IRA</h2>
 
         <div class="wide container row section">
             <div class="valign-wrapper center-align col s12 m6">
@@ -58,11 +58,11 @@
 
     <div class="blue panel">
         <div class="white-text wide container">
-            <div class="center section">
+            <div class="center-align section">
                 <p class="h2">Four Quick Steps</p>
             </div>
 
-            <div class="center row section">
+            <div class="center-align row section">
                 <div class="col s6 m3">
                     <img alt="" src="https://lorempixel.com/800/400/food/1"/>
                     <div class="inline">
@@ -94,7 +94,7 @@
                 </div>
             </div>
 
-            <div class="center section">
+            <div class="center-align section">
                 <div class="title-group">
                     <p class="h3">It's that easy!</p>
                     <p>You’re now ready to start investing in your favorite opportunities, as simple as writing a check.</p>

@@ -1,13 +1,54 @@
-// Scale transition
+.hide {
+    display: none !important;
+}
+
+
+// ---- TRANSITIONS ---- //
 .scale-transition {
-  &.scale-out {
-    transform: scale(0);
-    transition: transform .2s !important;
-  }
+    &.scale-out {
+        transform: scale(0);
+        transition: transform .2s !important;
+    }
 
-  &.scale-in {
-    transform: scale(1);
-  }
+    &.scale-in {
+        transform: scale(1);
+    }
 
-  transition: transform .3s cubic-bezier(0.53, 0.01, 0.36, 1.63) !important;
+    transition: transform .3s cubic-bezier(0.53, 0.01, 0.36, 1.63) !important;
+}
+
+.fade-in {
+    opacity: 0;
+    transform-origin: 0 50%;
+}
+
+
+// ---- KEYFRAMES ---- //
+@keyframes indeterminate {
+    0% {
+        left: -35%;
+        right:100%;
+    }
+    60% {
+        left: 100%;
+        right: -90%;
+    }
+    100% {
+        left: 100%;
+        right: -90%;
+    }
+}
+@keyframes indeterminate-short {
+    0% {
+        left: -200%;
+        right: 100%;
+    }
+    60% {
+        left: 107%;
+        right: -8%;
+    }
+    100% {
+        left: 107%;
+        right: -8%;
+    }
 }

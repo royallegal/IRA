@@ -1,0 +1,11 @@
+.divider {
+    height: 1px;
+    overflow: hidden;
+    background-color: color("gray", "lighten-2");
+    &.top {
+        margin: 10px 0 25px;
+    }
+    &.bottom {
+        margin: 25px 0 10px;
+    }
+}

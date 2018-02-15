@@ -1,0 +1,103 @@
+//  Blockquote
+blockquote,
+.quote {
+    padding: 25px;
+    font-size: $p-fontsize;
+    letter-spacing: 1px;
+    cursor: default;
+    :first-child {
+        margin-top: 0;
+    }
+    :last-child {
+        margin-bottom: 0;
+    }
+    .header,
+    .footer {
+        p {
+            margin: 12px 0;
+            font-size: .85rem;
+        }
+    }
+    .header {
+        margin: 0 0 10px;
+        padding: 0 0 10px;
+    }
+    .footer {
+        margin: 10px 0 0;
+        padding: 10px 0 0;
+    }
+}
+.quote {
+    margin: 20px 0;
+}
+blockquote {
+    margin: 35px 50px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+@media #{$small-and-down} {
+    blockquote {
+        margin: 35px 10px;
+    }
+}
+
+blockquote,
+.quote {
+    border: 2px solid palegoldenrod;
+    background-color: lightgoldenrodyellow;
+    color: #d6c48c;
+    transition: .2s ease-out;
+    &.blue {
+        border-color: #d2e1ec;
+        background-color: #edf4f9 !important;
+        color: #9ab6ca;
+        .header {
+            border-bottom: 2px dashed #d2e1ec;
+        }
+        .footer {
+            border-top: 2px dashed #d2e1ec;
+        }
+    }
+    &.green {
+        border-color: #c1eeb9;
+        background-color: #f0ffed !important;
+        color: #9dd293;
+        .header {
+            border-bottom: 2px dashed #c1eeb9;
+        }
+        .footer {
+            border-top: 2px dashed #c1eeb9;
+        }
+    }
+    &.pink {
+        border-color: #f7dede;
+        background-color: #f9f2ed !important;
+        color: #e3aaa3;
+        .header {
+            border-bottom: 2px dashed #f7dede;
+        }
+        .footer {
+            border-top: 2px dashed #f7dede;
+        }
+    }
+    &.brown {
+        border: 2px solid #e8e8c0;
+        background-color: beige !important;
+        color: #c9bc93;
+        .header {
+            border-bottom: 2px dashed #e8e8c0;
+        }
+        .footer {
+            border-top: 2px dashed #e8e8c0;
+        }
+    }
+}
+
+form {
+    blockquote,
+    .quote {
+        .input-field {
+            margin-top: 1rem;
+        }
+    }
+}
