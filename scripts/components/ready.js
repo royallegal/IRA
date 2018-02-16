@@ -6,6 +6,12 @@ $(document).ready(function() {
     royal_login();
 
 
+    // ---- GENERAL ---- //
+    if($.fn.parallax && $('.parallax').length){
+        $('.parallax').parallax();
+    }
+
+
     // ---- MOBILE ---- //
 
 
@@ -20,7 +26,6 @@ $(document).ready(function() {
             $('.carousel-slider').carousel('next');
             setTimeout(autoplay, 12000);
         }
-        $('.parallax').parallax();
     }
 
 

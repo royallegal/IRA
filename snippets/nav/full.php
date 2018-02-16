@@ -19,9 +19,9 @@ $items  = $woocommerce->cart->get_cart_contents_count();
 
             <!-- Left Menu -->
             <ul id="nav-left" class="left hide-on-med-and-down">
+                <li><a href="/professionals">Professionals</a></li>
                 <li><a href="/how-it-works">How It Works</a></li>
                 <li><a href="/pricing">Pricing</a></li>
-                <li><a href="/get-started">Get Started</a></li>
                 <li><a href="/contact-us">Contact Us</a></li>
                 <li><a href="tel:5127573994">1.512.757.3994</a></li>
             </ul>
@@ -54,7 +54,6 @@ $items  = $woocommerce->cart->get_cart_contents_count();
                         <a id="login" href="/my-account">Log In</a>
                     <?php } ?>
                 </li>
-                <li><a href="/professionals">Professionals</a></li>
             </ul>
         </div>
     </nav>

@@ -10,6 +10,9 @@
     &.wrap {
         flex-wrap: wrap;
     }
+    &.v-center {
+        align-items: center;
+    }
     // Item Alignment
     .valign-wrapper {
         display: flex;
@@ -64,7 +67,9 @@
 .pinned {
     position: fixed !important;
 }
-
+.relative {
+    position: relative;
+}
 
 // ---- TEXT ---- //
 // No Text Select
@@ -151,4 +156,9 @@ $view-heights: (
 // Shapes
 .circle {
     border-radius: 50%;
+}
+
+// ---- INDEXES ---- //
+.z-index-1 {
+    z-index: 1;
 }
