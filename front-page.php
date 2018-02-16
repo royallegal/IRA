@@ -140,7 +140,7 @@
         </div>
     </div>
 
-    <div class="parallax-container">
+    <div class="parallax-container p-v-15">
         <div class="parallax">
             <img alt="" src="https://lorempixel.com/800/400/food/1"/>
         </div>

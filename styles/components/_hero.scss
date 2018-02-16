@@ -6,8 +6,6 @@
     align-content: center;
     position: relative;
     overflow: hidden;
-    height: 500px;
-
 
     // ---- CONTENT ---- //
     .hero,
@@ -54,6 +52,11 @@
     }
 }
 
+.background-image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
 // ---- HOME HERO ---- //
 body.home {
