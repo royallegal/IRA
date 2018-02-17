@@ -62,7 +62,7 @@ $button-disabled-color: #9F9F9F !default;
     font-weight: $button-font-weight;
     text-decoration: none;
     text-transform: uppercase;
-    letter-spacing: .5px;
+    letter-spacing: 1px;
     transition: .2s ease-out;
     cursor: pointer;
     // Gets rid of tap active state
