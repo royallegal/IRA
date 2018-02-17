@@ -193,7 +193,8 @@ $all_colors: (
                         transition: none;
                         &:hover {
                             border: 2px solid $color_value;
-                            background: white;
+                            background: transparent;
+                            font-weight: 900;
                             color: $color_value;
                         }
                     }
