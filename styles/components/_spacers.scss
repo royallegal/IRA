@@ -20,79 +20,84 @@ This classes use the convention type_position_negative_number_target
             clear: both;
             height: 10px*$i;
         }
-        .m-v-#{$i}#{$sufix} {
-            margin-top: 10px*$i;
-            margin-bottom: 10px*$i;
-        }
-        .m-h-#{$i}#{$sufix} {
-            margin-left: 10px*$i;
-            margin-right: 10px*$i;
-        }
+
+        // Margin
         .m-#{$i}#{$sufix} {
-            margin: 10px*$i;
+            margin: 10px*$i !important;
         }
-        .m-t-#{$i}#{$sufix} {
-            margin-top: 10px*$i;
+        .mv-#{$i}#{$sufix} {
+            margin-top: 10px*$i !important;
+            margin-bottom: 10px*$i !important;
         }
-        .m-b-#{$i}#{$sufix} {
-            margin-bottom: 10px*$i;
+        .mh-#{$i}#{$sufix} {
+            margin-left: 10px*$i !important;
+            margin-right: 10px*$i !important;
         }
-        .m-r-#{$i}#{$sufix} {
-            margin-right: 10px*$i;
+        .mt-#{$i}#{$sufix} {
+            margin-top: 10px*$i !important;
         }
-        .m-l-#{$i}#{$sufix} {
-            margin-left: 10px*$i;
+        .mb-#{$i}#{$sufix} {
+            margin-bottom: 10px*$i !important;
         }
-        .p-#{$i}#{$sufix} {
-            padding: 10px*$i;
+        .mr-#{$i}#{$sufix} {
+            margin-right: 10px*$i !important;
         }
-        .p-v-#{$i}#{$sufix} {
-            padding-top: 10px*$i;
-            padding-bottom: 10px*$i;
-        }
-        .p-h-#{$i}#{$sufix} {
-            padding-left: 10px*$i;
-            padding-right: 10px*$i;
-        }
-        .p-t-#{$i}#{$sufix} {
-            padding-top: 10px*$i;
-        }
-        .p-b-#{$i}#{$sufix} {
-            padding-bottom: 10px*$i;
-        }
-        .p-r-#{$i}#{$sufix} {
-            padding-right: 10px*$i;
-        }
-        .p-l-#{$i}#{$sufix} {
-            padding-left: 10px*$i;
+        .ml-#{$i}#{$sufix} {
+            margin-left: 10px*$i !important;
         }
 
-        //Negatives
-        .m-v-n-#{$i}#{$sufix} {
-            margin-top: -10px*$i;
-            margin-bottom: -10px*$i;
+        // Padding
+        .p-#{$i}#{$sufix} {
+            padding: 10px*$i !important;
         }
-        .m-h-n-#{$i}#{$sufix} {
-            margin-left: -10px*$i;
-            margin-right: -10px*$i;
+        .pv-#{$i}#{$sufix} {
+            padding-top: 10px*$i !important;
+            padding-bottom: 10px*$i !important;
         }
-        .m-n-#{$i}#{$sufix} {
-            margin: -10px*$i;
+        .ph-#{$i}#{$sufix} {
+            padding-left: 10px*$i !important;
+            padding-right: 10px*$i !important;
         }
-        .m-t-n-#{$i}#{$sufix} {
-            margin-top: -10px*$i;
+        .pt-#{$i}#{$sufix} {
+            padding-top: 10px*$i !important;
         }
-        .m-b-n-#{$i}#{$sufix} {
-            margin-bottom: -10px*$i;
+        .pb-#{$i}#{$sufix} {
+            padding-bottom: 10px*$i !important;
         }
-        .m-r-n-#{$i}#{$sufix} {
-            margin-right: -10px*$i;
+        .pr-#{$i}#{$sufix} {
+            padding-right: 10px*$i !important;
         }
-        .m-l-n-#{$i}#{$sufix} {
-            margin-left: -10px*$i;
+        .pl-#{$i}#{$sufix} {
+            padding-left: 10px*$i !important;
+        }
+
+        // Negative Margin
+        .mn-#{$i}#{$sufix} {
+            margin: -10px*$i !important;
+        }
+        .mvn-#{$i}#{$sufix} {
+            margin-top: -10px*$i !important;
+            margin-bottom: -10px*$i !important;
+        }
+        .mhn-#{$i}#{$sufix} {
+            margin-left: -10px*$i !important;
+            margin-right: -10px*$i !important;
+        }
+        .mtn-#{$i}#{$sufix} {
+            margin-top: -10px*$i !important;
+        }
+        .mbn-#{$i}#{$sufix} {
+            margin-bottom: -10px*$i !important;
+        }
+        .mrn-#{$i}#{$sufix} {
+            margin-right: -10px*$i !important;
+        }
+        .mln-#{$i}#{$sufix} {
+            margin-left: -10px*$i !important;
         }
     }
 }
+
 @include spacer-loop(); 
 /* Small devices (mobile, 768px and low) */
 @media (max-width: 768px) {
