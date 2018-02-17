@@ -7,12 +7,10 @@ $(document).ready(function() {
 
 
     // ---- GENERAL ---- //
-    if($.fn.parallax && $('.parallax').length){
+    if ($.fn.parallax && $('.parallax').length){
         $('.parallax').parallax();
     }
-    console.log("asdasd")
-    if($.fn.carousel && $('.carousel-slider').length){
-        console.log("gogogo")
+    if ($.fn.carousel && $('.carousel-slider').length){
         $('.carousel-slider').carousel({
             duration: 350,
             fullWidth: true
