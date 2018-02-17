@@ -156,6 +156,7 @@ $view-heights: (
 // Shapes
 .circle {
     border-radius: 50%;
+    overflow: hidden;
 }
 
 // ---- INDEXES ---- //

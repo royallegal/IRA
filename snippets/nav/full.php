@@ -22,6 +22,9 @@ $items  = $woocommerce->cart->get_cart_contents_count();
                 <li><a href="/professionals">Professionals</a></li>
                 <li><a href="/how-it-works">How It Works</a></li>
                 <li><a href="/pricing">Pricing</a></li>
+                <li>
+                    <a href="/about-us">About <i class="small material-icons right">arrow_drop_down</i></a>
+                </li>
                 <li><a href="/contact-us">Contact Us</a></li>
                 <li><a href="tel:5127573994">1.512.757.3994</a></li>
             </ul>

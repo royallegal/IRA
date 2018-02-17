@@ -5,8 +5,8 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'single-p
 ?>
 
 
-<main id="contact" style="background-image:url('<?php echo $image[0];?>');">
-    <div class="mask"></div>
+<main id="contact" class="background-image p-t-10 p-b-5 m-b-0 relative z-index-1" style="background-image:url('http://lorempixel.com/500/400/');">
+    <div class="mask black trans-70"></div>
     <div class="container row">
         <div class="white-text col m6 s12">
             <h3>Don't risk a lawsuit. Contact our legal experts today!</h3>
@@ -21,7 +21,7 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'single-p
             </address>
         </div>
 
-        <form class="col m6 s12">
+        <form class="col m6 s12 white">
             <div class="row">
                 <div class="input-field col s6">
                     <input id="first" name="first" autocomplete="given-name" type="text" class="validate">
@@ -57,7 +57,7 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'single-p
             <div class="row">
                 <div class="col s12">
                     <div class="hide confirm quote"><p></p></div>
-                    <button class="btn-flat" type="submit" name="action">
+                    <button class="button default blue" type="submit" name="action">
                         Get in Touch
                         <i class="material-icons right">send</i>
                     </button>
