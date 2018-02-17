@@ -7,6 +7,11 @@
     position: relative;
     overflow: hidden;
 
+    &:not([class^="vh-"]) {
+        height: 500px;
+    }
+
+
     // ---- CONTENT ---- //
     .hero,
     .parallax {
@@ -17,12 +22,35 @@
         right: 0;
         z-index: -1;
     }
+
+    // Call to Action Grouping
+    .cta-container {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+        @media #{$medium-and-up} {
+            &.third {
+                width: 33%;
+            }
+            &.half {
+                width: 50%;
+            }
+        }
+        &.row {
+            margin: 0 auto;
+        }
+    }
+
+    // Titles and Buttons (preformatted)
     .title-group,
     .button-group {
         flex-basis: 100%;
         text-align: center;
         margin: 15px auto;
     }
+
 
     // ---- MEDIA ---- //
     // Background Images
@@ -52,24 +80,19 @@
     }
 }
 
-.background-image {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
 
 // ---- HOME HERO ---- //
-body.home {
-    .hero-container {
-        .hero {
-            @media screen and (min-width: 769px) {
-                background-size: 150%;
-                background-position: left 40%;
-            }
-            @media screen and (max-width: 768px) {
-                background-size: 225%;
-                background-position: 33% 40%;
-            }
-        }
-    }
-}
+// body.home {
+//     .hero-container {
+//         .hero {
+//             @media screen and (min-width: 769px) {
+//                 background-size: 150%;
+//                 background-position: left 40%;
+//             }
+//             @media screen and (max-width: 768px) {
+//                 background-size: 225%;
+//                 background-position: 33% 40%;
+//             }
+//         }
+//     }
+// }
