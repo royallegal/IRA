@@ -10,6 +10,14 @@ $(document).ready(function() {
     if($.fn.parallax && $('.parallax').length){
         $('.parallax').parallax();
     }
+    console.log("asdasd")
+    if($.fn.carousel && $('.carousel-slider').length){
+        console.log("gogogo")
+        $('.carousel-slider').carousel({
+            duration: 350,
+            fullWidth: true
+        });
+    } 
 
 
     // ---- MOBILE ---- //

@@ -190,6 +190,7 @@ $widths:("vw":$view-widths,"pw":$percent-widths);
 // ---- SHAPES ---- //
 .circle {
     border-radius: 50%;
+    overflow: hidden;
 }
 
 
