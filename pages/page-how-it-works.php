@@ -7,19 +7,19 @@ get_header();
 
 	<div class="row background-image mb-0" style="background-image: url(https://www.wealthflex.com/wp-content/uploads/2017/10/hiw-a.jpg)">
 		<div class="col m5 offset-m6">
-			<div class="p-h-4 pt-3 pb-5 center-align">
+			<div class="ph-4 pt-3 pb-5 center-align">
 				<h1>WealthFlex delivers all the benefits of private
 IRA investing without the pain points</h1>
 			</div>	
 		</div>
 	</div>
-	<div class="black p-v-2">
+	<div class="black pv-2">
 		<div class="container">
 			<h1 class="m-0">HOW IT WORKS</h1>
 		</div>
 	</div>
 
-	<div class="yellow p-v-4">
+	<div class="yellow pv-4">
 		<div class="container">
 			<h2 class="center-align m-0">Earn more and do more with your IRA!</h2>
 			<p>Using the WealthFlex program, the hours, hoops and days/weeks/months the current process takes is eliminated. With direct real-time access to your IRA funds, the ability to sign your own purchase documents, and no custodial delays, you can easily make private investments work for you.</p>
@@ -53,7 +53,7 @@ IRA investing without the pain points</h1>
 	</div>
 
 
-	<div class="container p-v-4">
+	<div class="container pv-4">
 		<h2 class="center-align">Four Quick Steps</h2>
 		<div class="row mt-6">
 			<div class="col m6">

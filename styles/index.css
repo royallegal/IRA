@@ -4760,8 +4760,8 @@ different sizes conveniently.
 
 -You get access to classes like mt-2 which stands to margin-top: 20px, 
 so same goes for something like pb-3 padding-bottom: 30px. 
--There is also m-v-2 which stands for vertical margin or margin-top: 
-20px; margin-bottom:20px; and p-h-3 would be padding horizontal 30px;
+-There is also mv-2 which stands for vertical margin or margin-top: 
+20px; margin-bottom:20px; and ph-3 would be padding horizontal 30px;
 
 This classes use the convention type_position_negative_number_target
 **/

@@ -52,7 +52,7 @@
     </div>
 
     <!-- excerpt -->
-    <div class="p-h-1 excerpt">
+    <div class="ph-1 excerpt">
         <?php rlswp_excerpt('rls_text_excerpt'); ?>
     </div>
 
