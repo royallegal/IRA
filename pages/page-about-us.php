@@ -3,7 +3,7 @@
 
 <main id="page">	
 
-	<div class="row black mix p-t-2 m-b-0">
+	<div class="row black mix pt-2 mb-0">
 		<div class="col m8 offset-m2">
 			<div class="flex split">
 				<h2>ABOUT US</h2>
@@ -21,21 +21,21 @@
 		<div class="row center-align">
 			<div class="col m6">
 				<img class="circle" src="https://randomuser.me/api/portraits/men/20.jpg" alt="">
-				<h2 class=" m-t-2">Joe DiDomenico</h2>
-				<h3 class="m-t-0">CO-FOUNDER, CEO, CISP</h3>
+				<h2 class=" mt-2">Joe DiDomenico</h2>
+				<h3 class="mt-0">CO-FOUNDER, CEO, CISP</h3>
 				<p>	Joe used his IRA to purchase a 16-acre baseball park in Olympia, WA. He has made several angel investments over the years and is a former Merrill Lynch stock broker and CitiGroup Senior Vice President. As a Certified IRA Services Professional (CISP), his deep knowledge of IRA structures and retirement plan permissibility rules have made him a vital part of our team.</p>
 			</div>
 			<div class="col m6">
 				<img class="circle" src="https://randomuser.me/api/portraits/men/20.jpg" alt="">
-				<h2 class=" m-t-2">Joe DiDomenico</h2>
-				<h3 class="m-t-0">CO-FOUNDER, CEO, CISP</h3>
+				<h2 class=" mt-2">Joe DiDomenico</h2>
+				<h3 class="mt-0">CO-FOUNDER, CEO, CISP</h3>
 				<p>	Joe used his IRA to purchase a 16-acre baseball park in Olympia, WA. He has made several angel investments over the years and is a former Merrill Lynch stock broker and CitiGroup Senior Vice President. As a Certified IRA Services Professional (CISP), his deep knowledge of IRA structures and retirement plan permissibility rules have made him a vital part of our team.</p>
 			</div>
 		</div>
 	</div>
 
 	<div class="gray p-v-4 center-align">
-		<h2 class="m-t-2">What other are saying about us...</h2>
+		<h2 class="mt-2">What other are saying about us...</h2>
 		<div class="container">
 			<div class="carousel carousel-slider" data-indicators="true">
 				<div class="carousel-item">

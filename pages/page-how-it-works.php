@@ -3,11 +3,11 @@
 get_header();
 ?>
 
-<main id="page" class="m-t-4">	
+<main id="page" class="mt-4">	
 
-	<div class="row background-image m-b-0" style="background-image: url(https://www.wealthflex.com/wp-content/uploads/2017/10/hiw-a.jpg)">
+	<div class="row background-image mb-0" style="background-image: url(https://www.wealthflex.com/wp-content/uploads/2017/10/hiw-a.jpg)">
 		<div class="col m5 offset-m6">
-			<div class="p-h-4 p-t-3 p-b-5 center-align">
+			<div class="p-h-4 pt-3 pb-5 center-align">
 				<h1>WealthFlex delivers all the benefits of private
 IRA investing without the pain points</h1>
 			</div>	
@@ -26,8 +26,8 @@ IRA investing without the pain points</h1>
 			<div class="row">
 				<div class="col m6">
 					<div class="flex">
-						<div class="m-r-2">
-							<div class="icon-circle black flex center v-center m-t-3">
+						<div class="mr-2">
+							<div class="icon-circle black flex center v-center mt-3">
 								<i class="material-icons">account_balance</i>
 							</div>
 						</div>
@@ -38,8 +38,8 @@ IRA investing without the pain points</h1>
 				</div>
 				<div class="col m6">
 					<div class="flex">
-						<div class="m-r-2">
-							<div class="icon-circle black flex center v-center m-t-3">
+						<div class="mr-2">
+							<div class="icon-circle black flex center v-center mt-3">
 								<i class="material-icons">trending_up</i>
 							</div>
 						</div>
@@ -55,7 +55,7 @@ IRA investing without the pain points</h1>
 
 	<div class="container p-v-4">
 		<h2 class="center-align">Four Quick Steps</h2>
-		<div class="row m-t-6">
+		<div class="row mt-6">
 			<div class="col m6">
 				<img class="responsive-img" src="https://www.wealthflex.com/wp-content/uploads/2017/10/how-it-works-01.png" alt="">
 			</div>
@@ -64,7 +64,7 @@ IRA investing without the pain points</h1>
 				<p>Create an account</p>
 			</div>
 		</div>
-		<div class="row m-t-6">
+		<div class="row mt-6">
 			<div class="col m6">
 				<h2>Step 2</h2>
 				<p>Transfer your current IRA funds to your new WealthFlex IRA. This IRA will be a Trust that you are the Trustee of, and your IRA is the Owner of.</p>
@@ -73,7 +73,7 @@ IRA investing without the pain points</h1>
 				<img class="responsive-img" src="https://www.wealthflex.com/wp-content/uploads/2017/10/how-it-works-01.png" alt="">
 			</div>
 		</div>
-		<div class="row m-t-6">
+		<div class="row mt-6">
 			<div class="col m6">
 				<img class="responsive-img" src="https://www.wealthflex.com/wp-content/uploads/2017/10/how-it-works-01.png" alt="">
 			</div>
@@ -84,9 +84,9 @@ IRA investing without the pain points</h1>
 		</div>
 	</div>
 
-	<div class="gray center-align p-t-3 p-b-7">
+	<div class="gray center-align pt-3 pb-7">
 		<h2>It’s your IRA, do it your way!</h2>
-		<a href="" class="button blue default m-t-4">Get started</a>
+		<a href="" class="button blue default mt-4">Get started</a>
 
 	</div>
 

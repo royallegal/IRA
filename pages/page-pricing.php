@@ -22,13 +22,13 @@
                 </div>
             </div>
         </div>
-        <div class="container gray m-t-7">
+        <div class="container gray mt-7">
             <div class="flex center">
-                <div class="icon-circle red mix flex center v-center m-t-n-2">
+                <div class="icon-circle red mix flex center v-center mtn-2">
                     <i class="material-icons">account_balance</i>
                 </div>
             </div>
-            <div class="p-h-5 p-b-5">
+            <div class="p-h-5 pb-5">
                 <p>
                     Unless, you consider one of these nickel and diming, but we don’t think so.
                     <br>
@@ -57,7 +57,7 @@
                 </ul>
             </div>
         </div>
-        <div class="container m-t-8 center-align">
+        <div class="container mt-8 center-align">
             <a class="button white default">Get Started</a>
         </div>
     </div>
