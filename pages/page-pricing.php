@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <main id="page">	
-	<div class="parallax-container p-v-10">
+	<div class="parallax-container pv-10">
         <div class="parallax">
             <img alt="" src="http://lorempixel.com/800/400/"/>
         </div>
@@ -9,26 +9,26 @@
             <div class="mask black trans-70"></div>
             <div class="white-text center-align row">
                 <div class="col m6">
-                    <div class="p-h-3">
+                    <div class="ph-3">
                         <h1>IRA</h1>
                         <h4>$499 to set up and $299 annual custodial fee</h4>
                     </div>
                 </div>
                 <div class="col m6">
-                    <div class="p-h-3">
+                    <div class="ph-3">
                         <h1>Solo 401(k)</h1>
                         <h4>$899 to set up and $299 annual custodial fee</h4>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="container gray m-t-7">
+        <div class="container gray mt-7">
             <div class="flex center">
-                <div class="icon-circle red mix flex center v-center m-t-n-2">
+                <div class="icon-circle red mix flex center v-center mtn-2">
                     <i class="material-icons">account_balance</i>
                 </div>
             </div>
-            <div class="p-h-5 p-b-5">
+            <div class="ph-5 pb-5">
                 <p>
                     Unless, you consider one of these nickel and diming, but we don’t think so.
                     <br>
@@ -57,7 +57,7 @@
                 </ul>
             </div>
         </div>
-        <div class="container m-t-8 center-align">
+        <div class="container mt-8 center-align">
             <a class="button white default">Get Started</a>
         </div>
     </div>

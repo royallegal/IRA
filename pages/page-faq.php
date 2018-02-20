@@ -2,7 +2,7 @@
 
 
 <main id="page">	
-    <div class="gray purple mix p-t-6 p-b-4">
+    <div class="gray purple mix pt-6 pb-4">
 	<div class="container center-align white-text">
 	    <h2>Frequently Asked Self-Directed IRA and 401(k) Questions</h2>
 	    <p>
@@ -11,7 +11,7 @@
 	</div>
     </div>
 
-    <div class="container p-t-8 p-b-8">
+    <div class="container pt-8 pb-8">
 	<div class="row">
 	    <div class="col m6">
 		<h3>Lorem ipsum</h3>

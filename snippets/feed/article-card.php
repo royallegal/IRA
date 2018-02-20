@@ -44,7 +44,7 @@
 
     <div class="p-1 title <?=has_post_thumbnail() ? "" : " mix"?>">
         <?=the_category()?>
-        <div class="m-t-1"><small itemprop="datePublished"><?=the_date("F j, Y")?></small></div>
+        <div class="mt-1"><small itemprop="datePublished"><?=the_date("F j, Y")?></small></div>
         <h4 itemprop="name headline"><a href="<?php the_permalink();?>" title="<?php the_title();?>" itemprop="url">
             <?php the_title(); ?>
         </a></h4>
@@ -52,7 +52,7 @@
     </div>
 
     <!-- excerpt -->
-    <div class="p-h-1 excerpt">
+    <div class="ph-1 excerpt">
         <?php rlswp_excerpt('rls_text_excerpt'); ?>
     </div>
 
