@@ -6,7 +6,7 @@ if($_GET["offset"]){
 }
 ?>
 
-<div  id="feed"  class="row m-t-6">
+<div  id="feed"  class="row mt-6">
     <button class="pink default button" data-toggle-sidebar>Toggle sidebar</button>
     <div class="col m9 s12">
         <main class="masonry">
