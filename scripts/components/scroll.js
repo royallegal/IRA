@@ -16,6 +16,25 @@ $(window).scroll(function(){
             $('nav').addClass('no-shadow');
         }
     }
+    if($('#feed').length && $('[data-load-more-spinner]').hasClass('hide')){
+        if($(window).scrollTop() + $(window).height() + $('footer').height() > $(document).height()) {
+            var $spinner = $('[data-load-more-spinner]');
+            $spinner.removeClass('hide');
+            var offset = $spinner.data("offset");
+            var postsPerPage = $spinner.data("posts-per-page");
+            getMorePosts(offset, postsPerPage).then(function(res){
+                var $res = $(res);
+                $('.masonry').append( $res ).masonry( 'appended', $res );
+                var newOffset = offset+postsPerPage;
+                var newParams = '?offset='+ newOffset;
+                window.history.pushState({urlPath:newParams},"",newParams)
+                $spinner.data("offset",newOffset);
+                $spinner.addClass('hide');
+            }).fail(function(){ 
+                $spinner.addClass('hide');
+            })
+        }
+    }
 });
 
 setInterval(function() {
