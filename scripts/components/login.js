@@ -163,12 +163,11 @@ jQuery(document).ready(function($) {
             url: '/wp-admin/admin-ajax.php',
             data: { 
                 'action': 'ajax_login',
-                'username': $('form#login #username').val(), 
-                'password': $('form#login #password').val(), 
-                'security': $('form#login #security').val() },
+                'username': $('form#login #loginUsername').val(), 
+                'password': $('form#login #loginPassword').val(), 
+                'loginSecurity': $('form#login #loginSecurity').val() },
             success: function(data){
                 $('form#login p.status').text(data.message);
-                $('#loginModal').trigger('calculateHeights');
                 if (data.loggedin == true){
                     location.reload();
                 }
@@ -177,20 +176,18 @@ jQuery(document).ready(function($) {
     });
     $('form#passwordLost').on('submit', function(e){
         e.preventDefault();
+        console.log("WTFFFF22222"); 
         $.ajax({
             type: 'POST',
             dataType: 'json',
             url: '/wp-admin/admin-ajax.php', 
             data: { 
                 'action': 'lost_pass',
-                'user_login': $('form#passwordReset #username').val(),
-                'security': $('form#passwordReset #security').val()
+                'user_login': $('form#passwordLost #lostUsername').val(),
+                'lostSecurity': $('form#passwordLost #lostSecurity').val()
             },
             success: function(data){
-                $('#loginModal').trigger('calculateHeights');
-                if (data.loggedin == true){
-                    location.reload();
-                }
+                $('form#passwordLost p.status').text(data.message);
             }
         });
     });
@@ -202,17 +199,14 @@ jQuery(document).ready(function($) {
             url: '/wp-admin/admin-ajax.php', 
             data: { 
 				action: 	'reset_pass',
-				pass1:		$('form#passwordReset #pass1').val(),
-				pass2:		$('form#passwordReset #pass2').val(),
+				pass1:		$('form#passwordReset #resetPass1').val(),
+				pass2:		$('form#passwordReset #resetPass2').val(),
 				user_key:	$('form#passwordReset #user_key').val(),
 				user_login:	$('form#passwordReset #user_login').val(),
-                'security': $('form#passwordReset #security').val()
+                'resetSecurity': $('form#passwordReset #resetSecurity').val()
             },
             success: function(data){
-                $('#loginModal').trigger('calculateHeights');
-                if (data.loggedin == true){
-                    location.reload();
-                }
+                $('form#passwordLost p.status').text(data.message);
             }
         });
     });

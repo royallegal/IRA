@@ -9,8 +9,7 @@
                     <div class="flex center v-center" style="height: 100%"> 
                         <div>
                         <h3>Login</h3>
-                        <p>PLease enter your credentials</p>
-                        <p>Already Have an account?</p>
+                        <p>PLease enter your credentials to login</p>
                         </div>
                     </div>
                 </div>
@@ -18,13 +17,13 @@
                     <div class="p-2 flex center v-center" style="height: 100%">
                         <form id="login" action="login" method="post">
                             <p class="status"> </p>
-                            <label for="username">Username</label>
-                            <input id="username" type="text" name="username">
-                            <label for="password">Password</label>
-                            <input id="password" type="password" name="password">
-                            <input class="button blue" type="submit" value="Login" name="submit">
-                            <a class="lost" href="<?php echo wp_lostpassword_url(); ?>">Lost your password?</a>
-                            <?php wp_nonce_field( 'ajax-login-nonce', 'security' ); ?>
+                            <label for="loginUsername">Username</label>
+                            <input id="loginUsername" type="text" name="username">
+                            <label for="loginPassword">Password</label>
+                            <input id="loginPassword" type="password" name="password">
+                            <?php wp_nonce_field( 'ajax-login-nonce', 'loginSecurity' ); ?>
+                            <input class="button blue mr-2" type="submit" value="Login" name="submit">
+                            <a class="lost" href="#lost-password" data-goto-lost>Lost your password?</a>
                         </form>
                     </div>
                 </div>
@@ -38,18 +37,20 @@
                     <div class="flex center v-center" style="height: 100%"> 
                         <div>
                         <h3>Recover your password</h3>
-                        <p>PLease enter your credentials</p>
+                        <p>PLease enter yout email to get a password reset link</p>
                         <p>Already Have an account?</p>
+                        <button class="button white" data-goto-login>Log in</button>
                         </div>
                     </div>
                 </div>
                 <div class="col m6">
                     <div class="p-2 flex center v-center" style="height: 100%">
                         <form id="passwordLost" action="passwordLost" method="post">
-                            <label for="username">Username</label>
-                            <input id="username" type="text" name="email">
+                            <p class="status"> </p>
+                            <label for="lostUsername">Username</label>
+                            <input id="lostUsername" type="text" name="email">
+                            <?php wp_nonce_field( 'ajax-lostpass-nonce', 'lostSecurity' ); ?>
                             <input class="button blue" type="submit" value="Recover Password" name="submit">
-                            <?php wp_nonce_field( 'ajax-lostpass-nonce', 'security' ); ?>
                         </form>
                     </div>
                 </div>
@@ -83,18 +84,24 @@
 
                                 // display error message
                                 if ( $errors->get_error_code() ):
-                                    echo $errors->get_error_message( $errors->get_error_code() );
-                                else:
-                                ?>
+                                ?> 
+                                    <p class="center-align">
+                                        <?php echo $errors->get_error_message( $errors->get_error_code() ); ?>
+                                        <br>
+                                        <a href="#" data-goto-login>Login</a>
+                                    </p>
+                                <?php else: ?>
+
                                 <form id="passwordReset" method="post" autocomplete="off">
+                                    <p class="status"> </p>
                                     <input type="hidden" name="user_key" id="user_key" value="<?php echo esc_attr( $_GET['key'] ); ?>" autocomplete="off" />
                                     <input type="hidden" name="user_login" id="user_login" value="<?php echo esc_attr( $_GET['login'] ); ?>" autocomplete="off" />
 
-                                    <label for="pass1"><?php _e('New password') ?><br />
-                                    <input type="password" name="pass1" id="pass1" class="input" size="20" value="" autocomplete="off" /></label>
-                                    <label for="pass2"><?php _e('Confirm new password') ?><br />
-                                    <input type="password" name="pass2" id="pass2" class="input" size="20" value="" autocomplete="off" /></label>
-                                    <?php wp_nonce_field( 'ajax-reset-nonce', 'security' ); ?>
+                                    <label for="resetPass1"><?php _e('New password') ?><br />
+                                    <input type="password" name="pass1" id="resetPass1" class="input" size="20" value="" autocomplete="off" /></label>
+                                    <label for="resetPass2"><?php _e('Confirm new password') ?><br />
+                                    <input type="password" name="pass2" id="resetPass2" class="input" size="20" value="" autocomplete="off" /></label>
+                                    <?php wp_nonce_field( 'ajax-reset-nonce', 'resetSecurity' ); ?>
                                     <?php
                                     /**
                                      * Fires following the 'Strength indicator' meter in the user password reset form.

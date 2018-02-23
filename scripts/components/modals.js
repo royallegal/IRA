@@ -64,6 +64,12 @@ function royal_modals() {
         if(location.search.includes("action=rp")) {
             $('#loginModal').modal('open');
         }
+        $('[data-goto-lost]').on('click', function(){
+            $('#loginModal .carousel.carousel-slider').carousel('set', 1); 
+        })
+        $('[data-goto-login]').on('click', function(){
+            $('#loginModal .carousel.carousel-slider').carousel('set', 0); 
+        })
 
     }
 }

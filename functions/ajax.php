@@ -48,7 +48,7 @@ add_action( 'wp_ajax_nopriv_ajax_login', 'ajax_login_callback' );
 if(!function_exists('ajax_login_callback')){
     function ajax_login_callback() {
         // First check the nonce, if it fails the function will break
-        check_ajax_referer( 'ajax-login-nonce', 'security' );
+        check_ajax_referer( 'ajax-login-nonce', 'loginSecurity' );
 
         // Nonce is checked, get the POST data and sign user on
         $info = array();
@@ -75,18 +75,18 @@ add_action( 'wp_ajax_lost_pass', 'lost_pass_callback' );
 function lost_pass_callback() {
 
     global $wpdb, $wp_hasher;
-    
-    check_ajax_referer( 'ajax-lostpass-nonce', 'security' );
+	
+    check_ajax_referer( 'ajax-lostpass-nonce', 'lostSecurity' );
 	$user_login = $_POST['user_login'];
     
 	$errors = new WP_Error();
 
 	if ( empty( $user_login ) ) {
-		$errors->add('empty_username', __('<strong>ERROR</strong>: Enter a username or e-mail address.'));
+		$errors->add('empty_username', __('Enter a username or e-mail address.'));
 	} else if ( strpos( $user_login, '@' ) ) {
 		$user_data = get_user_by( 'email', trim( $user_login ) );
 		if ( empty( $user_data ) )
-			$errors->add('invalid_email', __('<strong>ERROR</strong>: There is no user registered with that email address.'));
+			$errors->add('invalid_email', __('There is no user registered with that email address.'));
 	} else {
 		$login = trim( $user_login );
 		$user_data = get_user_by('login', $login);
@@ -95,11 +95,11 @@ function lost_pass_callback() {
 	do_action( 'lostpassword_post', $errors );
     
 	if ( $errors->get_error_code() ){
-        echo '<p class="error">'. $errors->get_error_message( $errors->get_error_code() ) .'</p>';
+        echo json_encode(array("message" => $errors->get_error_message( $errors->get_error_code() )));
         die();
     }
 	if ( !$user_data ) {
-		echo '<p class="error">'. $errors->get_error_message( $errors->get_error_code() ) .'</p>';
+		echo json_encode(array("message" => $errors->get_error_message( $errors->get_error_code() )));
 		die();
 	}
 
@@ -144,7 +144,7 @@ function lost_pass_callback() {
 
 	// display error message
 	if ( $errors->get_error_code() )
-		echo '<p class="error">'. $errors->get_error_message( $errors->get_error_code() ) .'</p>';
+		echo json_encode(array("message" => $errors->get_error_message( $errors->get_error_code() )));
 
 	// return proper result
 	die();
@@ -161,7 +161,7 @@ function reset_pass_callback() {
 
 	$errors = new WP_Error();
 	$nonce = $_POST['nonce'];
-    check_ajax_referer( 'ajax-reset-nonce', 'security' );
+    check_ajax_referer('ajax-reset-nonce', 'resetSecurity');
 
 	$pass1 	= $_POST['pass1'];
 	$pass2 	= $_POST['pass2'];
@@ -196,8 +196,8 @@ function reset_pass_callback() {
 
 	// display error message
 	if ( $errors->get_error_code() )
-		echo '<p class="error">'. $errors->get_error_message( $errors->get_error_code() ) .'</p>';
-
+		echo json_encode(array("message" => $errors->get_error_message( $errors->get_error_code() )));
+		
 	// return proper result
 	die();
 }
