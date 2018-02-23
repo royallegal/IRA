@@ -23,13 +23,13 @@ $(document).ready(function() {
 
     // ---- LANDING PAGES ---- //
     if ($('#home').length) {
-        $('.carousel-slider').carousel({
+        $('#home .carousel-slider').carousel({
             duration: 350,
             fullWidth: true
         });
         setTimeout(autoplay, 9000);
         function autoplay() {
-            $('.carousel-slider').carousel('next');
+            $('#home .carousel-slider').carousel('next');
             setTimeout(autoplay, 12000);
         }
     }
@@ -52,7 +52,7 @@ $(document).ready(function() {
 
     // ---- BLOG ---- //
     if ($('#feed').length) {
-        $('.carousel.carousel-slider').carousel({fullWidth: true});
+        $('#feed .carousel.carousel-slider').carousel({fullWidth: true});
         var columns =  $('#feed .col').first().hasClass('m9') ? 3 : 4;
         var $msnry = $('.masonry').masonry( {
             itemSelector: 'article',

@@ -54,7 +54,7 @@ $items  = $woocommerce->cart->get_cart_contents_count();
                         </a>
                         <a id="logout" href="<?php echo $logout; ?>">(logout)</a>
                     <?php } else { ?>
-                        <a id="login" href="/my-account">Log In</a>
+                        <a id="login" class="modal-trigger" href="#loginModal">Log In</a>
                     <?php } ?>
                 </li>
             </ul>

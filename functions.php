@@ -12,6 +12,7 @@ require_once(__DIR__ . '/functions/ajax.php');
 require_once(__DIR__ . '/functions/blog.php');
 require_once(__DIR__ . '/functions/files.php');
 require_once(__DIR__ . '/functions/helpers.php');
+require_once(__DIR__ . '/functions/login-modal.php');
 require_once(__DIR__ . '/functions/shortcodes.php');
 require_once(__DIR__ . '/functions/widgets.php');
 require_once(__DIR__ . '/functions/woocommerce.php');

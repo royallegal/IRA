@@ -150,3 +150,71 @@ else if (jQuery("#login-popup").length)
     jQuery("#login-popup").validate();
 if(jQuery('#forgot_password-popup').length)
     jQuery('#forgot_password-popup').validate();
+
+
+
+jQuery(document).ready(function($) {
+    // Perform AJAX login on form submit
+    $('form#login').on('submit', function(e){
+        e.preventDefault();
+        $.ajax({
+            type: 'POST',
+            dataType: 'json',
+            url: '/wp-admin/admin-ajax.php',
+            data: { 
+                'action': 'ajax_login',
+                'username': $('form#login #username').val(), 
+                'password': $('form#login #password').val(), 
+                'security': $('form#login #security').val() },
+            success: function(data){
+                $('form#login p.status').text(data.message);
+                $('#loginModal').trigger('calculateHeights');
+                if (data.loggedin == true){
+                    location.reload();
+                }
+            }
+        });
+    });
+    $('form#passwordLost').on('submit', function(e){
+        e.preventDefault();
+        $.ajax({
+            type: 'POST',
+            dataType: 'json',
+            url: '/wp-admin/admin-ajax.php', 
+            data: { 
+                'action': 'lost_pass',
+                'user_login': $('form#passwordReset #username').val(),
+                'security': $('form#passwordReset #security').val()
+            },
+            success: function(data){
+                $('#loginModal').trigger('calculateHeights');
+                if (data.loggedin == true){
+                    location.reload();
+                }
+            }
+        });
+    });
+    $('form#passwordReset').on('submit', function(e){
+        e.preventDefault();
+        $.ajax({
+            type: 'POST',
+            dataType: 'json',
+            url: '/wp-admin/admin-ajax.php', 
+            data: { 
+				action: 	'reset_pass',
+				pass1:		$('form#passwordReset #pass1').val(),
+				pass2:		$('form#passwordReset #pass2').val(),
+				user_key:	$('form#passwordReset #user_key').val(),
+				user_login:	$('form#passwordReset #user_login').val(),
+                'security': $('form#passwordReset #security').val()
+            },
+            success: function(data){
+                $('#loginModal').trigger('calculateHeights');
+                if (data.loggedin == true){
+                    location.reload();
+                }
+            }
+        });
+    });
+
+}); 

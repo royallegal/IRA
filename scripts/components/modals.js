@@ -49,4 +49,21 @@ function royal_modals() {
             }
         })
     }
+
+    if($('#loginModal').length > 0 ){
+        $('#loginModal').modal({
+            ready: function(modal){
+                $('#loginModal .carousel.carousel-slider').carousel({fullWidth: true, noWrap: true }); 
+                //Transition to slide if resetting password
+                if(location.search.includes("action=rp")) {
+                    $('#loginModal .carousel.carousel-slider').carousel('set', 2); 
+                }
+            }
+        });
+        //Open modal automatically if reset password is pressent
+        if(location.search.includes("action=rp")) {
+            $('#loginModal').modal('open');
+        }
+
+    }
 }
