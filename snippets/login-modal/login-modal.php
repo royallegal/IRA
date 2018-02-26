@@ -9,7 +9,7 @@
                     <div class="flex center v-center" style="height: 100%"> 
                         <div>
                         <h3>Login</h3>
-                        <p>PLease enter your credentials to login</p>
+                        <p>Please enter your credentials to login</p>
                         </div>
                     </div>
                 </div>
@@ -17,10 +17,18 @@
                     <div class="p-2 flex center v-center" style="height: 100%">
                         <form id="login" action="login" method="post">
                             <p class="status"> </p>
-                            <label for="loginUsername">Username</label>
-                            <input id="loginUsername" type="text" name="username">
-                            <label for="loginPassword">Password</label>
-                            <input id="loginPassword" type="password" name="password">
+                            <div class="input-field">
+                                <input id="loginUsername" type="text"  name="username" class="validate">
+                                <label for="loginUsername">Username</label>
+                            </div>
+                            <div class="input-field">
+                                <input id="loginPassword" type="password"  name="password" class="validate">
+                                <label for="loginPassword">Password</label>
+                            </div>
+                            <div class="mb-2">
+                                <input id="loginRemember" type="checkbox" name="password">
+                                <label for="loginRemember">Remember me</label>
+                            </div>
                             <?php wp_nonce_field( 'ajax-login-nonce', 'loginSecurity' ); ?>
                             <input class="button blue mr-2" type="submit" value="Login" name="submit">
                             <a class="lost" href="#lost-password" data-goto-lost>Lost your password?</a>
