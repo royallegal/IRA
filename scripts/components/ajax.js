@@ -7,9 +7,6 @@ function getMorePosts(offset, posts_per_page, category){
       offset: offset,
       posts_per_page: posts_per_page,
       action: 'rls_more_posts'
-    },
-    error: function () {
-        console.log("error");
     }
   });
 }

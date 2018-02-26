@@ -1,16 +1,18 @@
 #feed { 
     position: relative;
-    .col {
-        transition: all .4s ease-in-out; 
-    }
-    [data-toggle-sidebar] { 
-        position: absolute;
-        top: 0;
-        right: 10px;
-        z-index: 90;
+    .col.with-sidebar {
+        article {
+            @media only screen and (min-width: $large-screen-up) {
+                width: calc(33% - 4px);
+            }
+        }
+    } 
+    .masonry {
+        opacity: 0;
+        transition: all 0.4s ease-in-out;        
     }
     article {
-        width: calc(33% - 10px);
+        width: calc(100% - 4px);
         box-sizing: border-box;
         overflow: hidden;
         padding: 0;
@@ -18,8 +20,131 @@
         border-radius: 3px;
         display: flex;
         flex-direction: column;
-        margin: 5px;
+        margin: 2px;
         background: white;
+        @media only screen and (min-width: $large-screen-up) {
+            width: calc(25% - 4px);
+        }
+        @media only screen and (min-width: $medium-screen-up) and (max-width: $large-screen-up) {
+            width: calc(33% - 4px);
+        } 
+        h4 a, h3 a {
+            color: inherit;
+        }
+        .foregroud {
+            position: relative;
+        }
+        .background {
+            position: absolute;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            img {
+                max-width: initial;
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translate(-50%, 0);
+                height: 100%;
+                width: auto;
+                &.landscape{
+                    height: auto;
+                    width: 100%; 
+                }
+            }
+            .half, .gradient, .mix, .color {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%; 
+            }
+        }
+
+        &.single {
+            height: 290px;
+        }
+        &.double {
+            height: 585px;
+        }
+
+        &.image.post {
+            flex-direction: column-reverse;
+        }
+        &.text.post {
+            .foregroud {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                .excerpt {
+                    flex: 1;
+                    overflow: hidden;
+                    position: relative;
+                    &:after {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 50%; 
+                        background: linear-gradient(0, white 15%, #ffffff00 105%); 
+                    }
+                    p {
+                        margin-top: 0;
+                    }
+                    .read-more {
+                        display: none;
+                    }
+                }
+            }
+        }
+        &.video.post {
+            &.single {
+                .foregroud{
+                    padding-left: 80px !important;
+                }
+                .play-button {
+                    position: absolute;
+                    top: 20px;
+                    left: 20px;
+                    z-index: 99;
+                    .material-icons {
+                        color: white;
+                        font-size: 50px;
+                    }
+                }
+            }
+            &.double {
+                .play-button {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    z-index: 99;
+                    .material-icons {
+                        color: white;
+                        font-size: 80px;
+                    }
+                }
+            }
+        }
+        &.audio.post {
+            .foregroud {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+            }
+            .audio {
+                margin-top: auto;
+                audio {
+                    width: 100%;
+                }
+            }
+        }
+
+
+
         .image-wrapper {
             overflow: hidden;
             position: relative;
@@ -46,13 +171,10 @@
                 margin-bottom: -5px;
             }
         }
-        .excerpt {
-            flex:1;
-        }
         .post-categories {
             margin: 0;
             text-transform: uppercase;
-            font-size: 0.65rem;
+            font-size: 0.9rem;
             li {
                 display: inline;
                 margin-right: 10px;
@@ -64,39 +186,29 @@
                     right: -8px;
                     font-size: 7px;
                     top: 2px;
-                    opacity: 0.4;
                 }
                 &:last-child:after {
-                    content: "";
+                    content: ""; 
                 }
             }
             a {
-                opacity: 0.8;
-                color:inherit;
+                color: inherit; 
                 position: relative;
                 &:hover {
                     text-decoration: underline;
                 }
             }
         }
-        .line {
-            width: 20%;
-            height: 3px; 
-        }
-        h3, h4 {
-            margin-top: 0px; 
-            margin-bottom: 10px;
-            a {
-                color:inherit;
-            }
-        }
     } 
 
     .feed-sidebar {
-        &.collapsed {
-            transform: translateX(100%);
+        background: white;
+        transition: all .4s ease-in-out;
+        &.shown {
+            transform: translateX(0%);
         }
         @media only screen and (min-width: $medium-screen-up) {
+            transform: translateX(100%);
             position: absolute;
             top: 0;
             right: 0;
@@ -105,5 +217,32 @@
             background: white;
             border: 0;
         } 
+    }
+}
+
+.meta-group {
+    display: flex;
+    align-items: center;
+    max-width: fit-content;
+    padding-top: 10px;
+    &.white-text.border-top {
+        border-top-color: white;
+    }
+    &.border-top {
+        border-top: 1px solid black;
+    }
+
+    .meta-item {
+        display: flex;
+        align-items: center;
+        font-size: 0.9rem;
+        margin-right: 20px;
+        &:last-child {
+            margin-right: 0;
+        }
+        .material-icons {
+            font-size: 0.9rem;
+            margin-right: 10px;
+        }
     }
 }

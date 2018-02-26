@@ -6,9 +6,13 @@ if($_GET["offset"]){
 }
 ?>
 
-<div  id="feed"  class="row mt-6">
-    <button class="pink default button" data-toggle-sidebar>Toggle sidebar</button>
-    <div class="col m9 s12">
+<div id="feed" class="row mt-6">
+    <div class="fixed-action-btn">
+        <button class="pink default button floating mb-1" data-toggle-sidebar><i class="material-icons">menu</i></button>
+        <br>
+        <button class="pink default button floating"><i class="material-icons">chat_bubble</i></button>
+    </div>   
+    <div class="col m12 s12">
         <main class="masonry">
             <!-- <div class="controls">
                 <?php get_template_part('snippets/feed/search'); ?>
@@ -21,10 +25,25 @@ if($_GET["offset"]){
 
             <?php get_template_part('loop'); ?>
         </main>
-        <div class="text-center">
-            <button class="pink default button" data-load-more-posts data-offset="<?= $wp_query->post_count ?>" data-posts-per-page="8">Load more</button>
+
+        <!-- spinner -->
+        <div class="text-center mt-3">
+            <div data-load-more-spinner data-offset="<?= $wp_query->post_count ?>" data-posts-per-page="12" class="hide preloader-wrapper small active">
+                <div class="spinner-layer spinner-red-only">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+
+    </div> 
     <div class="col m3 s12 feed-sidebar">
         <?php get_template_part('sidebar'); ?>
     </div>

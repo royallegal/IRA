@@ -60,6 +60,10 @@ function rls_conditional_styles() {
      *     wp_register_style('css', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
      *     wp_enqueue_style('css');
      * }*/
+    if (is_home() == 1 || is_category() == 1) {
+        wp_enqueue_script( 'masonry', 'https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js', [], false, true );
+        wp_enqueue_script( 'imagesLoaded', 'https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js', [], false, true );
+    }
 }
 
 
