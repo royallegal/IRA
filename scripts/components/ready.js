@@ -23,13 +23,13 @@ $(document).ready(function() {
 
     // ---- LANDING PAGES ---- //
     if ($('#home').length) {
-        $('.carousel-slider').carousel({
+        $('#home .carousel-slider').carousel({
             duration: 350,
             fullWidth: true
         });
         setTimeout(autoplay, 9000);
         function autoplay() {
-            $('.carousel-slider').carousel('next');
+            $('#home .carousel-slider').carousel('next');
             setTimeout(autoplay, 12000);
         }
     }
@@ -52,46 +52,31 @@ $(document).ready(function() {
 
     // ---- BLOG ---- //
     if ($('#feed').length) {
-        $('.carousel.carousel-slider').carousel({fullWidth: true});
-        if($.fn.masonry){
-            var $msnry = $('.masonry').masonry( {
-                itemSelector: 'article',
-                // percentPosition: true,`
-                fitWidth: true,
-                hiddenStyle: {
-                    transform: 'translateY(100px)',
-                    opacity: 0
-                },
-                visibleStyle: {
-                    transform: 'translateY(0px)',
-                    opacity: 1
-                }
-            }).css('opacity', 1);
-        }
-        if($.fn.imagesLoaded){
-            $msnry.imagesLoaded().progress( function(instance, image) {
+        $('#feed .carousel.carousel-slider').carousel({fullWidth: true});
+        var columns =  $('#feed .col').first().hasClass('m9') ? 3 : 4;
+        var $msnry = $('.masonry').masonry( {
+            itemSelector: 'article',
+            percentPosition: true,
+            fitWidth: true,
+            hiddenStyle: {
+                transform: 'translateY(100px)',
+                opacity: 0
+            },
+            visibleStyle: {
+                transform: 'translateY(0px)',
+                opacity: 1
+            }
+        });
+
+        if ($.fn.imagesLoaded) {
+            $msnry.imagesLoaded().progress(function(instance, image) {
                 $msnry.masonry('layout');
                 resizeImages();
             });
-            $(window).on('resize', function(){
+            $(window).on('resize', function() {
                 $msnry.masonry('layout');
                 resizeImages();
-            })
-        }
-        var resizeImages = function(){
-            $('article .background img').each(function(index, image){
-                var $image = $(image);
-                var bh = $image.parent('.background').height();
-                var bw = $image.parent('.background').width();
-                
-                var iw = $image.width();
-                var ih = $image.height();
-                if(bw/bh > iw/ih ){
-                    $image.addClass('landscape')
-                } else {
-                    $image.removeClass('landscape')
-                }
-            })
+            });
         }
 
         //button to load more posts via ajax

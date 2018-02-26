@@ -1,5 +1,8 @@
 <?php 
 
+/**
+ * LOAD MORE POSTS
+ */
 add_action( 'wp_ajax_rls_more_posts', 'rls_more_posts_callback' );
 add_action( 'wp_ajax_nopriv_rls_more_posts', 'rls_more_posts_callback' );
 

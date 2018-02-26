@@ -3,7 +3,7 @@ function royal_quiz() {
     // Asset Protection Quiz
     if ($('#asset-protection-quiz').length) {
         // Materialize carousel settings
-        $('.carousel.carousel-slider').carousel({
+        $('#asset-protection-quiz .carousel.carousel-slider').carousel({
             fullWidth: true,
             indicators:true
         });
