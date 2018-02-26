@@ -18,6 +18,9 @@
         display: flex;
         align-items: center;
     }
+    &.v-center {
+        align-items: center;
+    }
     &.baseline {
         align-items: baseline;
     }

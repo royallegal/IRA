@@ -88,3 +88,14 @@
   border-radius: 0;
   will-change: bottom, opacity;
 }
+
+
+#loginModal {
+  .carousel.carousel-slider.initialized{
+    height: 380px !important;
+  }
+  .col {
+    min-height: 380px;
+    height: 380px;
+  }
+}
