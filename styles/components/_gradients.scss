@@ -86,62 +86,32 @@
 //   background: linear-gradient(42deg, #B58234 0%, #D2B545 50%, #D7C04D 50.01%, #FFFFFF 100%);
 // }
 
+$colors-list: "pink", "red", "purple", "blue", "teal", "green", "yellow", "orange", "tan", "brown", "steel";
 
 .gradient {
-    &.pink {
-        @include linear-gradient(155deg,
-                                 color("pink", "light") 0%,
-                                 color("pink", "base") 90%);
+    @each $current-color in $colors-list {
+        &.#{$current-color} { 
+            @include linear-gradient(155deg,
+                                    color($current-color, "base") 0%,
+                                    color($current-color, "light") 90%); 
+        }
     }
-    &.red {
-        @include linear-gradient(155deg,
-                                 color("red", "light") 0%,
-                                 color("red", "base") 90%);
-    }
-    &.purple {
-        @include linear-gradient(155deg,
-                                 color("purple", "light") 0%,
-                                 color("purple", "base") 90%);
-    }
-    &.blue {
-        @include linear-gradient(155deg,
-                                 color("blue", "light") 0%,
-                                 color("blue", "base") 90%);
-    }
-    &.teal {
-        @include linear-gradient(155deg,
-                                 color("teal", "light") 0%,
-                                 color("teal", "base") 90%);
-    }
-    &.green {
-        @include linear-gradient(155deg,
-                                 color("green", "light") 0%,
-                                 color("green", "base") 90%);
-    }
-    &.yellow {
-        @include linear-gradient(155deg,
-                                 color("yellow", "light") 0%,
-                                 color("yellow", "base") 90%);
-    }
-    &.orange {
-        @include linear-gradient(155deg,
-                                 color("orange", "light") 0%,
-                                 color("orange", "base") 90%);
-    }
-    &.tan {
-        @include linear-gradient(155deg,
-                                 color("tan", "light") 0%,
-                                 color("tan", "base") 90%);
-    }
-    &.brown {
-        @include linear-gradient(155deg,
-                                 color("brown", "light") 0%,
-                                 color("brown", "base") 90%);
-    }
-    &.steel {
-        @include linear-gradient(155deg,
-                                 color("steel", "light") 0%,
-                                 color("steel", "base") 90%);
+}
+
+.half {
+    @each $current-color in $colors-list {
+        &.#{$current-color} { 
+            &.bottom {
+                @include linear-gradient(0deg,
+                                        color($current-color, "base") 0%,
+                                        rgba(color($current-color, "light"), 0) 70%); 
+            }
+            &.top {
+                @include linear-gradient(180deg,
+                                        color($current-color, "base") 0%,
+                                        rgba(color($current-color, "light"), 0) 70%); 
+            } 
+        }
     }
 }
 

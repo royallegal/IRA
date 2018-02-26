@@ -16,17 +16,11 @@ if(!function_exists('rls_more_posts_callback')){
         if($category != "all" and $category != null) {
             $args['category_name'] = $category;
         }
-        $post_query = new WP_Query($args);
-        if($post_query->have_posts() ) {
-            while ($post_query->have_posts()) {
-                $post_query->the_post();
-                get_template_part( 'snippets/feed/article-card' );
-
-                //interlaces ads in posts
-                $index = $post_query->current_post +1;
-                if ($index % 6 == 0) { 
-                    get_template_part( 'snippets/feed/ad' );
-                }
+        $wp_query = new WP_Query($args);
+        if($wp_query->have_posts() ) {
+            while ($wp_query->have_posts()) {
+                $wp_query->the_post();
+                include(locate_template('snippets/feed/article-card.php'));
             }
         } else {
             status_header( '404' );
