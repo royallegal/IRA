@@ -3,8 +3,6 @@ $(document).ready(function() {
 
     // ---- GLOBAL ---- //
     royal_menus();
-    royal_login();
-
 
     // ---- GENERAL ---- //
     if ($.fn.parallax && $('.parallax').length){
