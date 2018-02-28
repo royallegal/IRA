@@ -2,18 +2,32 @@
 
 
 <main id="page">
-    <div class="container">
-	<?php if (have_posts()): while (have_posts()) : the_post(); ?>
-	    <article id="post-<?php the_ID();?>" <?php post_class();?>>
-		<?php the_content(); ?>
-	    </article>
-	<?php endwhile; ?>
-
-	<?php else: ?>
-	<h1><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h1>
-
-	<?php endif; ?>
-    </div>
+	<?php the_content() ?>
+	<?php 
+	if(have_rows('content')){
+		while(have_rows('content')) {
+			the_row();
+			if(get_row_layout() == "hero") {
+				get_template_part( 'snippets/page/hero' );
+			}
+			if(get_row_layout() == "text_block") {
+				get_template_part( 'snippets/page/text-block' );
+			}
+			if(get_row_layout() == "numbered_cards") {
+				get_template_part( 'snippets/page/numbered-cards' );
+			}
+			if(get_row_layout() == "hightlight") {
+				get_template_part( 'snippets/page/hightlight' );
+			}
+			if(get_row_layout() == "parallax") {
+				get_template_part( 'snippets/page/parallax' );
+			}
+			if(get_row_layout() == "testimonial") {
+				get_template_part( 'snippets/page/testimonial' );
+			}
+		}
+	}
+	?>
 </main>
 
 

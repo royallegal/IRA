@@ -28,4 +28,13 @@ function get_featured_video() {
         return false;
     }
 }
+
+
+function get_responsive_image(
+    $attachment_id, 
+    $size = array('800', '600'), 
+    $icon = "", 
+    $attr = array( "class" => "img-responsive" ) ) {
+        return wp_get_attachment_image( $attachment_id, $size, $icon, $attr); 
+  }
 ?>

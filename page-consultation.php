@@ -3,7 +3,7 @@
 
 
 <div class="hero-container valign-wrapper center-align">
-    <div class="hero" style="background-image:url(https://royallegal.staging.wpengine.com/wp-content/uploads/2017/12/consultation-3.png);"></div>
+    <div class="hero" style="background-image:url(https://lorempixel.com/500/400/);"></div>
     <div class="teal mix trans-80 mask"></div>
     <div class="white-text t-depth-2 title-group">
         <p class="h1">Learn The 1 Thing Ultra Rich Real Estate Property Investors Do To Fully Protect Themselves From A Lawsuit</p>
