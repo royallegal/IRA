@@ -16,10 +16,41 @@
                 "id": ""
             },
             "layouts": {
-                "5a961623f1cd4": {
-                    "key": "5a961623f1cd4",
+                "5a98901515316": {
+                    "key": "5a98901515316",
                     "name": "hero",
                     "label": "Hero",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5a98902015317",
+                            "label": "Hero",
+                            "name": "hero",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5a99e85b6e03e"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "5a961623f1cd4": {
+                    "key": "5a961623f1cd4",
+                    "name": "hero-old",
+                    "label": "Hero_old",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -513,5 +544,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1519790649
+    "modified": 1520036349
 }

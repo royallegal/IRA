@@ -3,21 +3,12 @@
 get_header();
 ?>
 
-
-<main id="documentation">
-    <docs-menu></docs-menu>
-
-    <div class="container">
-        <buttons></buttons>
-        <colors></colors>
-        <helpers></helpers>
-        <articles></articles>
-        <collections></collections>
-        <heroes></heroes>
-        <panels></panels>
-        <quizzes></quizzes>
-        <sidebars></sidebars>
-        <sliders></sliders>
+<main id="documentation" class="mt-6">
+    <div class="container wide">
+        <?php include(locate_template('documentation/components/cards.php'));?>
+        <?php include(locate_template('documentation/components/helpers.php'));?>
+        <?php include(locate_template('documentation/components/buttons.php'));?>
+        <?php include(locate_template('documentation/components/colors.php'));?>
     </div>
 </main>
 
