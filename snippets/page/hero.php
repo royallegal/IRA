@@ -1,3 +1,4 @@
+<!-- hero -->
 <div class="hero-container valign-wrapper center-align">
     <div class="hero" 
       <?php if (get_sub_field('background_image')): ?> 
