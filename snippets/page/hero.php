@@ -16,10 +16,14 @@
     $description = get_sub_field('description');
 ?>
     <div class="carousel-item ">
-      <div class="hero white-text z-index-1 flex wrap <?php echo $color; ?> <?php echo $style ?> <?php echo $alignement ?> <?php echo $background ?> <?php echo $colorVariant ?> " href="#one!"
+      <div class="hero white-text z-index-1 flex wrap <?php echo $style ?> <?php echo $alignement ?> <?php echo $background ?> " href="#one!"
         <?php if ($image): ?>
             style="background-image:url('<?php echo $image; ?>');"
         <?php endif; ?> >
+        <div class="mask <?php echo $color; ?> <?php echo $colorVariant ?> 
+        <?php if ($image): ?>
+            trans-40
+        <?php endif; ?> >"> </div>
         <div class="mask flex v-center <?php echo $alignement ?>">
           <div class="caption flex v-center center">
             <!-- @title-group -->
@@ -72,12 +76,16 @@
     $subtitle = get_sub_field('subtitle');
     $description = get_sub_field('description');
     ?>
-       <div class="hero white-text z-index-1 flex wrap <?php echo $color; ?> <?php echo $style ?> <?php echo $alignement ?> <?php echo $background ?> <?php echo $colorVariant ?>" 
+       <div class="hero white-text z-index-1 flex wrap  <?php echo $style ?> <?php echo $alignement ?> <?php echo $background ?> " 
         <?php if ($image): ?>
             style="background-image:url('<?php echo $image; ?>');"
         <?php endif; ?> >
-        <div class="mask flex v-center z-index-1 <?php echo $alignement ?>">
-          <div class="caption flex v-center center">
+        <div class="mask <?php echo $color; ?> <?php echo $colorVariant ?> 
+        <?php if ($image): ?>
+            trans-40
+        <?php endif; ?> >"> </div>
+        <div class="mask flex v-center z-index-1 <?php echo $alignement ?> ">
+          <div class="caption flex v-center center trans-0">
             <!-- @title-group -->
             <?php if( $children && in_array('title', $children) ): ?>
             <div class="white-text t-depth-2 title-group ">
@@ -127,10 +135,14 @@
     $subtitle = get_sub_field('subtitle');
     $description = get_sub_field('description');
     ?>
-      <div class="parallax white-text  flex wrap <?php echo $color; ?> <?php echo $style ?> <?php echo $alignement ?> <?php echo $background ?> <?php echo $colorVariant ?> ">
+      <div class="parallax white-text  flex wrap z-index-1 <?php echo $style ?> <?php echo $alignement ?> <?php echo $background ?> ">
       <?php if ($image): ?>
             <img src="<?php echo $image; ?>" alt="">
         <?php endif; ?> 
+        <div class="mask z-index-1 <?php echo $color; ?> <?php echo $colorVariant ?> 
+        <?php if ($image): ?>
+            trans-40
+        <?php endif; ?> >"> </div>
         <div class="mask flex v-center z-index-1 <?php echo $alignement ?>">
           <div class="caption flex v-center center">
             <!-- @title-group -->

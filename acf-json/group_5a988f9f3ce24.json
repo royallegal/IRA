@@ -99,15 +99,7 @@
             "type": "image",
             "instructions": "",
             "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5a9dc9ec0981d",
-                        "operator": "==",
-                        "value": "none"
-                    }
-                ]
-            ],
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -657,5 +649,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1520447074
+    "modified": 1520460444
 }
