@@ -16,7 +16,7 @@
     $description = get_sub_field('description');
 ?>
     <div class="carousel-item ">
-      <div class="hero white-text  flex wrap <?php echo $color; ?> <?php echo $style ?> <?php echo $alignement ?> <?php echo $background ?> <?php echo $colorVariant ?> " href="#one!"
+      <div class="hero white-text z-index-1 flex wrap <?php echo $color; ?> <?php echo $style ?> <?php echo $alignement ?> <?php echo $background ?> <?php echo $colorVariant ?> " href="#one!"
         <?php if ($image): ?>
             style="background-image:url('<?php echo $image; ?>');"
         <?php endif; ?> >
@@ -72,7 +72,7 @@
     $subtitle = get_sub_field('subtitle');
     $description = get_sub_field('description');
     ?>
-       <div class="hero white-text  flex wrap <?php echo $color; ?> <?php echo $style ?> <?php echo $alignement ?> <?php echo $background ?> <?php echo $colorVariant ?>" 
+       <div class="hero white-text z-index-1 flex wrap <?php echo $color; ?> <?php echo $style ?> <?php echo $alignement ?> <?php echo $background ?> <?php echo $colorVariant ?>" 
         <?php if ($image): ?>
             style="background-image:url('<?php echo $image; ?>');"
         <?php endif; ?> >
