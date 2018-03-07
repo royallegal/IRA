@@ -19,6 +19,112 @@
             "endpoint": 0
         },
         {
+            "key": "field_5a9dc9ec0981d",
+            "label": "Color",
+            "name": "color",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "none": "none",
+                "pink": "pink",
+                "red": "red",
+                "purple": "purple",
+                "blue": "blue",
+                "teal": "teal",
+                "green": "green",
+                "yellow": "yellow",
+                "orange": "orange",
+                "tan": "tan",
+                "brown": "brown",
+                "steel": "steel",
+                "gray": "gray",
+                "white": "white"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5a9eb4eec2c15",
+            "label": "Color Variant",
+            "name": "color_variant",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5a9dc9ec0981d",
+                        "operator": "!=",
+                        "value": "none"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "none": "none",
+                "light": "light",
+                "dark": "dark",
+                "accent": "accent",
+                "gradient": "gradient",
+                "mix": "mix"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5a9ea3e84b198",
+            "label": "Image",
+            "name": "background_image",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5a9dc9ec0981d",
+                        "operator": "==",
+                        "value": "none"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
             "key": "field_5a9890d35d586",
             "label": "Alignement",
             "name": "alignement",
@@ -32,9 +138,9 @@
                 "id": ""
             },
             "choices": {
-                "center": "Center",
-                "left": "Left",
-                "right": "Right"
+                "center center-align": "Center",
+                "left  left-align": "Left",
+                "right left-align": "Right"
             },
             "default_value": [
                 "center"
@@ -60,8 +166,8 @@
                 "id": ""
             },
             "choices": {
-                "light": "Light",
-                "dark": "Dark"
+                "background-light": "Light",
+                "background-dark": "Dark"
             },
             "default_value": [],
             "allow_null": 0,
@@ -87,7 +193,7 @@
             "choices": {
                 "floating": "Floating",
                 "full-height": "Full Height",
-                "mask": "Mask"
+                "mask-style": "Mask"
             },
             "default_value": [],
             "allow_null": 0,
@@ -436,8 +542,8 @@
                     },
                     "choices": {
                         "default": "default",
-                        "white": "white",
-                        "blue": "blue"
+                        "to-white": "white",
+                        "to-blue": "blue"
                     },
                     "default_value": [],
                     "allow_null": 0,
@@ -464,8 +570,10 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [
+        "excerpt"
+    ],
     "active": 1,
     "description": "",
-    "modified": 1520036692
+    "modified": 1520379371
 }
