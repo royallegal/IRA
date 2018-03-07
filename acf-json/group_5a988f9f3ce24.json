@@ -359,13 +359,72 @@
                     "type": "link",
                     "instructions": "",
                     "required": 0,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5aa015add6a3d",
+                                "operator": "!=",
+                                "value": "Modal"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "33",
                         "class": "",
                         "id": ""
                     },
                     "return_format": "array"
+                },
+                {
+                    "key": "field_5aa028e0d350b",
+                    "label": "Video",
+                    "name": "video",
+                    "type": "oembed",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5aa015add6a3d",
+                                "operator": "==",
+                                "value": "Modal"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "width": "",
+                    "height": ""
+                },
+                {
+                    "key": "field_5aa02e3aefd72",
+                    "label": "Button label",
+                    "name": "button_label",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5aa015add6a3d",
+                                "operator": "==",
+                                "value": "Modal"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
                 },
                 {
                     "key": "field_5a98d99e277c8",
@@ -552,6 +611,29 @@
                     "ajax": 0,
                     "return_format": "value",
                     "placeholder": ""
+                },
+                {
+                    "key": "field_5aa015add6a3d",
+                    "label": "Video Modal",
+                    "name": "modal",
+                    "type": "checkbox",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "Modal": "Modal"
+                    },
+                    "allow_custom": 0,
+                    "save_custom": 0,
+                    "default_value": [],
+                    "layout": "vertical",
+                    "toggle": 0,
+                    "return_format": "value"
                 }
             ]
         }
@@ -575,5 +657,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1520379371
+    "modified": 1520447074
 }

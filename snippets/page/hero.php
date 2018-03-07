@@ -171,20 +171,14 @@
 <?php if( $variation == 'video' ): 
 $video_options = get_sub_field('video_options'); ?>
 <div class="hero-container ">
-<?php if( $video_options && in_array('interactive', $video_options) ): ?>
-    <div class="video mask flex center v-center pv-3 z-index-1">
-        <?php the_sub_field('video'); ?>
-    </div>
-<?php endif; ?>  
+
     <?php if( $video_options && in_array('background', $video_options) ): ?>
     <div class="video mask flex center v-center z-index-1">
-        <video width="320" height="240" autoplay muted class="mask">
+        <video width="320" height="240" autoplay muted loop class="mask">
             <source src="<?php the_sub_field('video_background'); ?>" type="video/mp4">
             </video>
             </div>
 <?php endif; ?>  
-       
-    
     <?php if( have_rows('hero') ): while( have_rows('hero') ): the_row(); 
     $style = get_sub_field('style');
     $background = get_sub_field('background');
@@ -197,7 +191,7 @@ $video_options = get_sub_field('video_options'); ?>
     $subtitle = get_sub_field('subtitle');
     $description = get_sub_field('description');
     ?>
-       <div class="hero white-text  flex wrap <?php echo $color; ?> <?php echo $style ?> <?php echo $alignement ?> <?php echo $background ?> <?php echo $colorVariant ?>"  
+       <div class="hero white-text  flex wrap z-index-1 <?php echo $color; ?> <?php echo $style ?> <?php echo $alignement ?> <?php echo $background ?> <?php echo $colorVariant ?>"  
        <?php if ($image): ?>
             style="background-image:url('<?php echo $image; ?>');"
         <?php endif; ?> >
@@ -236,5 +230,10 @@ $video_options = get_sub_field('video_options'); ?>
         </div>
       </div>
     <?php endwhile; endif; ?>
+    <?php if( $video_options && in_array('interactive', $video_options) ): ?>
+    <div class="video mask flex center v-center pv-3 z-index-1">
+        <?php the_sub_field('video'); ?>
+    </div>
+<?php endif; ?>  
     </div>
 <?php endif; ?>
