@@ -23,12 +23,18 @@
     }
 
     // Call to Action Grouping
-    .cta-container {
+    .cta-group {
+        z-index: 1;
         display: flex;
         flex-wrap: wrap;
+        flex-flow: column nowrap;
         align-content: center;
         align-items: center;
         justify-content: center;
+        margin: 50px;
+        padding: 25px;
+        border-radius: 2px;
+        border: none;
         @media #{$medium-and-up} {
             &.third {
                 width: 33%;
@@ -40,14 +46,25 @@
         &.row {
             margin: 0 auto;
         }
-    }
+        &.full-height {
+            height: 100%;
+        }
+        &.background-light {
+            border: 1px solid rgba(0, 0, 0, 0.25);
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+        &.background-dark {
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            background-color: rgba(0, 0, 0, 0.5);
+        }
 
-    // Titles and Buttons (preformatted)
-    .title-group,
-    .button-group {
-        flex-basis: 100%;
-        text-align: center;
-        margin: 15px auto;
+        // Titles and Buttons (preformatted)
+        .title-group,
+        .button-group {
+            flex-basis: 100%;
+            text-align: center;
+            margin: 15px auto;
+        }
     }
 
 
@@ -101,29 +118,6 @@
     // ---- OPTIONS ---- //
     .hero,
     .parallax {
-
-        // Floating CTAs
-        .caption {
-            z-index: 1;
-            flex-flow: column nowrap;
-            margin: 50px;
-            padding: 25px;
-            border-radius: 2px;
-            border: none;
-            &.full-height {
-                height: 100%;
-            }
-            &.light {
-                border: 1px solid rgba(0, 0, 0, 0.25);
-                background-color: rgba(255, 255, 255, 0.5);
-            }
-            &.dark {
-                border: 1px solid rgba(255, 255, 255, 0.25);
-                background-color: rgba(0, 0, 0, 0.5);
-            }
-        }
-
-
         // ---- NOTES ---- //
         // Almost all of these features already exist under different classes
         // in files like helpers, typography, buttons, and global
