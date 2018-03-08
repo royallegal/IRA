@@ -8,16 +8,21 @@
     overflow: hidden;
     &:not([class^="vh-"]) {
         height: 500px;
-    } // ---- CONTENT ---- //
+    }
+
+
+    // ---- CONTENT ---- //
     .hero,
     .parallax {
+        z-index: -1;
         position: absolute;
         top: 0;
         bottom: 0;
         left: 0;
         right: 0;
-        z-index: -1;
-    } // Call to Action Grouping
+    }
+
+    // Call to Action Grouping
     .cta-container {
         display: flex;
         flex-wrap: wrap;
@@ -35,19 +40,26 @@
         &.row {
             margin: 0 auto;
         }
-    } // Titles and Buttons (preformatted)
+    }
+
+    // Titles and Buttons (preformatted)
     .title-group,
     .button-group {
         flex-basis: 100%;
         text-align: center;
         margin: 15px auto;
-    } // ---- MEDIA ---- //
+    }
+
+
+    // ---- MEDIA ---- //
     // Background Images
     .hero {
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-    } // Images
+    }
+
+    // Images
     .hero,
     .parallax {
         img {
@@ -59,76 +71,19 @@
             min-height: 100%;
         }
     }
+
+    // Parallax
     .parallax {
         img {
             transform: translate3d(0, 0, 0);
             transform: translateX(-50%);
         }
-    } // OPTIONS
-    //floating
-    .hero,
-    .parallax {
-        .caption {
-            border-radius: 2px;
-            margin: 50px;
-            padding: 25px;
-            flex-flow: column nowrap;
-        }
-        .button-group,
-        .title-group  {
-            flex-basis: 0;
-        }
-        &.left,
-        &.right {
-            .caption {
-                width: 50%;
-            }
-        }
-        &.left {
-            justify-content: flex-start;
-        }
-        &.right {
-            justify-content: flex-end;
-        }
-        .title-group {
-            text-align: left;
-        }
-        &.center .title-group {
-            text-align: center;
-        }
-        &.left .button-group,
-        &.right .button-group {
-            align-self: flex-start;
-            margin: 15px 0;
-        }
-         // background-dark
-        &.background-dark {
-            .caption {
-                border: 1px solid rgba(255, 255, 255, 0.25);
-                background-color: rgba(0, 0, 0, 0.5);
-            }
-        } // full-height
-        &.full-height {
-            .caption {
-                max-width: none !important;
-                height: 100%;
-                border: none;
-                margin: 0;
-                border-radius: 0;
-            }
-        } // mask
-        &.mask-style {
+        .mask {
             z-index: 1;
-            .caption {
-                height: 100%;
-                width: 100% !important;
-                max-width: 100% !important;
-                border: none;
-                margin: 0;
-                border-radius: 0;
-            }
         }
     }
+
+    // Video
     .video {
         iframe {
             width: auto;
@@ -141,7 +96,70 @@
             object-fit: fill;
         }
     }
+
+
+    // ---- OPTIONS ---- //
+    .hero,
+    .parallax {
+
+        // Floating CTAs
+        .caption {
+            z-index: 1;
+            flex-flow: column nowrap;
+            margin: 50px;
+            padding: 25px;
+            border-radius: 2px;
+            border: none;
+            &.full-height {
+                height: 100%;
+            }
+            &.light {
+                border: 1px solid rgba(0, 0, 0, 0.25);
+                background-color: rgba(255, 255, 255, 0.5);
+            }
+            &.dark {
+                border: 1px solid rgba(255, 255, 255, 0.25);
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+        }
+
+
+        // ---- NOTES ---- //
+        // Almost all of these features already exist under different classes
+        // in files like helpers, typography, buttons, and global
+
+        //     .button-group,
+        //     .title-group  {
+        //         flex-basis: 0;
+        //     }
+
+        //     &.left,
+        //     &.right {
+        //         .caption {
+        //             width: 50%;
+        //         }
+        //     }
+        //     &.left {
+        //         justify-content: flex-start;
+        //     }
+        //     &.right {
+        //         justify-content: flex-end;
+        //     }
+        //     .title-group {
+        //         text-align: left;
+        //     }
+        //     &.center .title-group {
+        //         text-align: center;
+        //     }
+        //     &.left .button-group,
+        //     &.right .button-group {
+        //         align-self: flex-start;
+        //         margin: 15px 0;
+        //     }
+        // }
+    }
 }
+
 
 // ---- HOME HERO ---- //
 // body.home {
