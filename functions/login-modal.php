@@ -26,8 +26,8 @@ if(!function_exists('ajax_login_callback')){
         $info = array();
 				$info['user_login'] = sanitize_text_field($_POST['username']);;
         $info['user_password'] = $_POST['password'];
-				$info['remember'] = $_POST['remember'] ?  true : false;
-				
+        $info['remember'] = true;
+
         $user_signon = wp_signon( $info, false );
         if ( is_wp_error($user_signon) ){
             echo json_encode(array('loggedin'=>false, 'message'=>__('Wrong username or password.')));

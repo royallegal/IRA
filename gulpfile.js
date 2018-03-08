@@ -10,9 +10,6 @@ const jqc    = require('gulp-jquery-closure');
 const concat = require('gulp-concat');
 const minify = require('gulp-minify');
 
-var webpack = require('webpack');
-var webpackConfig = require('./webpack.config.js');
-var webpackRun = webpack(webpackConfig);
 
 // STAGING
 gulp.task('styles', function() {
@@ -37,17 +34,7 @@ gulp.task('scripts', function() {
                .pipe(gulp.dest('scripts/'))
 });
 
-gulp.task('webpack', function(done) {
-    webpackRun.run(function(err, stats) {
-        if(err) {
-            console.log('Error', err);
-        }
-        else {
-            console.log(stats.toString());
-        }
-        done();
-    });
-});
+
 
 gulp.task('watch', function() {
     gulp.watch('styles/components/**/*.scss', ['styles']);

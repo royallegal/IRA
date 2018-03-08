@@ -10,7 +10,8 @@
 // Site Specific
 @import "components/pages/home";
 @import "components/pages/contact";
-@import "components/pages/professionals";
+@import "components/pages/professionals"; 
+@import "components/pages/consultation"; 
 
 // Stylesheets
 @import "components/articles";
@@ -42,6 +43,7 @@
 @import "components/normalize";
 @import "components/notices";
 @import "components/overrides";
+@import "components/page";
 @import "components/pagination";
 @import "components/panels";
 @import "components/preloader";

@@ -40,6 +40,7 @@
     &.spaced {
         justify-content: space-around;
     }
+
     // Content Grouping
     &.grouped-content {
         align-content: center;
@@ -89,6 +90,10 @@
 .clearfix {
     clear: both;
 }
+.no-float {
+    float: none !important;
+}
+
 
 // Pushpin
 .pin-top,
@@ -199,5 +204,10 @@ $widths:("vw":$view-widths,"pw":$percent-widths);
 
 // ---- INDEXES ---- //
 .z-index-1 {
-    z-index: 1;
+    z-index: 1 !important;
 }
+
+.z-index-2 {
+    z-index: 2 !important;
+}
+

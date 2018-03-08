@@ -8,12 +8,6 @@ main#documentation {
         padding: 0 25px 0 0;
     }
 
-    .flex-row {
-        display: flex;
-        // justify-content: space-around;
-    }
-
-
     // ---- COMPONENTS ---- //
     // Buttons
     #buttons {
@@ -36,17 +30,13 @@ main#documentation {
             }
         }
     }
-
-    // Colors
-    #colors {
-        .swatch {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100px;
-            width: 100px;
-            margin: 2.5px;
-            padding: 10px;
-        }
+    .swatch {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100px;
+        width: 100px;
+        margin: 2.5px;
+        padding: 10px;
     }
 }
