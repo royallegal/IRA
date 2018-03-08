@@ -19,12 +19,13 @@ if (have_rows('hero')) {
 
         // BACKGROUNDS
         $background = get_sub_field('background');
-        $alignment = get_sub_field('alignement');
+        $alignment = get_sub_field('alignment');
         $children = get_sub_field('children');
         $color = get_sub_field('color');
+        $color_variant = get_sub_field('color_variant');
         $image = get_sub_field('background_image');
+        $style = get_sub_field('style');
         /* $alt = get_sub_field('alt_tag');  NEED ALT TAG*/
-        $variant = get_sub_field('color_variant');
         $title = get_sub_field('title');
         $subtitle = get_sub_field('subtitle');
         $description = get_sub_field('description');

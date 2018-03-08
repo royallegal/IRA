@@ -118,8 +118,8 @@
         },
         {
             "key": "field_5a9890d35d586",
-            "label": "Alignement",
-            "name": "alignement",
+            "label": "Alignment",
+            "name": "alignment",
             "type": "select",
             "instructions": "",
             "required": 0,
@@ -158,8 +158,8 @@
                 "id": ""
             },
             "choices": {
-                "background-light": "Light",
-                "background-dark": "Dark"
+                "light": "Light",
+                "dark": "Dark"
             },
             "default_value": [],
             "allow_null": 0,
@@ -649,9 +649,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1520460444
-<<<<<<< HEAD
+    "modified": 1520541829
 }
-=======
-}
->>>>>>> master

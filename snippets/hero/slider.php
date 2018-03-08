@@ -11,49 +11,38 @@
     $subtitle = get_sub_field('subtitle');
     $description = get_sub_field('description');
     ?>
-        <div class="carousel-item ">
-            <div class="hero white-text z-index-1 flex wrap <?php echo $style ?> <?php echo $alignement ?> <?php echo $background ?> " href="#one!"
-                 <?php if ($image): ?>
-                 style="background-image:url('<?php echo $image; ?>');"
-                 <?php endif; ?> >
-                <div class="mask <?php echo $color; ?> <?php echo $colorVariant ?> 
-                            <?php if ($image): ?>
-                            trans-40
-                            <?php endif; ?> >"> </div>
-                <div class="mask flex v-center <?php echo $alignement ?>">
-                    <div class="caption flex v-center center">
-                        <!-- @title-group -->
-                        <?php if( $children && in_array('title', $children) ): ?>
-                            <div class="white-text t-depth-2 title-group ">
-                                <?php if ($title): ?>
-                                    <h1 class="h1">
-                                        <?php echo $title ?>
-                                    </h1>
-                                <?php endif; ?>
-                                <?php if ($subtitle): ?>
-                                    <h2 class="h2">
-                                        <?php echo $subtitle ?>
-                                    </h2>
-                                <?php endif; ?>
-                                <?php if ($description): ?>
-                                    <?php echo $description ?>
-                                <?php endif; ?>
-                            </div>
-                        <?php endif; ?>
-                        <!-- @button-group -->
-                        <?php if( $children && in_array('button', $children) ): ?>
-                            <div class="button-group">
-                                <?php if( have_rows('buttons') ): while( have_rows('buttons') ): the_row(); 
-                                $style = get_sub_field('style');
-                                $link = get_sub_field('link');
-                                ?>
-                                    <a href="<?php echo $link['url']; ?>" class="button <?= the_sub_field('type') ?> <?= the_sub_field('color') ?> <?= the_sub_field('size') ?> <?= the_sub_field('color_variant') ?> <?= the_sub_field('hover') ?>"><?php echo $link['title']; ?></a>
-                                <?php endwhile; endif; ?>
-                            </div>
-                        <?php endif; ?>
+    <div class="carousel-item ">
+        <?php
+         $container_style = ($image) ? "background-image:url('<?= $image; ?>')" : "";
+        ?>
+        <div class="hero white-text z-index-1 flex wrap <?= $alignment ?> " style="<?= $container_style; ?>" >
+            <?php
+                $opacity = $image ? "trans-70" : "";
+                $mask_classes = $color.' '.$colorVariant.' '.$opacity;
+            ?>
+            <div class="mask <?= $mask_classes ?>"> </div>
+            <?php if ($children) {  ?>
+                <div class="<?= $style.' '.$background;?> cta-group">
+                    <div>
+                    <?php 
+                    // ---- TITLE GROUP ---- //
+                    if (in_array("title", $children)) {
+                        include(locate_template('snippets/title-group.php'));
+                    }
+
+                    // ---- BUTTON GROUP ---- //
+                    if (in_array("button", $children)) {
+                        include(locate_template('snippets/button-group.php'));
+                    }
+
+                    // ---- FORMS ---- //
+                    if (in_array("form", $children)) {
+                    }
+                    ?>
                     </div>
                 </div>
-            </div>
+            <?php } ?>
         </div>
+    </div>
     <?php endwhile; endif; ?>
 </div>
