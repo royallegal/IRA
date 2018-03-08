@@ -13,7 +13,7 @@
 
 
     <?php $container_style = ($image) ? "background-image:url('<?= $image; ?>')" : "";?>
-    <div class="hero white-text z-index-1 flex wrap <?= $alignment ?> " style="<?= $container_style; ?>" >
+    <div class="hero z-index-1 <?= $alignment ?> " style="<?= $container_style; ?>" >
         <?php
             $opacity = $hasBgVideo ? "trans-70" : "";
             $mask_classes = $color.' '.$colorVariant.' '.$opacity;

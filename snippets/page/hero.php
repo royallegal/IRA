@@ -25,7 +25,6 @@ if (have_rows('hero')) {
         $color_variant = get_sub_field('color_variant');
         $image = get_sub_field('background_image');
         $style = get_sub_field('style');
-        /* $alt = get_sub_field('alt_tag');  NEED ALT TAG*/
         $title = get_sub_field('title');
         $subtitle = get_sub_field('subtitle');
         $description = get_sub_field('description');
