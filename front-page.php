@@ -10,6 +10,7 @@
             <div class="caption-container">
                 <div class="caption">
                     <div class="white-text title-group">
+                        <h1>Hi</h1>
                         <p class="title">Take control of your IRA Portfolio</p>
                         <p class="subtitle">Use tax free retirement funds to invest in your future. Get direct checkbook control of your IRA today.</p>
                     </div>

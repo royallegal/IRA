@@ -39,12 +39,10 @@ gulp.task('scripts', function() {
 gulp.task('watch', function() {
     gulp.watch('styles/components/**/*.scss', ['styles']);
     gulp.watch('scripts/components/**/*.js', ['scripts']);
-    gulp.watch('documentation/js/**/*.js', ['webpack'])
-    gulp.watch('documentation/js/**/*.vue', ['webpack'])
 });
 
 gulp.task('default', function(cb) {
-    return sequence(['styles', 'scripts','webpack'], 'watch', cb);
+    return sequence(['styles', 'scripts'], 'watch', cb);
 });
 
 
