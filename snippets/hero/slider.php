@@ -13,7 +13,7 @@
     ?>
     <div class="carousel-item ">
         <?php
-         $container_style = ($image) ? "background-image:url('<?= $image; ?>')" : "";
+        $container_style = ($image) ? "background-image:url('".$image."')" : "";
         ?>
         <div class="hero z-index-1 <?= $alignment ?> " style="<?= $container_style; ?>" >
             <?php
