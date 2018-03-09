@@ -49,11 +49,6 @@
             ?>
     </div>
 
-
-
-
-
-
     <?php if( $video_options && in_array('interactive', $video_options) ): ?>
         <div class="video mask flex center v-center pv-3 z-index-1">
             <?php the_sub_field('video'); ?>
