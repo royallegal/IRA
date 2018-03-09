@@ -8,10 +8,7 @@
     overflow: hidden;
     &:not([class^="vh-"]) {
         height: 500px;
-    }
-
-
-    // ---- CONTENT ---- //
+    } // ---- CONTENT ---- //
     .hero,
     .parallax {
         z-index: -1;
@@ -20,6 +17,8 @@
         bottom: 0;
         left: 0;
         right: 0;
+        display: flex;
+        flex-wrap: wrap;
     }
 
     // Call to Action Grouping
@@ -48,12 +47,13 @@
         }
         &.full-height {
             height: 100%;
+            margin: 0;
         }
-        &.background-light {
+        &.light {
             border: 1px solid rgba(0, 0, 0, 0.25);
             background-color: rgba(255, 255, 255, 0.5);
         }
-        &.background-dark {
+        &.dark {
             border: 1px solid rgba(255, 255, 255, 0.25);
             background-color: rgba(0, 0, 0, 0.5);
         }
@@ -64,7 +64,7 @@
             flex-basis: 100%;
             text-align: center;
             margin: 15px auto;
-        }
+        } 
     }
 
 
@@ -74,9 +74,7 @@
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-    }
-
-    // Images
+    } // Images
     .hero,
     .parallax {
         img {
@@ -114,59 +112,4 @@
         }
     }
 
-
-    // ---- OPTIONS ---- //
-    .hero,
-    .parallax {
-        // ---- NOTES ---- //
-        // Almost all of these features already exist under different classes
-        // in files like helpers, typography, buttons, and global
-
-        //     .button-group,
-        //     .title-group  {
-        //         flex-basis: 0;
-        //     }
-
-        //     &.left,
-        //     &.right {
-        //         .caption {
-        //             width: 50%;
-        //         }
-        //     }
-        //     &.left {
-        //         justify-content: flex-start;
-        //     }
-        //     &.right {
-        //         justify-content: flex-end;
-        //     }
-        //     .title-group {
-        //         text-align: left;
-        //     }
-        //     &.center .title-group {
-        //         text-align: center;
-        //     }
-        //     &.left .button-group,
-        //     &.right .button-group {
-        //         align-self: flex-start;
-        //         margin: 15px 0;
-        //     }
-        // }
-    }
 }
-
-
-// ---- HOME HERO ---- //
-// body.home {
-//     .hero-container {
-//         .hero {
-//             @media screen and (min-width: 769px) {
-//                 background-size: 150%;
-//                 background-position: left 40%;
-//             }
-//             @media screen and (max-width: 768px) {
-//                 background-size: 225%;
-//                 background-position: 33% 40%;
-//             }
-//         }
-//     }
-// }

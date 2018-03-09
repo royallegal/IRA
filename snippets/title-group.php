@@ -2,7 +2,7 @@
 $title        = get_sub_field('title');
 $subtitle     = get_sub_field('subtitle');
 $description  = get_sub_field('description');
-if ($image || $background == "background-dark") {
+if ($image || $background == "dark") {
     $text_classes = "white-text t-depth-1-half";
 }
 ?>

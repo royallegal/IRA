@@ -47,6 +47,8 @@
                     "min": "",
                     "max": ""
                 },
+<<<<<<< HEAD
+=======
                 "5a961623f1cd4": {
                     "key": "5a961623f1cd4",
                     "name": "hero-old",
@@ -194,6 +196,7 @@
                     "min": "",
                     "max": ""
                 },
+>>>>>>> master
                 "5a961b92f75bd": {
                     "key": "5a961b92f75bd",
                     "name": "text_block",
@@ -547,5 +550,9 @@
     ],
     "active": 1,
     "description": "",
+<<<<<<< HEAD
+    "modified": 1520522544
+=======
     "modified": 1520350531
+>>>>>>> master
 }
