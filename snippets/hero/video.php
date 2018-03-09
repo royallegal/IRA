@@ -12,7 +12,7 @@
     <?php endif; ?>  
 
 
-    <?php $container_style = ($image) ? "background-image:url('<?= $image; ?>')" : "";?>
+    <?php $container_style = ($image) ? "background-image:url('".$image."')" : "";?>
     <div class="hero z-index-1 <?= $alignment ?> " style="<?= $container_style; ?>" >
         <?php
             $opacity = $hasBgVideo ? "trans-70" : "";
