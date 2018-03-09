@@ -165,6 +165,7 @@ jQuery(document).ready(function($) {
                 'action': 'ajax_login',
                 'username': $('form#login #loginUsername').val(), 
                 'password': $('form#login #loginPassword').val(), 
+                'remember': $('form#login #loginRemember').attr("checked"), 
                 'loginSecurity': $('form#login #loginSecurity').val() },
             success: function(data){
                 $('form#login p.status').text(data.message);
@@ -207,6 +208,23 @@ jQuery(document).ready(function($) {
             },
             success: function(data){
                 $('form#passwordLost p.status').text(data.message);
+            }
+        });
+    });
+
+    $('form#logout a').on('click', function(e){
+        e.preventDefault();
+        $.ajax({
+            type: 'POST',
+            dataType: 'json',
+            url: '/wp-admin/admin-ajax.php',
+            data: { 
+                'action': 'ajax_logout',
+                'logoutSecurity': $('form#logout #logoutSecurity').val() },
+            success: function(data){
+                if (data.loggedout == true){
+                    location.reload();
+                }
             }
         });
     });

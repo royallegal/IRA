@@ -13,9 +13,9 @@ function royal_menus() {
 
 
     // Hero Displays
-    if ($('.hero-container, .parallax-container').length) {
-        $('nav').addClass('transparent');
-    }
+    /* if ($('.hero-container, .parallax-container').length) {
+     *     $('nav').addClass('transparent');
+     * }*/
 }
 
 

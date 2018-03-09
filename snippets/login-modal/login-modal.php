@@ -3,27 +3,35 @@
     <div class="carousel carousel-slider">
         <div class="carousel-item">
             <div class="row mb-0">
-                <div class="col m6 relative white-text center-align" >
+                <div class="col m6 relative white-text center-align pv-2-xs" >
                     <div class="mask pink mix"></div>
                     <div class="mask "></div>
                     <div class="flex center v-center" style="height: 100%"> 
                         <div>
-                        <h3>Login</h3>
-                        <p>PLease enter your credentials to login</p>
+                            <h3>Login</h3>
+                            <p>Please enter your credentials to login</p>
+                            <a class="lost button white" href="#lost-password" data-goto-lost>Lost your password?</a>
                         </div>
                     </div>
                 </div>
-                <div class="col m6">
+                <div class="col m6 pv-2-xs">
                     <div class="p-2 flex center v-center" style="height: 100%">
-                        <form id="login" action="login" method="post">
+                        <form id="login" action="login" method="post" style="width: 100%">
                             <p class="status"> </p>
-                            <label for="loginUsername">Username</label>
-                            <input id="loginUsername" type="text" name="username">
-                            <label for="loginPassword">Password</label>
-                            <input id="loginPassword" type="password" name="password">
+                            <div class="input-field">
+                                <input id="loginUsername" type="text" name="username">
+                                <label for="loginUsername">Username</label>
+                            </div> 
+                            <div class="input-field">
+                                <input id="loginPassword" type="password" name="password">
+                                <label for="loginPassword">Password</label>
+                            </div> 
+                            <p>
+                                <input type="checkbox" id="loginRemember" />
+                                <label for="loginRemember">Remember me</label>
+                            </p>
                             <?php wp_nonce_field( 'ajax-login-nonce', 'loginSecurity' ); ?>
-                            <input class="button blue mr-2" type="submit" value="Login" name="submit">
-                            <a class="lost" href="#lost-password" data-goto-lost>Lost your password?</a>
+                            <input class="button blue mr-2 mt-2" type="submit" value="Login" name="submit">
                         </form>
                     </div>
                 </div>
@@ -31,24 +39,26 @@
         </div>
         <div class="carousel-item">
             <div class="row mb-0">
-                <div class="col m6 relative white-text center-align" >
+                <div class="col m6 relative white-text center-align pv-2-xs" >
                     <div class="mask orange mix"></div>
                     <div class="mask "></div>
                     <div class="flex center v-center" style="height: 100%"> 
                         <div>
-                        <h3>Recover your password</h3>
-                        <p>PLease enter yout email to get a password reset link</p>
-                        <p>Already Have an account?</p>
-                        <button class="button white" data-goto-login>Log in</button>
+                            <h3>Recover your password</h3>
+                            <p>Please enter yout email to get a password reset link</p>
+                            <p>Already Have an account?</p>
+                            <button class="button white" data-goto-login>Log in</button>
                         </div>
                     </div>
                 </div>
-                <div class="col m6">
+                <div class="col m6 pv-2-xs">
                     <div class="p-2 flex center v-center" style="height: 100%">
-                        <form id="passwordLost" action="passwordLost" method="post">
+                        <form id="passwordLost" action="passwordLost" method="post" style="width: 100%">
                             <p class="status"> </p>
-                            <label for="lostUsername">Username</label>
-                            <input id="lostUsername" type="text" name="email">
+                            <div class="input-field">
+                                <input id="lostUsername" type="text" name="email">
+                                <label for="lostUsername">Username</label>
+                            </div>
                             <?php wp_nonce_field( 'ajax-lostpass-nonce', 'lostSecurity' ); ?>
                             <input class="button blue" type="submit" value="Recover Password" name="submit">
                         </form>
@@ -58,18 +68,17 @@
         </div>
         <div class="carousel-item">
             <div class="row mb-0">
-                <div class="col m6 relative white-text center-align" >
+                <div class="col m6 relative white-text center-align pv-2-xs" >
                     <div class="mask blue mix"></div>
                     <div class="mask "></div>
                     <div class="flex center v-center" style="height: 100%"> 
                         <div>
                         <h3>Reset your password</h3>
-                        <p>PLease enter your credentials</p>
-                        <p>Already Have an account?</p>
+                        <p>You can now change your password</p>
                         </div>
                     </div>
                 </div>
-                <div class="col m6">
+                <div class="col m6 pv-2-xs">
                     <div class="p-2 flex center v-center" style="height: 100%">
                             <?php
                                 $errors = new WP_Error();

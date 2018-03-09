@@ -37,22 +37,29 @@ $items  = $woocommerce->cart->get_cart_contents_count();
             ?>
             <ul id="nav-right" class="right hide-on-med-and-down">
                 <?php if (current_user_can('edit_posts')) { ?>
-                    <li><a href="/quick-cart">
+                    <li>
+                        <a href="/quick-cart">
                         <i class="material-icons left">shopping_cart</i>
                         Cart (<span id="cart-count"><?php echo $items; ?></span>)
-                    </a></li>
+                        </a>
+                    </li>
                 <?php } ?>
-                <li id="user-account" class="baseline flex">
+                <li id="user-account">
                     <?php if (is_user_logged_in()) { ?>
                         <a id="username" href="/my-account">
                             <i class="material-icons left">person</i>
-                            <?php if (!empty($first)) { ?>
-                                Hi <?php echo $first; ?>
-                            <?php } else { ?>
-                                My Account
-                            <?php } ?>
+                            <?php
+                            if (!empty($first)) {
+                                echo "Hi ".$first;
+                            } else {
+                                echo "My Account";
+                            }
+                            ?>
                         </a>
-                        <a id="logout" href="<?php echo $logout; ?>">(logout)</a>
+                        <form id="logout" action="logout" method="post">
+                            <?php wp_nonce_field( 'ajax-logout-nonce', 'logoutSecurity' ); ?>
+                            <a>(logout)</a>
+                        </form> 
                     <?php } else { ?>
                         <a id="login" class="modal-trigger" href="#loginModal">Log In</a>
                     <?php } ?>

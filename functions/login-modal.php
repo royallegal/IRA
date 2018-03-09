@@ -16,7 +16,6 @@ endif;
  * AJAX LOGIN
  */
 add_action( 'wp_ajax_nopriv_ajax_login', 'ajax_login_callback' );
-
 if(!function_exists('ajax_login_callback')){
     function ajax_login_callback() {
         // First check the nonce, if it fails the function will break
@@ -26,9 +25,9 @@ if(!function_exists('ajax_login_callback')){
         $info = array();
 				$info['user_login'] = sanitize_text_field($_POST['username']);;
         $info['user_password'] = $_POST['password'];
-        $info['remember'] = true;
+				$info['remember'] = isset($_POST['remember']);
 
-        $user_signon = wp_signon( $info, false );
+        $user_signon = wp_signon( $info, true );
         if ( is_wp_error($user_signon) ){
             echo json_encode(array('loggedin'=>false, 'message'=>__('Wrong username or password.')));
         } else {
@@ -172,4 +171,18 @@ function reset_pass_callback() {
 		
 	// return proper result
 	die();
+}
+
+/**
+ * AJAX RECOVER PASSWORD REQUEST
+ */
+add_action( 'wp_ajax_ajax_logout', 'ajax_logout_callback' );
+if(!function_exists('ajax_logout_callback')){
+    function ajax_logout_callback() {
+        check_ajax_referer( 'ajax-logout-nonce', 'logoutSecurity' );
+        wp_logout();
+        ob_clean();
+        echo json_encode(array('loggedout'=>true, 'message'=>__('Logged out')));
+        die();
+    }
 }

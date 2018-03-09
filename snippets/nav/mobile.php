@@ -30,8 +30,12 @@ $logout = esc_url(wc_logout_url(wc_get_page_permalink('myaccount')));
                 <?php } ?>
             </a>
             <a id="logout" href="<?php echo $logout; ?>">(logout)</a>
+            <form id="logout" action="logout" method="post">
+                <?php wp_nonce_field( 'ajax-logout-nonce', 'logoutSecurity' ); ?>
+                <button type="submit" name="submit">(logout)</button>
+            </form> 
         <?php } else { ?>
-            <a id="login" href="/my-account">Log In</a>
+            <a id="login" class="modal-trigger" href="#loginModal">Log In</a>
         <?php } ?>
     </li>
 </ul>

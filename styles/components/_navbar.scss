@@ -25,6 +25,17 @@ nav {
             display: none;
         }
     }
+
+    #user-account {
+        display: flex;
+        #logout {
+            a {
+                margin-left: -8px;
+                padding-left: 0;
+                font-weight: normal;
+            }
+        }
+    }
 }
 
 
@@ -59,13 +70,6 @@ nav {
 
 
 // ---- COLORS ---- //
-.home nav.transparent {
-    #nav-right {
-        li a {
-            color: $transparent-nav-color;
-        }
-    }
-}
 nav {
     color: $navbar-font-color;
     @extend .z-depth-1;
@@ -89,6 +93,21 @@ nav {
             li {
                 a {
                     color: white;
+                    opacity: .7;
+                    &:hover {
+                        color: white;
+                        opacity: 1;
+                    }
+                    &.active {
+                        background-color: $link-color;
+                        color: white;
+                    }
+                }
+                button {
+                    background: transparent;
+                    border: 0;
+                    font-size: 13px;
+                    font-weight: bold;
                     opacity: .7;
                     &:hover {
                         color: white;

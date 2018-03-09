@@ -1,3 +1,7 @@
+<pre>
+<?php print_r($alignment); ?>
+</pre>
+
 <div class="flex <?php echo $alignment; ?> parallax-container ">
     <div class="parallax">
         <?php if ($image) { ?>

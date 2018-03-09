@@ -3,9 +3,9 @@ $(window).scroll(function(){
     didScroll = true;
     var top = $(window).scrollTop();
 
-    if ($('.hero-container, .parallax-container').length) {
-        royal_toggle_menus(top);
-    }
+    /* if ($('.hero-container, .parallax-container').length) {
+     *     royal_toggle_menus(top);
+     * }*/
 
     if ($('.consultation').length > 0) {
         var hero = $('.hero-container').height();
