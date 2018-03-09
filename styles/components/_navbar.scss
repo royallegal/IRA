@@ -61,7 +61,7 @@ nav {
 // ---- COLORS ---- //
 .home nav.transparent {
     #nav-right {
-        li a {
+        li a, li button {
             color: $transparent-nav-color;
         }
     }
@@ -89,6 +89,21 @@ nav {
             li {
                 a {
                     color: white;
+                    opacity: .7;
+                    &:hover {
+                        color: white;
+                        opacity: 1;
+                    }
+                    &.active {
+                        background-color: $link-color;
+                        color: white;
+                    }
+                }
+                button {
+                    background: transparent;
+                    border: 0;
+                    font-size: 13px;
+                    font-weight: bold;
                     opacity: .7;
                     &:hover {
                         color: white;
