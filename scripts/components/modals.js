@@ -33,7 +33,10 @@ function royal_modals() {
     }
 
     if($('[hero-video-modal]').length > 0 ){
+        //We need to move the dom elemnt to the body so the z-index works and the 
+        //modal is not displayed below the overlay
         $("[hero-video-modal]").detach().appendTo('body');
+        
         $('[hero-video-modal]').modal({
             complete: function(modal) {
                 var $modal = $(modal);
