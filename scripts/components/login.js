@@ -1,162 +1,57 @@
 function royal_login() {
-    $('#login-modal').modal();
+    console.log('login');
 
-    // Chooses which of the three modal forms to display
-    $('#login-modal a').click(function(e) {
-        e.preventDefault();
-        var target = $(this).attr('href');
-        royal_showForm(target);
-    });
-
-    // Submits AJAX call & loader, closes on completion
-    $('#login-modal input[type=submit]').click(function(e) {
-        var form = $(this).find('form');
-        var action = $(form).attr('action');
-
-        if (action == "login") {
-            royal_ajaxLogin();
-        }
-        else if (action == "register") {
-            royal_ajaxRegister();
-        }
-        else if (action == "reset") {
-            royal_ajaxReset();
-        }
-        else {
-            // error
-            // use "classes/email.php" to send an error notification to swedy13@gmail.com
-            // only send email if an error occurs on the production site
-            // if (is_wpe()) { ...send password }
+    // Materialize Modal
+    $('#loginModal').modal({
+        inDuration: 200,
+        outDuration: 150,
+        complete: function() {
+            $('#loginModal .login').css({
+                zIndex: 1,
+                opacity: 1
+            });
         }
     });
-}
 
 
-function royal_showLoginField(target) {
-    $('#login-modal .row').addClass('hide');
-    $(target).removeClass('hide');
-}
+    // ---- CONTROLS ---- //
+    // Transitions to login form
+    $('[data-goto-login]').on('click', function() {
+        $('#loginModal .splash').removeClass('shift');
+    })
 
+    // Transition to password recovery form
+    $('[data-goto-lost]').on('click', function() {
+        $('#loginModal .splash').addClass('shift');
+    })
 
-function royal_ajaxLogin(form) {
-    // If (login validation == "successful") {
-    //     AJAX login call here...
-    // }
-}
+    // Auto-opens modal if user is coming via a reset link
+    if (location.search.includes("action=rp")) {
+        $('#loginModal .login').css({
+            zIndex: 0,
+            opacity: 0
+        });
 
-
-
-
-$("#loginCall, .btn-loginform").click(function () {
-    //alert('working...');
-    $('#register-hd').hide();
-    $('#register-popup').hide();
-    $('#forgot-hd').hide();
-    $('#forgot_password-popup').hide();
-
-    $('#login-hd').fadeIn();
-    $('#login-popup').fadeIn();
-});
-
-$("#signupCall, #signupCall2").click(function () {
-    $('#login-hd').hide();
-    $('#login-popup').hide();
-    $('#forgot-hd').hide();
-    $('#forgot_password-popup').hide();
-
-    $('#register-hd').fadeIn();
-    $('#register-popup').fadeIn();
-});
-
-$("#forgotCall").click(function () {
-    $('#register-hd').hide();
-    $('#register-popup').hide();
-    $('#login-hd').hide();
-    $('#login-popup').hide();
-
-    $('#forgot-hd').fadeIn();
-    $('#forgot_password-popup').fadeIn();
-});
-
-// Perform AJAX login/register on form submit
-$('form#login-popup, form#register-popup').on('submit', function (e) {
-    if (!$(this).valid()) return false;
-    $('p.status', this).show().text(ajax_auth_object.loadingmessage);
-    action = 'ajaxlogin';
-    username =  $('form#login-popup #username').val();
-    password = $('form#login-popup #password').val();
-    email = '';
-    security = $('form#login-popup #security').val();
-    if ($(this).attr('id') == 'register-popup') {
-        action = 'ajaxregister';
-        username = $('#signonname').val();
-        password = $('#signonpassword').val();
-        email = $('#email').val();
-        security = $('#signonsecurity').val();  
-    }  
-    ctrl = $(this);
-    $.ajax({
-        type: 'POST',
-        dataType: 'json',
-        url: ajax_auth_object.ajaxurl,
-        data: {
-            'action': action,
-            'username': username,
-            'password': password,
-            'email': email,
-            'security': security
-        },
-        success: function (data) {
-            $('p.status', ctrl).text(data.message);
-            if (data.loggedin == true) {
-                document.location.href = ajax_auth_object.redirecturl;
-            }
-        }
+        setTimeout(function() {
+            $('#loginModal').modal('open');
+        }, 750);
+    }
+    $('#loginModal .reset #lost-link').click(function() {
+        setTimeout(function() {
+            $('#loginModal .login').css("z-index", 1).animate({
+                opacity: 1
+            }, 250);
+        }, 350);
     });
-    e.preventDefault();
-});
-
-// Perform AJAX forget password on form submit
-$('form#forgot_password-popup').on('submit', function(e){
-    if (!$(this).valid()) return false;
-    $('p.status', this).show().text(ajax_auth_object.loadingmessage);
-    ctrl = $(this);
-    $.ajax({
-        type: 'POST',
-        dataType: 'json',
-        url: ajax_auth_object.ajaxurl,
-        data: { 
-            'action': 'ajaxforgotpassword', 
-            'user_login': $('#user_login').val(), 
-            'security': $('#forgotsecurity').val(), 
-        },
-        success: function(data){                    
-            $('p.status',ctrl).text(data.message);              
-        }
-    });
-    e.preventDefault();
-    return false;
-});
-
-// Client side form validation
-if (jQuery("#register-popup").length) 
-    jQuery("#register-popup").validate(
-        {rules:{
-            password2:{ equalTo:'#signonpassword' 
-            }   
-        }}
-    );
-else if (jQuery("#login-popup").length) 
-    jQuery("#login-popup").validate();
-if(jQuery('#forgot_password-popup').length)
-    jQuery('#forgot_password-popup').validate();
 
 
-
-jQuery(document).ready(function($) {
+    // ---- METHODS ---- //
     // Perform AJAX login on form submit
-    $('form#login').on('submit', function(e){
+    $('form#login').on('submit', function(e) {
         e.preventDefault();
+
+        
+
         $.ajax({
             type: 'POST',
             dataType: 'json',
@@ -166,18 +61,31 @@ jQuery(document).ready(function($) {
                 'username': $('form#login #loginUsername').val(), 
                 'password': $('form#login #loginPassword').val(), 
                 'remember': $('form#login #loginRemember').attr("checked"), 
-                'loginSecurity': $('form#login #loginSecurity').val() },
-            success: function(data){
-                $('form#login p.status').text(data.message);
-                if (data.loggedin == true){
-                    location.reload();
-                }
+                'loginSecurity': $('form#login #loginSecurity').val()
+            },
+            /* success: function(data) {
+             *     $('form#login .success .message').text(data.message);
+
+             *     if (data.loggedin == true) {
+             *         location.reload();
+             *     }
+             * }*/
+        }).always(function() {
+            console.log('always');
+        }).fail(function() {
+            console.log('fail');
+        }).done(function(data) {
+            $('form#login .success .message').text(data.message);
+
+            if (data.loggedin == true) {
+                location.reload();
             }
         });
     });
-    $('form#passwordLost').on('submit', function(e){
+
+    // Perform AJAX login on form submit
+    $('form#passwordLost').on('submit', function(e) {
         e.preventDefault();
-        console.log("WTFFFF22222"); 
         $.ajax({
             type: 'POST',
             dataType: 'json',
@@ -187,11 +95,12 @@ jQuery(document).ready(function($) {
                 'user_login': $('form#passwordLost #lostUsername').val(),
                 'lostSecurity': $('form#passwordLost #lostSecurity').val()
             },
-            success: function(data){
+            success: function(data) {
                 $('form#passwordLost p.status').text(data.message);
             }
         });
     });
+
     $('form#passwordReset').on('submit', function(e){
         e.preventDefault();
         $.ajax({
@@ -199,11 +108,11 @@ jQuery(document).ready(function($) {
             dataType: 'json',
             url: '/wp-admin/admin-ajax.php', 
             data: { 
-				action: 	'reset_pass',
-				pass1:		$('form#passwordReset #resetPass1').val(),
-				pass2:		$('form#passwordReset #resetPass2').val(),
-				user_key:	$('form#passwordReset #user_key').val(),
-				user_login:	$('form#passwordReset #user_login').val(),
+	        action: 	'reset_pass',
+	        pass1:		$('form#passwordReset #resetPass1').val(),
+	        pass2:		$('form#passwordReset #resetPass2').val(),
+	        user_key:	$('form#passwordReset #user_key').val(),
+	        user_login:	$('form#passwordReset #user_login').val(),
                 'resetSecurity': $('form#passwordReset #resetSecurity').val()
             },
             success: function(data){
@@ -212,7 +121,8 @@ jQuery(document).ready(function($) {
         });
     });
 
-    $('form#logout a').on('click', function(e){
+    // Perform AJAX login on form submit
+    $('form#logout').on('submit', function(e){
         e.preventDefault();
         $.ajax({
             type: 'POST',
@@ -228,5 +138,4 @@ jQuery(document).ready(function($) {
             }
         });
     });
-
-}); 
+}

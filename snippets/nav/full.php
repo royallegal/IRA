@@ -58,7 +58,7 @@ $items  = $woocommerce->cart->get_cart_contents_count();
                         </a>
                         <form id="logout" action="logout" method="post">
                             <?php wp_nonce_field( 'ajax-logout-nonce', 'logoutSecurity' ); ?>
-                            <a>(logout)</a>
+                            <button type="submit" name="submit">(logout)</button>
                         </form> 
                     <?php } else { ?>
                         <a id="login" class="modal-trigger" href="#loginModal">Log In</a>

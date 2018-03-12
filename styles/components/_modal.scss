@@ -1,101 +1,186 @@
-.modal {
-  @extend .z-depth-4;
+#loginModal {
+    overflow: hidden;
+    width: 90%;
+    max-width: 800px;
+    .row {
+        display: flex;
+        position: relative;
+        margin: 0;
 
-  display: none;
-  position: fixed;
-  left: 0;
-  right: 0;
-  background-color: #fafafa;
-  padding: 0;
-  max-height: 70%;
-  width: 55%;
-  margin: auto;
-  overflow-y: auto;
+        // SPLASH IMAGE
+        .splash {
+            z-index: 2;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 50%;
+            box-sizing: content-box;
+            background-image: url("https://ira-business-trust.local/wp-content/uploads/2018/03/rei-nerds-21022018-podcast-300x300.png");
+            background-size: cover;
+            transition: all 500ms cubic-bezier(0.7, 0.3, 0.1, 0.9);
+            @media #{$small-and-down} {
+                height: 20vh;
+                background-position: top center;
+            }
+            @media #{$medium-and-up} {
+                min-height: 400px;
+                background-position: bottom center;
+            }
+            &.shift {
+                transform: translateX(100%);
+            }
+        }
 
-  border-radius: 2px;
-  will-change: top, opacity;
+        // FORMS
+        .col {
+            display: flex;
+            align-items: center;
+            min-height: 412px;
+            padding: 0;
+            // Form Components
+            .section {
+                flex-shrink: 0;
+                text-align: center;
+                width: 100%;
+                padding: 25px;
+            }
+            .title-group {
+                margin-bottom: 50px;
+                p {
+                    text-align: center;
+                }
+            }
+            .button-group {
+                margin-top: 15px;
+            }
 
-  @media #{$medium-and-down} {
-   width: 80%;
-  }
-
-  h1,h2,h3,h4 {
-    margin-top: 0;
-  }
-
-  .modal-content {
-    padding: 24px;
-  }
-  .modal-close {
-    cursor: pointer;
-  }
-
-  .modal-footer {
-    border-radius: 0 0 2px 2px;
-    background-color: #fafafa;
-    padding: 4px 6px;
-    height: 56px;
-    width: 100%;
-    text-align: right;
-
-    .btn, .btn-flat {
-      margin: 6px 0;
+            // Form Content
+            .login {
+                z-index: 1;
+                background-color: white;
+                #rememberMe {
+                    margin-top: -8px;
+                    line-height: 1;
+                    label {
+                        padding-left: 25px;
+                    }
+                }
+            }
+            .lost {
+                
+            }
+            .reset {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+            }
+        }
     }
-  }
+}
+
+
+// #loginModal {
+//   .carousel.carousel-slider.initialized{
+//     height: 380px !important;
+//   }
+//   .col {
+//     min-height: 380px;
+//     height: 380px;
+//   }
+// }
+
+
+
+
+.modal {
+    @extend .z-depth-4;
+
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    background-color: #fafafa;
+    padding: 0;
+    max-height: 70%;
+    width: 55%;
+    margin: auto;
+    overflow-y: auto;
+
+    border-radius: 2px;
+    will-change: top, opacity;
+
+    @media #{$medium-and-down} {
+        width: 80%;
+    }
+
+    h1,h2,h3,h4 {
+        margin-top: 0;
+    }
+
+    .modal-content {
+        padding: 24px;
+    }
+    .modal-close {
+        cursor: pointer;
+    }
+
+    .modal-footer {
+        border-radius: 0 0 2px 2px;
+        background-color: #fafafa;
+        padding: 4px 6px;
+        height: 56px;
+        width: 100%;
+        text-align: right;
+
+        .btn, .btn-flat {
+            margin: 6px 0;
+        }
+    }
 }
 .modal-overlay {
-  position: fixed;
-  z-index: 999;
-  top: -25%;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  height: 125%;
-  width: 100%;
-  background: #000;
-  display: none;
+    position: fixed;
+    z-index: 999;
+    top: -25%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 125%;
+    width: 100%;
+    background: #000;
+    display: none;
 
-  will-change: opacity;
+    will-change: opacity;
 }
 
 // Modal with fixed action footer
 .modal.modal-fixed-footer {
-  padding: 0;
-  height: 70%;
+    padding: 0;
+    height: 70%;
 
-  .modal-content {
-    position: absolute;
-    height: calc(100% - 56px);
-    max-height: 100%;
-    width: 100%;
-    overflow-y: auto;
-  }
+    .modal-content {
+        position: absolute;
+        height: calc(100% - 56px);
+        max-height: 100%;
+        width: 100%;
+        overflow-y: auto;
+    }
 
-  .modal-footer {
-    border-top: 1px solid rgba(0,0,0,.1);
-    position: absolute;
-    bottom: 0;
-  }
+    .modal-footer {
+        border-top: 1px solid rgba(0,0,0,.1);
+        position: absolute;
+        bottom: 0;
+    }
 }
 
 // Modal Bottom Sheet Style
 .modal.bottom-sheet {
-  top: auto;
-  bottom: -100%;
-  margin: 0;
-  width: 100%;
-  max-height: 45%;
-  border-radius: 0;
-  will-change: bottom, opacity;
-}
-
-
-#loginModal {
-  .carousel.carousel-slider.initialized{
-    height: 380px !important;
-  }
-  .col {
-    min-height: 380px;
-    height: 380px;
-  }
+    top: auto;
+    bottom: -100%;
+    margin: 0;
+    width: 100%;
+    max-height: 45%;
+    border-radius: 0;
+    will-change: bottom, opacity;
 }

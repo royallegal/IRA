@@ -44,6 +44,12 @@ $button-disabled-color: #9F9F9F !default;
     &:not(.tight) {
         .button {
             margin: 3px 2px;
+            &:first-child {
+                margin-left: 0px;
+            }
+            &:last-child {
+                margin-right: 0px;
+            }
         }
     }
 }
