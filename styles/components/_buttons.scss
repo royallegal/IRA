@@ -218,6 +218,7 @@ $button_colors: ("pink", "red", "purple", "blue", "teal", "green", "yellow", "or
     i {
         font-size: 1.15rem;
         line-height: inherit;
+        vertical-align: middle;
     }
     &.gradient:not(:hover),
     &.mix:not(:hover) {

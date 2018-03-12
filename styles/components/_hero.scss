@@ -110,6 +110,14 @@
             height: auto   !important;
             object-fit: fill;
         }
+        .video-container iframe {
+            height: 74%;
+            width: 100%;
+        }
+        &.modal {
+            overflow-y: hidden;
+        }
     }
 
+  
 }
