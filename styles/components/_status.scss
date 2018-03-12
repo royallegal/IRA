@@ -1,0 +1,21 @@
+.status {
+    margin-top: 15px;
+    .loading,
+    .success,
+    .error {
+        display: flex;
+        .message {
+            margin-left: 12px;
+        }
+    }
+
+    .loading {
+        
+    }
+    .success {
+        
+    }
+    .error {
+        
+    }
+}
