@@ -1,5 +1,4 @@
 function royal_login() {
-    console.log('login');
 
     // Materialize Modal
     $('#loginModal').modal({
@@ -10,6 +9,7 @@ function royal_login() {
                 zIndex: 1,
                 opacity: 1
             });
+            $('#loginModal .splash').removeClass('shift');
         }
     });
 
@@ -49,34 +49,19 @@ function royal_login() {
     // Perform AJAX login on form submit
     $('form#login').on('submit', function(e) {
         e.preventDefault();
-
-        
-
         $.ajax({
             type: 'POST',
             dataType: 'json',
             url: '/wp-admin/admin-ajax.php',
-            data: { 
+            data: {
                 'action': 'ajax_login',
-                'username': $('form#login #loginUsername').val(), 
-                'password': $('form#login #loginPassword').val(), 
-                'remember': $('form#login #loginRemember').attr("checked"), 
+                'username': $('form#login #loginUsername').val(),
+                'password': $('form#login #loginPassword').val(),
+                'remember': $('form#login #loginRemember').attr("checked"),
                 'loginSecurity': $('form#login #loginSecurity').val()
-            },
-            /* success: function(data) {
-             *     $('form#login .success .message').text(data.message);
-
-             *     if (data.loggedin == true) {
-             *         location.reload();
-             *     }
-             * }*/
-        }).always(function() {
-            console.log('always');
-        }).fail(function() {
-            console.log('fail');
+            }
         }).done(function(data) {
             $('form#login .success .message').text(data.message);
-
             if (data.loggedin == true) {
                 location.reload();
             }
@@ -89,8 +74,8 @@ function royal_login() {
         $.ajax({
             type: 'POST',
             dataType: 'json',
-            url: '/wp-admin/admin-ajax.php', 
-            data: { 
+            url: '/wp-admin/admin-ajax.php',
+            data: {
                 'action': 'lost_pass',
                 'user_login': $('form#passwordLost #lostUsername').val(),
                 'lostSecurity': $('form#passwordLost #lostSecurity').val()
@@ -106,13 +91,13 @@ function royal_login() {
         $.ajax({
             type: 'POST',
             dataType: 'json',
-            url: '/wp-admin/admin-ajax.php', 
-            data: { 
-	        action: 	'reset_pass',
-	        pass1:		$('form#passwordReset #resetPass1').val(),
-	        pass2:		$('form#passwordReset #resetPass2').val(),
-	        user_key:	$('form#passwordReset #user_key').val(),
-	        user_login:	$('form#passwordReset #user_login').val(),
+            url: '/wp-admin/admin-ajax.php',
+            data: {
+                action:         'reset_pass',
+                pass1:		$('form#passwordReset #resetPass1').val(),
+                pass2:		$('form#passwordReset #resetPass2').val(),
+                user_key:	$('form#passwordReset #user_key').val(),
+                user_login:	$('form#passwordReset #user_login').val(),
                 'resetSecurity': $('form#passwordReset #resetSecurity').val()
             },
             success: function(data){
@@ -128,7 +113,7 @@ function royal_login() {
             type: 'POST',
             dataType: 'json',
             url: '/wp-admin/admin-ajax.php',
-            data: { 
+            data: {
                 'action': 'ajax_logout',
                 'logoutSecurity': $('form#logout #logoutSecurity').val() },
             success: function(data){
