@@ -6,6 +6,7 @@ $(document).ready(function() {
     royal_login();
 
 
+
     // ---- GENERAL ---- //
     if ($.fn.parallax && $('.parallax').length){
         $('.parallax').parallax();
