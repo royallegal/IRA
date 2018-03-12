@@ -7,6 +7,7 @@ $(document).ready(function() {
 
 
 
+
     // ---- GENERAL ---- //
     if ($.fn.parallax && $('.parallax').length){
         $('.parallax').parallax();

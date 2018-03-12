@@ -50,4 +50,7 @@ function auto(action, modal) {
     else if (src.includes('vimeo')) {
         // vimeo autoplay
     }
+    if($('#videoModal').length > 0 ){
+       $('#videoModal').modal();
+    }
 }
