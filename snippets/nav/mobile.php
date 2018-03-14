@@ -23,13 +23,15 @@ $logout = esc_url(wc_logout_url(wc_get_page_permalink('myaccount')));
     <li id="sidebar-user-account" class="baseline flex">
         <?php if (is_user_logged_in()) { ?>
             <a id="username" href="/my-account">
-                <?php if (!empty($first)) { ?>
-                    Hi <?php echo $first; ?>
-                <?php } else { ?>
-                    My Account
-                <?php } ?>
+                <i class="material-icons left">person</i>
+                <?php
+                if (!empty($first)) {
+                    echo "Hi ".$first;
+                } else {
+                    echo "My Account";
+                }
+                ?>
             </a>
-            <a id="logout" href="<?php echo $logout; ?>">(logout)</a>
             <form id="logout" action="logout" method="post">
                 <?php wp_nonce_field( 'ajax-logout-nonce', 'logoutSecurity' ); ?>
                 <button type="submit" name="submit">(logout)</button>

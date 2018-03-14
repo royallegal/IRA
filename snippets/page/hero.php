@@ -4,30 +4,22 @@ if (have_rows('hero')) {
     while (have_rows('hero')) {
         the_row();
 
-        // ---- CTA ---- //
-        // STYLES
-        /* We have three primary styles and some secondary, conditional styles:
-         * 1. Floating
-         *    - left
-         *    - right
-         *    - center
-         * 2. Full Height
-         *    - left
-         *    - right
-         * 3. Mask */
-        $style = get_sub_field('style');
-
-        // BACKGROUNDS
-        $background = get_sub_field('background');
-        $alignment = get_sub_field('alignment');
-        $children = get_sub_field('children');
-        $color = get_sub_field('color');
+        // Hero
+        $image         = get_sub_field('background_image');
+        $color         = get_sub_field('color');
         $color_variant = get_sub_field('color_variant');
-        $image = get_sub_field('background_image');
-        $style = get_sub_field('style');
-        $title = get_sub_field('title');
-        $subtitle = get_sub_field('subtitle');
-        $description = get_sub_field('description');
+        $children      = get_sub_field('children');
+
+        // CTA
+        $background    = get_sub_field('background');
+        $position      = get_sub_field('position');
+        $alignment     = get_sub_field('alignment');
+        $style         = get_sub_field('style');
+
+        // Title Group
+        $title         = get_sub_field('title');
+        $subtitle      = get_sub_field('subtitle');
+        $description   = get_sub_field('description');
     }
 }
 

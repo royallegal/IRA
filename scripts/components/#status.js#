@@ -1,0 +1,41 @@
+function Status(elem, options) {
+    let _defaults = {
+        loader: 'spinner',
+        ready: undefined,
+    }
+
+    // Overrides default styles based on user options
+    let config = $.extend({}, _defaults, options);
+}
+
+
+status.prototype.start = function(elem) {
+    $(elem).find('.status-swap').addClass('hide');
+    $(elem).find('.status').removeClass('hide');
+}
+
+
+function show_status_loader(elem) {
+    $(elem).find('.status-swap').addClass('hide');
+    $(elem).find('.status').removeClass('hide');
+}
+
+function hide_status_loader(elem) {
+    $(elem).find('.status').addClass('hide');
+    $(elem).find('.status-swap').removeClass('hide');
+}
+
+function show_status_loading(elem) {
+    $(elem).find('div').addClass('hide');
+    $(elem).find('.loading').removeClass('hide');
+}
+
+function show_status_error(elem) {
+    $(elem).find('div').addClass('hide');
+    $(elem).find('.error').removeClass('hide');
+}
+
+function show_status_success(elem) {
+    $(elem).find('div').addClass('hide');
+    $(elem).find('.success').removeClass('hide');
+}

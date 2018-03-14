@@ -24,15 +24,21 @@
     &.baseline {
         align-items: baseline;
     }
-    &.start {
+    &.top {
         align-items: flex-start;
     }
-    &.end {
+    &.bottom {
         align-items: flex-end;
     }
     // Justification
     &.center {
         justify-content: center;
+    }
+    &.left {
+        justify-content: flex-start;
+    }
+    &.right {
+        justify-content: flex-end;
     }
     &.split {
         justify-content: space-between;
@@ -70,19 +76,19 @@
 .absolute {
     position: absolute;
 }
-.top {
+.pin-top {
     top: 0;
 }
-.bottom {
+.pin-bottom {
     bottom: 0;
 }
 // Floats
-.left {
+.float-left {
     justify-content: flex-start;
     left: 0;
     float: left !important;
 }
-.right {
+.float-right {
     justify-content: flex-end;
     right: 0;
     float: right !important;

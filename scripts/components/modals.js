@@ -31,4 +31,18 @@ function royal_modals() {
             }
         })
     }
+
+    if($('[hero-video-modal]').length > 0 ){
+        //We need to move the dom element to the body so the z-index works and the 
+        //modal is not displayed below the overlay
+        $("[hero-video-modal]").detach().appendTo('body');
+
+        $('[hero-video-modal]').modal({
+            complete: function(modal) {
+                var $modal = $(modal);
+                var $iframe = $modal.find('iframe');
+                autostop($iframe.get(0));
+            }
+        }); 
+    }
 }

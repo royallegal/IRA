@@ -18,7 +18,7 @@ $items  = $woocommerce->cart->get_cart_contents_count();
             </a>
 
             <!-- Left Menu -->
-            <ul id="nav-left" class="left hide-on-med-and-down">
+            <ul id="nav-left" class="float-left hide-on-med-and-down">
                 <li><a href="/professionals">Professionals</a></li>
                 <li><a href="/how-it-works">How It Works</a></li>
                 <li><a href="/pricing">Pricing</a></li>
@@ -35,7 +35,7 @@ $items  = $woocommerce->cart->get_cart_contents_count();
             $first  = $user->user_firstname;
             $logout = esc_url(wc_logout_url(wc_get_page_permalink('myaccount')));
             ?>
-            <ul id="nav-right" class="right hide-on-med-and-down">
+            <ul id="nav-right" class="float-right hide-on-med-and-down">
                 <?php if (current_user_can('edit_posts')) { ?>
                     <li>
                         <a href="/quick-cart">

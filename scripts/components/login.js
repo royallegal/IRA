@@ -49,6 +49,9 @@ function royal_login() {
     // Perform AJAX login on form submit
     $('form#login').on('submit', function(e) {
         e.preventDefault();
+
+        
+
         $.ajax({
             type: 'POST',
             dataType: 'json',
