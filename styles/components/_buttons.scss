@@ -40,7 +40,9 @@ $button-disabled-color: #9F9F9F !default;
 
 // ---- BUTTON GROUPS ---- //
 .button-group {
-    margin: auto;
+    flex-basis: 100%;
+    max-width: $container-width;
+    margin-top: 10px;
     &:not(.tight) {
         .button {
             margin: 3px 2px;
@@ -94,13 +96,13 @@ $button-disabled-color: #9F9F9F !default;
 // ---- STYLES ---- //
 .button {
     // Ghost Buttons
-    &.ghost {
-        background-color: transparent;
-        color: $off-black;
-        &.yellow:hover {
-            color: $off-black;
-        }
-    }
+    // &.ghost {
+    //     background: transparent !important;
+    //     color: $off-black;
+    //     &.yellow:hover {
+    //         color: $off-black;
+    //     }
+    // }
 
     // Raised Buttons
     &.raised {
@@ -220,8 +222,8 @@ $button_colors: ("pink", "red", "purple", "blue", "teal", "green", "yellow", "or
         line-height: inherit;
         vertical-align: middle;
     }
-    &.gradient:not(:hover),
-    &.mix:not(:hover) {
+    &.gradient:not(:hover):not(.ghost),
+    &.mix:not(:hover):not(.ghost) {
         padding-left: $button-mix-padding;
         padding-right: $button-mix-padding;
     }
@@ -236,8 +238,8 @@ $button_colors: ("pink", "red", "purple", "blue", "teal", "green", "yellow", "or
             font-size: 1.05rem;
             line-height: inherit;
         }
-        &.gradient:not(:hover),
-        &.mix:not(:hover) {
+        &.gradient:not(:hover):not(.ghost),
+        &.mix:not(:hover):not(.ghost) {
             padding-left: $button-small-mix-padding;
             padding-right: $button-small-mix-padding;
         }
@@ -253,8 +255,8 @@ $button_colors: ("pink", "red", "purple", "blue", "teal", "green", "yellow", "or
             font-size: 1.25rem;
             line-height: inherit;
         }
-        &.gradient:not(:hover),
-        &.mix:not(:hover) {
+        &.gradient:not(:hover):not(.ghost),
+        &.mix:not(:hover):not(.ghost) {
             padding-left: $button-large-mix-padding;
             padding-right: $button-large-mix-padding;
         }
@@ -267,9 +269,11 @@ $button_colors: ("pink", "red", "purple", "blue", "teal", "green", "yellow", "or
 .large.button {
     &.gradient,
     &.mix {
+        &:not(.ghost) { // Ghost styles override mix / gradient styles
         padding-top: 2px;
         padding-bottom: 2px;
         border: 0;
+        }
         &:hover {
             padding-top: 0;
             padding-bottom: 0;
