@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_5a9890b75d585",
-            "label": "CTA",
+            "label": "Hero Settings",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -20,35 +20,34 @@
         },
         {
             "key": "field_5a9dc9ec0981d",
-            "label": "Color",
+            "label": "Hero Color",
             "name": "color",
             "type": "select",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
             "choices": {
-                "none": "none",
-                "pink": "pink",
-                "red": "red",
-                "purple": "purple",
-                "blue": "blue",
-                "teal": "teal",
-                "green": "green",
-                "yellow": "yellow",
-                "orange": "orange",
-                "tan": "tan",
-                "brown": "brown",
-                "steel": "steel",
-                "gray": "gray",
-                "white": "white"
+                "pink": "Pink",
+                "red": "Red",
+                "purple": "Purple",
+                "blue": "Blue",
+                "teal": "Teal",
+                "green": "Green",
+                "yellow": "Yellow",
+                "orange": "Orange",
+                "tan": "Tan",
+                "brown": "Brown",
+                "steel": "Steel",
+                "gray": "Gray",
+                "white": "White"
             },
             "default_value": [],
-            "allow_null": 0,
+            "allow_null": 1,
             "multiple": 0,
             "ui": 0,
             "ajax": 0,
@@ -67,25 +66,24 @@
                     {
                         "field": "field_5a9dc9ec0981d",
                         "operator": "!=",
-                        "value": "none"
+                        "value": ""
                     }
                 ]
             ],
             "wrapper": {
-                "width": "33",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
             "choices": {
-                "none": "none",
-                "light": "light",
-                "dark": "dark",
-                "accent": "accent",
-                "gradient": "gradient",
-                "mix": "mix"
+                "light": "Light",
+                "dark": "Dark",
+                "accent": "Accent",
+                "gradient": "Gradient",
+                "mix": "Mix"
             },
             "default_value": [],
-            "allow_null": 0,
+            "allow_null": 1,
             "multiple": 0,
             "ui": 0,
             "ajax": 0,
@@ -94,7 +92,7 @@
         },
         {
             "key": "field_5a9ea3e84b198",
-            "label": "Image",
+            "label": "Hero Image",
             "name": "background_image",
             "type": "image",
             "instructions": "",
@@ -117,26 +115,24 @@
             "mime_types": ""
         },
         {
-            "key": "field_5a9890d35d586",
-            "label": "Alignment",
-            "name": "alignment",
+            "key": "field_5a9892455d588",
+            "label": "CTA Style",
+            "name": "style",
             "type": "select",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
             "choices": {
-                "center center-align": "Center",
-                "left  left-align": "Left",
-                "right left-align": "Right"
+                "floating": "Floating",
+                "tall": "Tall",
+                "full": "Full"
             },
-            "default_value": [
-                "center"
-            ],
+            "default_value": [],
             "allow_null": 0,
             "multiple": 0,
             "ui": 0,
@@ -145,8 +141,69 @@
             "placeholder": ""
         },
         {
+            "key": "field_5a9890d35d586",
+            "label": "CTA Position",
+            "name": "position",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5a9892455d588",
+                        "operator": "==",
+                        "value": "floating"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_5a9892455d588",
+                        "operator": "==",
+                        "value": "tall"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "left": "<i class=\"dashicons dashicons-align-left\"><\/i>",
+                "center": "<i class=\"dashicons dashicons-align-center\"><\/i>",
+                "right": "<i class=\"dashicons dashicons-align-right\"><\/i>"
+            },
+            "allow_null": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_5aa875117005a",
+            "label": "Text Alignment",
+            "name": "alignment",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "left-align": "<i class=\"dashicons dashicons-editor-alignleft\"><\/i>",
+                "center-align": "<i class=\"dashicons dashicons-editor-aligncenter\"><\/i>",
+                "right-align": "<i class=\"dashicons dashicons-editor-alignright\"><\/i>"
+            },
+            "allow_null": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
             "key": "field_5a9892255d587",
-            "label": "Background",
+            "label": "CTA Background",
             "name": "background",
             "type": "select",
             "instructions": "",
@@ -162,33 +219,7 @@
                 "dark": "Dark"
             },
             "default_value": [],
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
-            "ajax": 0,
-            "return_format": "value",
-            "placeholder": ""
-        },
-        {
-            "key": "field_5a9892455d588",
-            "label": "Style",
-            "name": "style",
-            "type": "select",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "floating": "Floating",
-                "full-height": "Full Height",
-                "mask-style": "Mask"
-            },
-            "default_value": [],
-            "allow_null": 0,
+            "allow_null": 1,
             "multiple": 0,
             "ui": 0,
             "ajax": 0,
@@ -197,7 +228,7 @@
         },
         {
             "key": "field_5a9892e35d58a",
-            "label": "Children",
+            "label": "CTA Components",
             "name": "children",
             "type": "checkbox",
             "instructions": "",
@@ -222,7 +253,7 @@
         },
         {
             "key": "field_5a989312c6da6",
-            "label": "Title group",
+            "label": "Text Area",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -303,7 +334,7 @@
         },
         {
             "key": "field_5a989348c6da7",
-            "label": "Button group",
+            "label": "Buttons",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -345,70 +376,15 @@
             "button_label": "",
             "sub_fields": [
                 {
-                    "key": "field_5a98d97e277c7",
-                    "label": "Link",
-                    "name": "link",
-                    "type": "link",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5aa015add6a3d",
-                                "operator": "!=",
-                                "value": "Modal"
-                            }
-                        ]
-                    ],
-                    "wrapper": {
-                        "width": "33",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "array"
-                },
-                {
-                    "key": "field_5aa028e0d350b",
-                    "label": "Video",
-                    "name": "video",
-                    "type": "oembed",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5aa015add6a3d",
-                                "operator": "==",
-                                "value": "Modal"
-                            }
-                        ]
-                    ],
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "width": "",
-                    "height": ""
-                },
-                {
                     "key": "field_5aa02e3aefd72",
-                    "label": "Button label",
+                    "label": "Text",
                     "name": "button_label",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5aa015add6a3d",
-                                "operator": "==",
-                                "value": "Modal"
-                            }
-                        ]
-                    ],
+                    "conditional_logic": 0,
                     "wrapper": {
-                        "width": "33",
+                        "width": "",
                         "class": "",
                         "id": ""
                     },
@@ -423,11 +399,11 @@
                     "label": "Icon",
                     "name": "icon",
                     "type": "text",
-                    "instructions": "https:\/\/material.io\/icons\/\r\nUse the name of the icon ie: \"announcement\"",
+                    "instructions": "Write the name of whichever icon you want to use from the Materialize library. Example: \"announcement\"\r\nhttps:\/\/material.io\/icons\/",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "33",
+                        "width": "67",
                         "class": "",
                         "id": ""
                     },
@@ -439,9 +415,9 @@
                 },
                 {
                     "key": "field_5a98d9fb277c9",
-                    "label": "Icon position",
+                    "label": "Icon Position",
                     "name": "icon_position",
-                    "type": "select",
+                    "type": "button_group",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -451,8 +427,30 @@
                         "id": ""
                     },
                     "choices": {
-                        "left": "Left",
-                        "right": "Right"
+                        "left": "<i class=\"dashicons dashicons-editor-alignleft\"><\/i>",
+                        "right": "<i class=\"dashicons dashicons-editor-alignright\"><\/i>"
+                    },
+                    "allow_null": 0,
+                    "default_value": "",
+                    "layout": "horizontal",
+                    "return_format": "value"
+                },
+                {
+                    "key": "field_5aa85c9d485c7",
+                    "label": "Behavior",
+                    "name": "behavior",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "link": "Link",
+                        "modal": "Modal"
                     },
                     "default_value": [],
                     "allow_null": 0,
@@ -463,9 +461,116 @@
                     "placeholder": ""
                 },
                 {
+                    "key": "field_5a98d97e277c7",
+                    "label": "Link",
+                    "name": "link",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5aa85c9d485c7",
+                                "operator": "==",
+                                "value": "link"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array"
+                },
+                {
+                    "key": "field_5aa015add6a3d",
+                    "label": "Modal",
+                    "name": "modal",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5aa85c9d485c7",
+                                "operator": "==",
+                                "value": "modal"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "upload": "Upload",
+                        "embed": "Embed"
+                    },
+                    "default_value": [],
+                    "allow_null": 1,
+                    "multiple": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "return_format": "value",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_5aa85a6db95a8",
+                    "label": "Video Upload",
+                    "name": "video",
+                    "type": "file",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5aa015add6a3d",
+                                "operator": "==",
+                                "value": "upload"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "library": "all",
+                    "min_size": "",
+                    "max_size": "",
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_5aa028e0d350b",
+                    "label": "Video URL",
+                    "name": "video",
+                    "type": "oembed",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5aa015add6a3d",
+                                "operator": "==",
+                                "value": "embed"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "width": "",
+                    "height": ""
+                },
+                {
                     "key": "field_5a98da2a277ca",
-                    "label": "Type",
-                    "name": "type",
+                    "label": "Styles",
+                    "name": "styles",
                     "type": "checkbox",
                     "instructions": "",
                     "required": 0,
@@ -476,7 +581,6 @@
                         "id": ""
                     },
                     "choices": {
-                        "default": "Default",
                         "raised": "Raised",
                         "ghost": "Ghost",
                         "rounded": "Rounded"
@@ -490,7 +594,7 @@
                 },
                 {
                     "key": "field_5a98da58277cb",
-                    "label": "Size",
+                    "label": "Alternate Sizes",
                     "name": "size",
                     "type": "select",
                     "instructions": "",
@@ -503,11 +607,10 @@
                     },
                     "choices": {
                         "small": "Small",
-                        "default": "Default",
                         "large": "Large"
                     },
                     "default_value": [],
-                    "allow_null": 0,
+                    "allow_null": 1,
                     "multiple": 0,
                     "ui": 0,
                     "ajax": 0,
@@ -516,7 +619,7 @@
                 },
                 {
                     "key": "field_5a99e4dca253c",
-                    "label": "Color",
+                    "label": "Button Color",
                     "name": "color",
                     "type": "select",
                     "instructions": "",
@@ -528,19 +631,19 @@
                         "id": ""
                     },
                     "choices": {
-                        "pink": "pink",
-                        "red": "red",
-                        "purple": "purple",
-                        "blue": "blue",
-                        "teal": "teal",
-                        "green": "green",
-                        "yellow": "yellow",
-                        "orange": "orange",
-                        "tan": "tan",
-                        "brown": "brown",
-                        "steel": "steel",
-                        "gray": "gray",
-                        "white": "white"
+                        "pink": "Pink",
+                        "red": "Red",
+                        "purple": "Purple",
+                        "blue": "Blue",
+                        "teal": "Teal",
+                        "green": "Green",
+                        "yellow": "Yellow",
+                        "orange": "Orange",
+                        "tan": "Tan",
+                        "brown": "Brown",
+                        "steel": "Steel",
+                        "gray": "Gray",
+                        "white": "White"
                     },
                     "default_value": [],
                     "allow_null": 0,
@@ -557,21 +660,29 @@
                     "type": "select",
                     "instructions": "",
                     "required": 0,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5a98da2a277ca",
+                                "operator": "!=",
+                                "value": "ghost"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "33",
                         "class": "",
                         "id": ""
                     },
                     "choices": {
-                        "light": "light",
-                        "dark": "dark",
-                        "accent": "accent",
-                        "gradient": "gradient",
-                        "mix": "mix"
+                        "light": "Light",
+                        "dark": "Dark",
+                        "accent": "Accent",
+                        "gradient": "Gradient",
+                        "mix": "Mix"
                     },
                     "default_value": [],
-                    "allow_null": 0,
+                    "allow_null": 1,
                     "multiple": 0,
                     "ui": 0,
                     "ajax": 0,
@@ -605,10 +716,10 @@
                     "placeholder": ""
                 },
                 {
-                    "key": "field_5aa015add6a3d",
-                    "label": "Video Modal",
-                    "name": "modal",
-                    "type": "checkbox",
+                    "key": "field_5aa8701cb34e1",
+                    "label": "",
+                    "name": "",
+                    "type": "text",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -617,15 +728,11 @@
                         "class": "",
                         "id": ""
                     },
-                    "choices": {
-                        "Modal": "Modal"
-                    },
-                    "allow_custom": 0,
-                    "save_custom": 0,
-                    "default_value": [],
-                    "layout": "vertical",
-                    "toggle": 0,
-                    "return_format": "value"
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
                 }
             ]
         }
@@ -643,11 +750,11 @@
     "position": "normal",
     "style": "default",
     "label_placement": "top",
-    "instruction_placement": "label",
+    "instruction_placement": "field",
     "hide_on_screen": [
         "excerpt"
     ],
     "active": 1,
     "description": "",
-    "modified": 1520541829
+    "modified": 1520989818
 }

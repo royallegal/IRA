@@ -22,17 +22,32 @@ html{
 // ---- TITLES ---- //
 // Text formatting
 .title-group {
+    flex-basis: 100%;
     max-width: $container-width;
-    margin: 15px auto;
-    *,.h1,.h2,.h3,.h4,.h5,.h6 {
-        margin: 0;
-        line-height: 1.5;
-        &:first-child {
-            margin-bottom: 5px;
+    margin: 0;
+    p {
+        // Overrides
+        &.title,
+        &.subtitle,
+        &.h1,&.h2,&.h3,&.h4,&.h5,&.h6 {
+            margin: 0;
+            line-height: calc(100% + 8px);
         }
-        &:last-child {
+        &.title {
+            font-size: 2rem;
+            font-weight: 900;
+            text-transform: capitalize;
+            letter-spacing: 1px;
+        }
+        &.subtitle {
             margin-top: 5px;
+            font-size: 1.5rem;
+            text-transform: capitalize;
+            letter-spacing: .5px;
         }
+        // Description
+        margin-top: 15px;
+        font-size: 1.1rem;
     }
 }
 

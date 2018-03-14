@@ -202,6 +202,7 @@ $all_colors: (
                     // Ghost Buttons
                     &.ghost {
                         border-color: $color_value;
+                        background: transparent;
                         color: $color_value;
                         &:hover {
                             border-color: darken($color_value, 2.5%);

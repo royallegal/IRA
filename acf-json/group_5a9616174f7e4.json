@@ -1,6 +1,27 @@
 {
     "key": "group_5a9616174f7e4",
     "title": "Page",
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content",
+        "excerpt"
+    ],
+    "active": 1,
+    "description": "",
+    "modified": 1520976729,
     "fields": [
         {
             "key": "field_5a9617ebdeb17",
@@ -47,8 +68,6 @@
                     "min": "",
                     "max": ""
                 },
-<<<<<<< HEAD
-=======
                 "5a961623f1cd4": {
                     "key": "5a961623f1cd4",
                     "name": "hero-old",
@@ -196,7 +215,6 @@
                     "min": "",
                     "max": ""
                 },
->>>>>>> master
                 "5a961b92f75bd": {
                     "key": "5a961b92f75bd",
                     "name": "text_block",
@@ -529,30 +547,5 @@
             "min": "",
             "max": ""
         }
-    ],
-    "location": [
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "page"
-            }
-        ]
-    ],
-    "menu_order": 0,
-    "position": "normal",
-    "style": "default",
-    "label_placement": "top",
-    "instruction_placement": "label",
-    "hide_on_screen": [
-        "the_content",
-        "excerpt"
-    ],
-    "active": 1,
-    "description": "",
-<<<<<<< HEAD
-    "modified": 1520522544
-=======
-    "modified": 1520350531
->>>>>>> master
+    ]
 }
