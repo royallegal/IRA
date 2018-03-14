@@ -28,4 +28,32 @@
             }
         }
     }
+
+    // ---- NEWSLETTER ---- //
+
+    .newsletter,
+    .split {
+        .h1 {
+            text-align: center;
+            background: none;
+            &.white {
+                color: white;
+            }
+            &.black {
+                color: black;
+            }
+        }
+    }
+
+    // ---- SPLIT ---- //
+    .split {
+        img {
+            width: 100%;
+            height: auto;
+        }
+        iframe {
+            width: 100%;
+            height: 240px;
+        }
+    }
 }
