@@ -1,12 +1,5 @@
 function royal_modals() {
 
-    function autoplay(video) {
-        video.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
-    }
-    function autostop(video) {
-        video.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
-    }
-
     // Blog Videos
     if ($('#feed').length > 0) {
         $('.modal').modal({
@@ -32,17 +25,29 @@ function royal_modals() {
         })
     }
 
-    if($('[hero-video-modal]').length > 0 ){
-        //We need to move the dom element to the body so the z-index works and the 
-        //modal is not displayed below the overlay
-        $("[hero-video-modal]").detach().appendTo('body');
-
-        $('[hero-video-modal]').modal({
+    if ($('[id*="videoModal"]').length > 0 ) {
+        $('[id*="videoModal"]').modal({
+            ready: function(modal) {
+                auto('play', modal);
+            },
             complete: function(modal) {
-                var $modal = $(modal);
-                var $iframe = $modal.find('iframe');
-                autostop($iframe.get(0));
+                auto('pause', modal);
             }
-        }); 
+        });
+    }
+}
+
+
+// Video Functions
+function auto(action, modal) {
+    var iframe = $(modal).find('iframe');
+    var src    = iframe.attr('src');
+    var func   = action + 'Video';
+
+    if (src.includes('youtube')) {
+        iframe.get(0).contentWindow.postMessage('{"event":"command","func":"'+func+'","args":""}', '*');
+    }
+    else if (src.includes('vimeo')) {
+        // vimeo autoplay
     }
 }
