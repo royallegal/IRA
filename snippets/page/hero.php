@@ -15,11 +15,6 @@ if (have_rows('hero')) {
         $position      = get_sub_field('position');
         $alignment     = get_sub_field('alignment');
         $style         = get_sub_field('style');
-
-        // Title Group
-        $title         = get_sub_field('title');
-        $subtitle      = get_sub_field('subtitle');
-        $description   = get_sub_field('description');
     }
 }
 
