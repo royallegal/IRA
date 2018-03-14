@@ -546,7 +546,7 @@
                 {
                     "key": "field_5aa028e0d350b",
                     "label": "Video URL",
-                    "name": "video",
+                    "name": "iframe",
                     "type": "oembed",
                     "instructions": "",
                     "required": 0,
@@ -564,8 +564,8 @@
                         "class": "",
                         "id": ""
                     },
-                    "width": "",
-                    "height": ""
+                    "width": "auto",
+                    "height": "auto"
                 },
                 {
                     "key": "field_5a98da2a277ca",
@@ -714,25 +714,6 @@
                     "ajax": 0,
                     "return_format": "value",
                     "placeholder": ""
-                },
-                {
-                    "key": "field_5aa8701cb34e1",
-                    "label": "",
-                    "name": "",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
                 }
             ]
         }
@@ -756,5 +737,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1520989818
+    "modified": 1521054957
 }

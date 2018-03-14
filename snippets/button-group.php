@@ -6,23 +6,32 @@
             $randId = substr(md5(microtime()),rand(0,26),10);
 
             // Basic Info
-            $title   = get_sub_field("link")["title"];
-            $label   = get_sub_field('button_label');
-            $text    = ($label) ? $label : $title;
+            $title   = get_sub_field('button_label');
             $icon    = get_sub_field('icon');
             $iconPos = get_sub_field('icon_position');
 
-            // Behaviour
-            $url     = get_sub_field("link")["url"];
-            $modal   = get_sub_field('modal');
-            $target  = get_sub_field("link")["target"];
-            $video   = get_sub_field('video');
-            $video   = preg_replace('/src="(.+?)"/', 'src="$1&enablejsapi=1"', $video);
-
-            $href = ($modal) ? "#videoModal".$randId : $url;
+            // Behavior
+            if (get_sub_field("behavior") == "link") {
+                $href    = get_sub_field("link")["url"];
+                $target  = get_sub_field("link")["target"];
+            }
+            elseif (get_sub_field("behavior") == "modal") {
+                $modal   = get_sub_field('modal');
+                $href    = "#videoModal".$randId;
+                $video   = get_sub_field('video');
+                $iframe  = get_sub_field('iframe');
+                // Add autoplay settings based on provider
+                if (strpos($iframe, "youtube")) {
+                    $iframe  = preg_replace('/src="(.+?)"/', 'src="$1&enablejsapi=1"', $iframe);
+                }
+                elseif (strpos($iframe, "vimeo")) {
+                    /* $iframe  = preg_replace('/src="(.+?)"/', 'src="$1&enablejsapi=1"', $iframe);*/
+                }
+            }
 
             // Styling
-            $styles  = implode(" ", get_sub_field("styles"));
+            $styles  = get_sub_field("styles");
+            $styles  = $styles ? implode(" ", get_sub_field("styles")) : '';
             $size    = get_sub_field("size");
             $color   = get_sub_field("color");
             $variant = get_sub_field("color_variant");
@@ -31,18 +40,23 @@
             $classes = $styles.' '.$size.' '.$color.' '.$variant.' '.$hover.' '.$popup;
     ?>
 
-        <a href="<?= $href; ?>" class="<?= $classes; ?> button" target="<?= $target; ?>">
-            <i class="material-icons <?= $iconPos; ?>"><?= $icon; ?></i>
-            <?php echo $text ?>
-        </a>
+    <a href="<?= $href; ?>" class="<?= $classes; ?> button" target="<?= $target; ?>">
+        <i class="material-icons <?= $iconPos; ?>"><?= $icon; ?></i>
+        <?php echo $title; ?>
+    </a>
 
-        <?php if ($modal) : ?>
-            <div id="videoModal<?=$randId?>" hero-video-modal class="modal video">
+    <?php if ($modal) { ?>
+        <div id="videoModal<?=$randId?>" class="modal">
+            <?php if ($iframe) : ?>
                 <div class="video-container">
-                    <?= $video ?>
+                    <?php echo $iframe; ?>
                 </div>
-            </div>
-        <?php endif; ?>
+            <?php
+            elseif ($video) : echo $video;
+            endif;
+            ?>
+        </div>
+    <?php } ?>
 
     <?php } } ?>
 </div>

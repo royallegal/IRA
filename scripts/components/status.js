@@ -45,8 +45,8 @@ Status.init = function(elem, options) {
     self.elem = elem || '';
     self.options = $.extend({}, _defaults, options);
 
-    console.log(self.elem);
-    console.log(self.options);
+    /* console.log(self.elem);
+     * console.log(self.options);*/
 }
 
 // Init Status prototype
