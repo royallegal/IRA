@@ -3,7 +3,7 @@
     $size = count($columns);
     $classes = array (
         "2" => "s12 m6 l6",
-        "3" => "s12 m4 l4", 
+        "3" => "s12 m4 l4",
         "4" => "s12 m3 l3",
     )
 ?>
@@ -17,15 +17,15 @@
                     $video = get_sub_field('video');
                 ?>
                     <div class="col <?= $classes[$size]?>">
-                        <?php if( $text ): ?>
-                            <?php echo $text ?>
-                        <?php endif; ?>
-                        <?php if( $image ): ?>
-                            <img src="<?php echo $image ?>" alt="">
-                        <?php endif; ?>
-                        <?php if( $video ): ?>
-                            <?php echo $video ?>
-                        <?php endif; ?>
+                        <?php if( $text ) { 
+                            echo $text; 
+                        }  ?>
+                        <?php if( $image ) { 
+                            echo '<img src="' . $image . '" alt="">';
+                         } ?>
+                        <?php if( $video ) {
+                           echo $video;
+                        }  ?>
                     </div>
                 <?php endwhile; endif; ?>
             </div>
