@@ -11,19 +11,19 @@
     <div class="grid">
         <div class="container">
             <div class="row">
-                <?php if( have_rows('columns') ): while( have_rows('columns') ): the_row(); 
+                <?php if( have_rows('columns') ): while( have_rows('columns') ): the_row();
                     $text = get_sub_field('text');
                     $image = get_sub_field('image');
                     $video = get_sub_field('video');
                 ?>
                     <div class="col <?= $classes[$size]?>">
-                        <?php if( $text ) { 
-                            echo $text; 
-                        }  ?>
-                        <?php if( $image ) { 
+                        <?php if( $text ) {
+                            echo $text;
+                        }
+                        if( $image ) { 
                             echo '<img src="' . $image . '" alt="">';
-                         } ?>
-                        <?php if( $video ) {
+                        }
+                        if( $video ) {
                            echo $video;
                         }  ?>
                     </div>
