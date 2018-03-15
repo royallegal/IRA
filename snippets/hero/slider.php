@@ -1,4 +1,4 @@
-<div class="panel <?php  if (in_array("inline", get_sub_field('style_panel'))) { echo 'container'; }  ?>">
+
     <div class="hero-container carousel carousel-slider" data-indicators="true">
         <?php if( have_rows('slider') ): while( have_rows('slider') ): the_row(); 
         $style = get_sub_field('style');
@@ -47,4 +47,3 @@
         </div>
         <?php endwhile; endif; ?>
     </div>
-</div>

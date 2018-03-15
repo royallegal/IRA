@@ -1,5 +1,5 @@
 <?php $video_options = get_sub_field('video_options'); ?>
-<div class="panel <?php  if (in_array("inline", get_sub_field('style_panel'))) { echo 'container'; }  ?>">
+
     <div class="hero-container ">
 
         <?php
@@ -55,5 +55,5 @@
                 <?php the_sub_field('video'); ?>
             </div>
         <?php endif; ?>  
-    </div>
+   
 </div>
