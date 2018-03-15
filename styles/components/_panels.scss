@@ -29,7 +29,9 @@
         }
     }
     // ---- SPLIT ---- //
-    .split {
+    // ---- GRID ---- //
+    .split,
+    .grid {
         img {
             width: 100%;
             height: auto;
@@ -39,4 +41,5 @@
             height: 240px;
         }
     }
+    
 }

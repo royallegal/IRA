@@ -435,6 +435,37 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "5aaad5d392725": {
+                    "key": "5aaad5d392725",
+                    "name": "grid",
+                    "label": "Grid",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5aaad5de92727",
+                            "label": "Grid",
+                            "name": "grid",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5aaad4a6bf52a"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Add Component",
@@ -462,5 +493,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1521078187
+    "modified": 1521145790
 }

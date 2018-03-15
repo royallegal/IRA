@@ -106,9 +106,75 @@
             "placeholder": ""
         },
         {
+            "key": "field_5aaaed1602ad1",
+            "label": "Color (copy)",
+            "name": "color_copy",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "none": "none",
+                "pink": "pink",
+                "red": "red",
+                "purple": "purple",
+                "blue": "blue",
+                "teal": "teal",
+                "green": "green",
+                "yellow": "yellow",
+                "orange": "orange",
+                "tan": "tan",
+                "brown": "brown",
+                "steel": "steel",
+                "gray": "gray",
+                "white": "white"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
             "key": "field_5aa8448275838",
             "label": "Color Variant",
             "name": "color_variant",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "none": "none",
+                "light": "light",
+                "dark": "dark",
+                "accent": "accent",
+                "gradient": "gradient",
+                "mix": "mix"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5aaaed2002ad2",
+            "label": "Color Variant (copy)",
+            "name": "color_variant_copy",
             "type": "select",
             "instructions": "",
             "required": 0,
@@ -344,5 +410,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1521072115
+    "modified": 1521151272
 }
