@@ -6,7 +6,9 @@
     $title = get_sub_field('title');
     $submit_color = get_sub_field('submit_color');
     $media = get_sub_field('media');
-    
+    $video = get_sub_field('video');
+    $image = get_sub_field('image');
+
     $mask_classes = $color.' '.$color_variant;
 
 // Load the newsletter variation

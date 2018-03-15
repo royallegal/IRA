@@ -1,15 +1,14 @@
-
 <div class="panel <?php if( $style == 'inline' ) { echo 'container'; }  ?> <?php echo $mask_classes;?>">
     <div class="split">
         <div class="container">
             <div class="row">
                 <div class="col s5">
-                <?php if( $media == 'image' ) {  ?>
-                        <img src="<?php the_sub_field('image')?>" alt="">
-                    <?php }  ?>
-                    <?php if( $media == 'video' ) { ?>
-                        <?php the_sub_field('video'); ?>
-                    <?php }  ?>
+                <?php if( $media == 'image' ) { 
+                       echo '<img src="' . $image . '" alt="">';
+                    }
+                     if( $media == 'video' ) { 
+                        echo $video;
+                     }  ?>
                 </div>
                 <div class="col s6 offset-s1">  
                     <div class="title-group <?php echo $alignment ?>">    
