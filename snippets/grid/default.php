@@ -20,7 +20,7 @@
                         <?php if( $text ) {
                             echo $text;
                         }
-                        if( $image ) { 
+                        if( $image ) {
                             echo '<img src="' . $image . '" alt="">';
                         }
                         if( $video ) {

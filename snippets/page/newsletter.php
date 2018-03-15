@@ -6,8 +6,9 @@
     $title = get_sub_field('title');
     $submit_color = get_sub_field('submit_color');
     $media = get_sub_field('media');
+    
+    $mask_classes = $color.' '.$color_variant;
 
-    $mask_classes = $color.' '.$color_variant; 
-// Load the hero variation
+// Load the newsletter variation
 include(locate_template('snippets/newsletter/'.get_sub_field('variation').'.php'));
 ?>

@@ -5,6 +5,7 @@
     $text = get_sub_field('text');
 
     $mask_classes = $color.' '.$color_variant; 
-// Load the hero variation
+
+// Load the text variation
 include(locate_template('snippets/text/'.get_sub_field('variation').'.php'));
 ?>
