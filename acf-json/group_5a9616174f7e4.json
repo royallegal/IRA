@@ -1,6 +1,26 @@
 {
     "key": "group_5a9616174f7e4",
     "title": "Page",
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content",
+        "excerpt"
+    ],
+    "active": 1,
+    "description": "",
     "fields": [
         {
             "key": "field_5a9617ebdeb17",
@@ -473,25 +493,5 @@
             "max": ""
         }
     ],
-    "location": [
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "page"
-            }
-        ]
-    ],
-    "menu_order": 0,
-    "position": "normal",
-    "style": "default",
-    "label_placement": "top",
-    "instruction_placement": "label",
-    "hide_on_screen": [
-        "the_content",
-        "excerpt"
-    ],
-    "active": 1,
-    "description": "",
-    "modified": 1521211705
+    "modified": 1521214170
 }

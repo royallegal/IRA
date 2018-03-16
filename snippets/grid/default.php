@@ -7,7 +7,7 @@
         "4" => "s12 m3 l3",
     )
 ?>
-<div class="panel <?php if( $style == 'inline' ) { echo 'container'; }  ?> <?php echo $mask_classes;?>">
+<div class="panel <?php if( $style == 'inline' ) { echo 'container'; }  ?> <?= $mask_classes;?>">
     <div class="grid">
         <div class="container">
             <div class="row">
